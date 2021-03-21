@@ -1,0 +1,107 @@
+Title: Mondern Amusements - Shady Tawfik Portfolio
+
+----
+
+Description: Shady Tawfik is a Web Developer that specializes in website design, custom development, mobile apps. Top rated web design.
+
+----
+
+Additionaldescription: Web Development made in Germany. From a small town called Bielefeld
+
+----
+
+Behanceid: Shady Tawfik
+
+----
+
+Social:
+
+- 
+  platform: Behance
+  link: https://www.behance.net/fnagel1992256a
+- 
+  platform: Instagram
+  link: >
+    https://www.instagram.com/fffcorp/feed/?hl=de
+
+----
+
+Email: hello@modernamusements.de
+
+----
+
+Emailpress: press@modernamusements.de
+
+----
+
+Phone: (+31) 6 46 79 52 91
+
+----
+
+Metaimage:
+
+- group75.png
+
+----
+
+Popupheadline: My Credo:
+
+----
+
+Popupsubheadline01: Fast: Fast load times and lag free interaction
+
+----
+
+Popupsubheadline02: Dynamic: Websites don't have to be static
+
+----
+
+Popupsubheadline03: Intuitive: Strong preference for engaging UX/UI
+
+----
+
+Popupimage:
+
+- shadytawfik-kraken.jpg
+
+----
+
+Altpopup: Javascript/TypeScript PHP/Laravel/MVC HTML/CSS/Bootstrap/SCSS vuejs/vuetify/vuex Apache/Nginx
+
+----
+
+Succesimage:
+
+- shady1000px.png
+
+----
+
+Altsucces: Webpack/Babel AWS(EC2/ECS) MySQL/SQLite VersionControl:Git VariousCMS
+
+----
+
+Consent: Declaration of consent
+
+----
+
+Consentdeclaration01: We do not share your information with third parties.
+
+----
+
+Consentdeclaration02: We use your data exclusively for consulting and information purposes about a cooperation with Modern Amusements.
+
+----
+
+Consentdeclaration03: You can object to being contacted at any time. The best way is to send an email to (link: mailto:info@fff-corp.de text: info@ModernAmusements.de).
+
+----
+
+Consentdeclaration04: You can find more information about data protection in our  (link: /imprint text: Data privacy policy).
+
+----
+
+Metaimagetext: Find out how our method achieves outstanding strategy and design so as to boost innovation in your company.
+
+----
+
+Successimagetext: Find out how our method achieves outstanding strategy and design so as to boost innovation in your company.

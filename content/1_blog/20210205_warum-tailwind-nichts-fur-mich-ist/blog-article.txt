@@ -1,0 +1,124 @@
+Title: Warum Tailwind nichts für mich ist
+
+----
+
+Fullrow:
+
+- 
+  headingc1: Blog Post 001
+  textc1: '# Tailwind kann man größtenteils durch CSS Custom Properties ersetzten'
+  headingc2: Section 001
+  textc2: '# 01'
+  headingc3: Einleitung
+  textc3: |
+    ## Ich habe es ausprobiert
+    
+    Und ich habe es benutzt. Sehr oft. Ein Projekt, das einer meiner größten Kunden mich entwickeln lässt, ist auf React und Tailwind aufgebaut. Was auch immer Sie mir also vorwerfen, Sie können mir nicht vorwerfen, dass ich Tailwind nicht den guten alten College-Versuch gegeben habe.
+    
+    Immer noch nicht mein Ding. Ganz und gar nicht. In der Tat habe ich einige echte Bedenken gegenüber Tailwind, und was ich äußerst frustrierend finde, ist, dass ich, wann immer ich diese Bedenken äußere, sofort von eingefleischten Tailwind-Fans zurückgewiesen werde, die mich (in so vielen Worten) beschuldigen, einfach ein verdammter Idiot zu sein. Als Programmierer, der seit den späten 90ern hauptberuflich in der Web-Industrie arbeitet, passt mir das einfach nicht.
+    
+    Da Twitter und Hacker-News-Kommentare offenbar schlechte Medien für technische Gespräche dieser Größenordnung sind, werde ich nun versuchen, die sehr realen Gründe zu skizzieren, warum Tailwind nichts für mich ist.
+    
+    ### Tailwind fördert unglaublich lange class Tags
+    ruhig nach ganz rechts scrollen ;)
+  codeheadingc3: ""
+  codec3: |
+    <button class="hover:bg-light-blue-200 hover:text-light-blue-800 group flex items-center rounded-md bg-light-blue-100 text-light-blue-600 text-sm font-medium px-4 py-2">
+    New
+    </button>
+    ****
+  imagebuilder: [ ]
+  imagebuilderalt: ""
+  _key: fullRow
+  line-a: null
+  _uid: fullRow_1612538707544_576
+- 
+  headingc1: Blog Post 001
+  textc1: '# Tailwind ermutigt zur div/span-tag soup'
+  headingc2: Section 002
+  textc2: '# 02'
+  headingc3: >
+    Dieser Grund ist ein ästhetisches
+    Anliegen
+  textc3: |
+    ##Praxiserfahrungen
+    
+    Beinahe hätte ich dies in den vorigen Punkt aufgenommen, aber es ist wirklich eine eigene Diskussion wert. Ich bin mittlerweile davon überzeugt, dass die Verwendung von `<div>-` und `<span>-`Tags überall in Ihrem Markup ein Anti-Muster ist. Wir leben in einer Welt, in der benutzerdefinierte Elemente (aka <whatever-you-can-dream-of>) von modernen Browsern vollständig unterstützt und aktiviert werden. Es gibt praktisch keinen Grund, warum Sie gezwungen sind, `<div class="card"></div>` zu schreiben, wenn Sie `<ui-card></ui-card>` schreiben können. Und in der Tat ist es durchaus möglich, benutzerdefinierte Attribute zusammen mit Elementen zu verwenden, um extrem ausdrucksstarkes Markup zu schreiben, das - verglichen mit dem Markup von früher - ziemlich futuristisch aussieht!
+  codeheadingc3: ""
+  codec3: |
+    <div class="min-w-0 flex-auto space-y-0.5">
+    <p class="text-lime-600 dark:text-lime-400 text-sm sm:text-base lg:text-sm xl:text-base font-semibold uppercase">
+    <abbr title="Episode">Ep.</abbr> 128
+    </p>
+    <h2 class="text-black dark:text-white text-base sm:text-xl lg:text-base xl:text-xl font-semibold truncate">
+    Scaling CSS at Heroku with Utility Classes
+    </h2>
+    <p class="text-gray-500 dark:text-gray-400 text-base sm:text-lg lg:text-base xl:text-lg font-medium">
+    Full Stack Radio
+    </p>
+    </div>
+    ****
+  imagebuilder: [ ]
+  imagebuilderalt: ""
+  _key: fullRow
+  line-a: null
+  uniquekey: 1
+  showpreviewinitially: false
+  _uid: fullRow_1612539713304_3871
+- 
+  headingc1: Blog Post 001
+  textc1: '# Tailwind vergisst, dass es web components gibt.'
+  headingc2: Section 003
+  textc2: '# 03'
+  headingc3: Das Problem
+  textc3: |
+    ## Apropos, was in modernen Webbrowsern nativ ist
+    
+    Dies ist vielleicht der größte Kritikpunkt an Tailwind. Es wurde scheinbar in einer Welt konzipiert und beworben, in der es keine Web-Komponenten gibt. Tailwind-CSS ist innerhalb des Shadow-DOMs völlig unbrauchbar. Einige unternehmungslustige Entwickler haben Lösungen gefunden, bei denen ausgewählte Teile des Tailwind-Stylings durch einen Build-Prozess in Komponenten injiziert werden können, aber das ist definitiv ein Hack.
+    
+    Meanwhile, there are ways to build web component-based design systems today where global theming and component styling via the Shadow DOM (and exposed Parts) all work together. Again, you can do all this based on technology that's built-in and native to all modern browsers. And before you shrug your shoulders and go back to your React or your Vue, bear in mind that web components are not only an integral part of the HTML/CSS/JS spec today but are increasingly at the heart of further advancements to browser technology (for example how advanced customization of form controls might work in the future).
+    
+    Tailwind ist in dieser Hinsicht nicht hilfreicher für Sie als Bootstrap oder Foundation oder irgendein anderes CSS-Framework, das vor Jahren/Jahrzehnten geschrieben wurde.
+  codeheadingc3: ""
+  codec3: ""
+  imagebuilder: [ ]
+  imagebuilderalt: ""
+  _key: fullRow
+  line-a: null
+  uniquekey: 0
+  isnew: true
+  _uid: fullRow_1612539319387_1764
+
+----
+
+Cover:
+
+- tailwindcss.png
+
+----
+
+Subheading: Tailwind fördert hässliches HTML
+
+----
+
+Date: 2021-02-05 15:15
+
+----
+
+Pills: FrontEnd
+
+----
+
+Author: Shady Tawfik
+
+----
+
+Tags: tailwind, css, webcomponents
+
+----
+
+Theme: 
+
+----
+
+Description: Ich bin in letzter Zeit in mehr als einen hitzigen Streit im Internet über Tailwind CSS geraten. Ich bin nicht stolz darauf. Ich mag es nicht, mit jemandem im Streit zu liegen. Ich denke, die Leute, die Tailwind bauen, sind talentierte und nette Leute. Aber auf einer rein technischen Ebene mag ich Tailwind einfach nicht. Für wen auch immer es gebaut wurde, es wurde nicht für mich gebaut.

@@ -1,0 +1,55 @@
+# System files
+# ------------
+
+Icon
+.DS_Store
+
+# Temporary files
+# ---------------
+
+/media/*
+!/media/index.html
+/.id.php
+
+# node_modules
+# ---------------
+
+/node_modules
+
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+
+# Lock files
+# ---------------
+
+.lock
+
+# -------------SECURITY-------------
+# NEVER publish these files via Git!
+# -------------SECURITY-------------
+
+# Cache Files
+# ---------------
+
+/site/cache/*
+!/site/cache/index.html
+
+# Accounts
+# ---------------
+
+# /site/accounts/.logins
+
+# Sessions
+# ---------------
+
+/site/sessions/*
+!/site/sessions/index.html
+
+# License
+# ---------------
+
+/site/config/.license
+

@@ -1,0 +1,41 @@
+Title: Home
+
+----
+
+Cardheading: # Hello! I’m Shady. I work with startups and top companies!
+
+----
+
+Carddescription: I’m a fullstack web developer from the Germany. Interested in programming and to code inclusive, effective, and impactful digital products. Logical approach to problem solving is my passion. Code perfectionist in the best sense of the word.
+
+----
+
+Capabilities: HTML5/CSS3, SCSS, Bootstrap5/Materialize, UI/UXDesign, JavaScript/TypeScript, Git, GitHub, NPM/Yarn
+
+----
+
+Capabilitiesrow2: Parcel/Webpack, Vue/Vuex/Nuxt.js, Jest/Stylelint, VariousCMS, PHP/Laravel, MySQL/Eloquent, Apache/Nginx, AWC/Fortrabbit
+
+----
+
+Contributors: 
+
+----
+
+Concept: 
+
+----
+
+Client: 
+
+----
+
+Date: 
+
+----
+
+Description: 
+
+----
+
+Mybuilder: 

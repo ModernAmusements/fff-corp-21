@@ -1,0 +1,42 @@
+$(function() {
+  var logo = $(".home-logo"); $(window).scroll(function() {
+  var scroll = $(window).scrollTop();
+
+      if (scroll >= 25) {
+        if(!logo.hasClass("scroll-logo")) {
+          logo.removeClass('lrg-logo').addClass("scroll-logo").fadeIn("slow");
+        }
+      } else {
+        if(!logo.hasClass("lrg-logo")) {
+          logo.removeClass("scroll-logo").addClass('lrg-logo').fadeIn("slow");
+        }
+      }
+
+  });
+});
+
+$(function() {
+  var nav = $(".desktop-nav"); $(window).scroll(function() {
+
+  var scroll = $(window).scrollTop();
+      if (window.innerWidth < 460) {
+
+      if (scroll >= 25) {
+        if(!nav.hasClass("scroll-nav")) {
+          nav.removeClass('lrg-nav').addClass("scroll-nav").fadeIn("slow");
+        }
+      } else {
+        if(!nav.hasClass("lrg-nav")) {
+          nav.removeClass("scroll-nav").addClass('lrg-nav').fadeIn("slow");
+        }
+      }
+    }
+
+  });
+
+
+});
+
+
+
+

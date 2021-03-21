@@ -1,0 +1,63 @@
+name: Full Row
+label: Archive Files
+preview:
+  snippet: blocks/fullRow
+  css: /assets/css/index.css
+defaultView: preview
+fields:
+  headingC1:
+    label: H-Col. 1 "Description"
+    type: textarea
+  textC1:
+    label: T-Col.1
+    type: textarea
+    minlength: 02
+    maxlength: 100
+    size: small
+    buttons: true
+  headingC2:
+    label: H-Col. 2 "Number"
+    type: textarea
+  textC2:
+    label: T-Col.2
+    type: textarea
+    minlength: 02
+    maxlength: 100
+    size: small
+    buttons: true
+  line-a:
+    type: line
+  headingC3:
+    label: Heading Col. 3 "Part"
+    type: textarea
+    buttons: true
+  textC3:
+    label: Text col.3
+    type: textarea
+    size: medium
+    buttons: true
+  codeHeadingC3:
+    label: Code Heading 3
+    type: text
+    size: medium
+    buttons: true
+  codeC3:
+    label: Code 3
+    type: textarea
+    size: medium
+  imageBuilder:
+      type: files
+      multiple: false
+  imageBuilderAlt:
+      label: Blog Alt Text ((Seo))
+      type: textarea
+    headline:
+      type: textarea
+    description:
+      type: textarea
+    tags: true
+
+
+
+
+

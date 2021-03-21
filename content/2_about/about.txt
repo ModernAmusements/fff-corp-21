@@ -1,0 +1,78 @@
+Title: About
+
+----
+
+Heading: About
+
+----
+
+Subheading: Me
+
+----
+
+Company: Shady Tawfik
+
+----
+
+Street: Goldbach 14
+
+----
+
+Zip: 33602
+
+----
+
+City: Nordrhein-Westfalia
+
+----
+
+Country: Germany
+
+----
+
+Email: hello@modernamusements.de
+
+----
+
+Phone: (+49) 1 71 285 30 46
+
+----
+
+About: # Currently based in Bielefeld, working with startups and top companies.
+
+----
+
+Info:
+
+## Information
+
+Das Programm researches Braun Design 1955-1995 (the period of Dieter Rams’ directorship). Our activities span writing projects, exhibition curation and the supply of objects to museums – amongst others, the London Design Museum, Vitra Museum, Cooper Hewitt Smithsonian Design Museum and the HfG Ulm Archive. Stocked with over 550 Braun objects, from ‘60s audio equipment to ‘80s shavers, Das Programm’s website combines archive, reference book and educational resource.
+
+----
+
+Cv:
+
+## Curriculum Vitae
+
+An exploration of the new versatile GORE-TEX outerwear launched in spring 19. A jacket suitable for use in both nature as well as the urban environment.
+
+----
+
+Capabilitiesheading: Capabilities
+
+----
+
+Capabilities:
+
+- 
+  capabilities: Web Development
+- 
+  capabilities: Custom CMS Platform
+- 
+  capabilities: Javascript / TypeScript
+- 
+  capabilities: Vuejs, Vuetify, Vuex
+- 
+  capabilities: MySQL, SQLite
+- 
+  capabilities: PHP, Laravel, MVC

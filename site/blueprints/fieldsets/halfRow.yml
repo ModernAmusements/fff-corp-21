@@ -1,0 +1,15 @@
+name: Half Row 
+label: Half Row Archive Files
+preview:
+  snippet: blocks/fullRow
+  css: /assets/css/index.css
+defaultView: preview
+fields:
+  halfRow:
+    label: HalfRow A.Section Builder
+    type: builder
+    fieldsets:
+      halfRowText:
+        extends: fieldsets/halfRowtext
+        name: Full Row Sections "3"
+

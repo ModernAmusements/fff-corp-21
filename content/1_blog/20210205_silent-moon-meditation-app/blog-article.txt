@@ -1,0 +1,39 @@
+Title: Silent Moon: Meditation App
+
+----
+
+Fullrow: 
+
+----
+
+Cover:
+
+- blog1.png
+
+----
+
+Subheading: Sleep Stories
+
+----
+
+Date: 2021-02-05 16:05
+
+----
+
+Pills: WebApp
+
+----
+
+Author: Shady Tawfik
+
+----
+
+Tags: VueJS, Laravel
+
+----
+
+Theme: Wie man eine App baut.
+
+----
+
+Description: Kämpfen Sie damit, eine konsistente Meditationspraxis aufzubauen und aufrechtzuerhalten? Lesen Sie weiter, um herauszufinden, wie sie Achtsamkeit und Meditation in ihre tägliche Routine einbauen, sowie ihre besten Tipps für alle!

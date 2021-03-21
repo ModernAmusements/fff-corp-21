@@ -1,0 +1,7 @@
+type: pages
+headline: Work
+parent: kirby.page("works")
+info: "Client:{{ page.client }} || Tags:{{ page.tags }} || Date:{{ page.date.toDate('d.m.Y') }}"
+template: work
+empty: No notes yet
+sortBy: date desc

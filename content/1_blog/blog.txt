@@ -1,0 +1,31 @@
+Title: Archive
+
+----
+
+Heading: Archive
+
+----
+
+Subheading: Blog
+
+----
+
+Homepageheading: The latest info on web development and machine learning. compiled by me for you.
+
+----
+
+Pr: An enjoyable web apps rely on engineers implementing the APIs that cover all of the small things. Those small things sometimes improve performance, usability, accessibility, and the app's relationship with its host system. The Wake Lock API is the latter -- an API that allows developers to instruct the host machine to not dim the screen or sleep, especially useful when users view videos.
+
+----
+
+Cover:
+
+- 4.jpg
+
+----
+
+Limit: 6
+
+----
+
+Dateformat: d M, Y

@@ -1,0 +1,112 @@
+/* Main */
+#preload-homepage {
+  display: none;
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overflow-y: scroll;
+  justify-content: center;
+  transition: background var(--duration) ease;
+  background-color: var(--background-color-alpha);
+  backdrop-filter: saturate(180%) blur(5px);
+  .intro {
+    align-items: center;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    padding: calc(var(--lineHeight) * 3);
+    .intro-items {
+      text-align: center;
+    }
+  }
+}
+#consent-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 1s ease;
+  padding: calc(var(--lineHeight) * 1) calc(var(--lineHeight) * 2);
+  z-index: 1001;
+  border-top: 1px solid var(--foreground-color);
+  background-color: var(--background-color-alpha);
+  backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: underline;
+    align-self: flex-end;
+  }
+  &.hidden {
+    opacity: 0;
+  }
+}
+.pageContent {
+  // padding: calc(var(--lineHeight) * 1) 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: min-content 1fr;
+  grid-column-gap: 10px;
+  align-items: end;
+  grid-row-gap: var(--rowGap);
+  .homepage-info {
+    padding: calc(var(--lineHeight) * 1) 0;
+    display: grid;
+    svg {
+      margin-bottom: 1em;
+    }
+    svg,
+    .date-time {
+      justify-self: center;
+      text-align: center;
+    }
+  }
+  .left {
+    grid-column: 1 / 6;
+    grid-row: 1;
+    align-self: start;
+  }
+  .right {
+    grid-column: 6 / 9;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+  }
+}
+@media (min-width: 320px) and (max-width: 760px) {
+  .pageContent {
+    grid-template-columns: repeat(2, 1fr);
+    .left {
+      grid-column: 1 / 3;
+      grid-row: 1;
+      align-self: start;
+    }
+    .right {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      align-self: start;
+      justify-self: start;
+    }
+  }
+  .intro-items {
+    h1.xlarge {
+      font-size: 2em;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-top: calc(var(--lineHeight) * 1);
+      margin-bottom: calc(var(--lineHeight) * 1);
+    }
+  }
+}
+
+@media (min-width: 10px) and (max-width: 322px) {
+  .home-page-image {
+    img {
+      max-width: 273px;
+    }
+  }
+}

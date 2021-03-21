@@ -1,0 +1,54 @@
+title: Imprint
+
+
+columns:
+  - width: 1/3
+    fields:
+      heading:
+        type: text
+      subheading:
+        type: text  
+      lineA:
+        type: line
+      about:
+        label: Angaben gemäß § 5 TMG
+        type: textarea  
+
+
+  - width: 2/3
+    fields:
+      info:
+        label: I. Haftungsausschluss
+        type: textarea
+      cv:
+        label: II. Urheberrecht
+        type: textarea      
+      capabilities:
+        label: III. Datenschutz
+        type: textarea
+      cookies:
+        label: IV. Cookies
+        type: textarea  
+
+  - width: 1/3
+    fields:
+      googleAnalytics:
+        label: Google Analytics
+        type: textarea  
+
+
+  - width: 2/3
+    fields:
+      googleAnalyticsConsent:
+        label: I. Google Analytics
+        type: textarea
+      noConsent:
+        label: II. Widerspruch Werbe-Mails
+        type: textarea      
+      reason:
+        label: III. Zweck der Verarbeitung
+        type: textarea
+      instagram:
+        label: IV. Instagram
+        type: textarea  
+            

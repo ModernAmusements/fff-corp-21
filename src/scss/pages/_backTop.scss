@@ -1,0 +1,62 @@
+/* BACK TO TOP
+================================================== */
+
+#top {
+  position: sticky;
+  position: -webkit-sticky;
+  width: 100vw;
+  bottom: 2rem;
+  padding: 1rem;
+  margin: 4rem auto 2rem;
+  line-height: normal;
+  clear: both;
+  text-align: center;
+  z-index: 9;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+#top span {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+#top span span:first-child::after {
+  content: 'BACK TO TOP'
+}
+
+#top span span:last-child::after {
+  content: '↑';
+}
+
+.desktop #top span:hover span:last-child {
+  animation: blinker .5s linear infinite;
+}
+
+main.scroll~#top {
+  position: fixed;
+  bottom: 0;
+  opacity: 1 !important;
+}
+
+main.scroll~#top:not(.active) span {
+  pointer-events: none;
+}
+
+main.scroll~#top:not(.active) span span:first-child::after {
+  content: 'SCROLL DOWN';
+}
+
+main.scroll~#top:not(.active) span span:last-child::after {
+  content: '↓';
+}
+
+main.scroll~#top:not(.active) span span:last-child {
+  animation: blinker .5s linear infinite;
+}
+
+main.list~#top {
+  position: initial;
+  opacity: 1 !important;
+}

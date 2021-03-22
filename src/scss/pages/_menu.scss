@@ -1,0 +1,43 @@
+menu {
+  width: fit-content;
+  width: -moz-fit-content;
+  padding: 0 1rem;
+  position: relative;
+  pointer-events: all;
+}
+
+menu>wrap {
+  display: block;
+  padding: 0 0 0 1rem;
+}
+
+menu>wrap .trigger {
+  text-transform: uppercase;
+}
+
+.trigger {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: .3rem;
+  width: fit-content;
+  width: -moz-fit-content;
+  user-select: none;
+  cursor: pointer;
+}
+
+.trigger .dot::before {
+  content: '+';
+}
+
+.trigger.active .dot::before {
+  content: '–';
+}
+
+/*Shop Link*/
+
+menu .wrapper:last-of-type+a {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: .3rem;
+  text-transform: uppercase;
+}

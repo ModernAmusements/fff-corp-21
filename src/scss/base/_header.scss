@@ -35,6 +35,7 @@ header:not(.post-header) {
   padding-top: calc(var(--lineHeight) * 1);
   color: var(--foreground-color);
   mix-blend-mode: difference;
+  text-transform: uppercase;
   .dark-mode-toggle {
     display: flex;
     svg {
@@ -95,6 +96,7 @@ header:not(.post-header) {
 .desktop-nav {
   grid-column: 2 / 3;
   display: flex;
+  padding: 0;
 }
 .home-logo {
   grid-column: 3 / 9;

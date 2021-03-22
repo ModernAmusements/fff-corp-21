@@ -5,13 +5,14 @@ footer {
   padding: 1em calc(var(--lineHeight) * 2);
   display: flex;
   justify-content: space-between;
+  text-transform: uppercase;
 }
 .legal,
 .footer-nav,
 .footer-social {
   display: flex;
   justify-content: space-between;
-    white-space: nowrap;
+  white-space: nowrap;
   a {
     margin-right: 2em;
   }
@@ -19,10 +20,9 @@ footer {
     margin-right: 0;
   }
 }
-.footer-mobile{
+.footer-mobile {
   display: none;
 }
-
 
 @media only screen and (max-width: 768px) {
   footer {
@@ -35,9 +35,9 @@ footer {
   .footer-social {
     display: none;
   }
-  .footer-mobile{
+  .footer-mobile {
     display: flex;
-    grid-column: 1 /  5;
+    grid-column: 1 / 5;
     flex-direction: column;
     margin-bottom: 20px;
     a {
@@ -47,6 +47,4 @@ footer {
       }
     }
   }
-
 }
-

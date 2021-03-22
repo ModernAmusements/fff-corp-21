@@ -1,0 +1,29 @@
+Title: Albert Camus
+
+----
+
+Date: 2021-03-18
+
+----
+
+Tags: VueJs, SPA
+
+----
+
+Description: 
+
+----
+
+Contributors: 
+
+----
+
+Layout: small
+
+----
+
+Concept: 
+
+----
+
+Client: 

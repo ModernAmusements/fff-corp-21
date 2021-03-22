@@ -1,0 +1,40 @@
+/*Tags*/
+
+#tags ul {
+  column-count: 7;
+  column-gap: 1rem;
+}
+
+li[data-letter]::before {
+  content: attr(data-letter);
+  text-transform: uppercase;
+}
+
+li .tag {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: .3rem;
+  width: fit-content;
+  width: -moz-fit-content;
+  direction: rtl;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+li .tag span {
+  display: inline-block;
+  direction: ltr;
+}
+
+li .tag .dot {
+  opacity: 0;
+}
+
+li .tag.active .dot,
+.desktop li .tag:hover .dot {
+  opacity: 1;
+}

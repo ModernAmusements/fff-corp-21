@@ -1,0 +1,59 @@
+/* FOOTER
+================================================== */
+
+footer {
+  padding: 1rem 0;
+  margin: 0 1rem;
+  width: calc(100vw - 2rem);
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 10rem 1rem;
+  background-image: linear-gradient(to right, black 16%, rgba(255, 255, 255, 0) 0%);
+  background-position: top;
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+}
+
+footer wrap {
+  padding-top: 1em;
+  grid-column: 2 span !important;
+  justify-self: center;
+}
+
+footer wrap+div {
+  display: grid;
+}
+
+footer wrap+div br {
+  display: none;
+}
+
+footer form+a {
+  justify-self: flex-end;
+  align-self: flex-start;
+}
+
+footer div:last-of-type {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+footer div:last-of-type a span:last-child {
+  display: none;
+}
+
+.desktop footer div:last-of-type a:hover span:first-child {
+  display: none;
+}
+
+.desktop footer div:last-of-type a:hover span:last-child {
+  display: inline-block;
+}
+
+.device footer div:last-of-type a span:first-child::after {
+  content: ' BY';
+}
+
+.device footer div:last-of-type a span:last-child {
+  display: inline-block !important;
+}

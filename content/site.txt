@@ -1,4 +1,4 @@
-Title: Mondern Amusements - Shady Tawfik Portfolio
+Title: FFFCorp - Florian Nagel Portfolio
 
 ----
 
@@ -38,9 +38,7 @@ Phone: (+31) 6 46 79 52 91
 
 ----
 
-Metaimage:
-
-- group75.png
+Metaimage: - group75.png
 
 ----
 
@@ -60,9 +58,7 @@ Popupsubheadline03: Intuitive: Strong preference for engaging UX/UI
 
 ----
 
-Popupimage:
-
-- shadytawfik-kraken.jpg
+Popupimage: - shadytawfik-kraken.jpg
 
 ----
 
@@ -70,9 +66,7 @@ Altpopup: Javascript/TypeScript PHP/Laravel/MVC HTML/CSS/Bootstrap/SCSS vuejs/vu
 
 ----
 
-Succesimage:
-
-- shady1000px.png
+Succesimage: - shady1000px.png
 
 ----
 

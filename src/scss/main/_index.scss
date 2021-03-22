@@ -1,0 +1,45 @@
+/* INDEX
+================================================== */
+
+main {
+  // padding: 10rem 1rem 5rem;
+}
+
+/*Covers*/
+
+main.covers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10rem 1rem;
+  align-items: flex-end;
+}
+
+main.covers .project {
+  height: fit-content;
+  height: -moz-fit-content;
+  display: grid;
+  grid-gap: .5rem;
+}
+
+main.covers .project.big {
+  width: 100%;
+  max-width: 1800px;
+  grid-column: auto/span 2;
+  padding: 0 15%;
+  margin: 0 auto;
+}
+
+main.covers .project.medium {
+  margin: 10rem 0;
+}
+
+main.covers .project.small {
+  padding: 0 25%;
+  align-self: flex-start;
+}
+
+main.covers .project .trigger {
+  display: block;
+  grid-area: 1;
+  cursor: auto;
+}

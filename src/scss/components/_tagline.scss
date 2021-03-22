@@ -1,0 +1,52 @@
+/* TAGLINE
+================================================== */
+
+#tagline {
+  width: calc(100vw - 2rem);
+  margin: 0 1rem;
+  background-image: linear-gradient(to right, black 16%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 9;
+}
+
+#tagline wrap {
+  display: block;
+  padding: 2.5rem 0;
+}
+
+#tagline p {
+  max-width: calc(812px - 2rem);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.device #tagline {
+  font-size: 200%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  margin: 0;
+  background: black;
+  color: #F8F8F8;
+  z-index: 999;
+}
+
+.device #tagline wrap {
+  padding: 1rem;
+}
+
+.device #tagline p {
+  max-width: none;
+  padding: 0 4rem;
+}

@@ -20,4 +20,27 @@
   'components/blog',
   'components/menuMobile',
   'components/blogSubpage',
-  'components/fffmodal';
+  'components/fffmodal',
+  'components/loading',
+  'components/cardMobile',
+  'components/tagline';
+
+
+  @import
+  'pages/menu',
+  'pages/sections',
+  'pages/tags',
+  'pages/filter',
+  'pages/homepageLayout',
+  'pages/backTop';
+
+
+  @import
+  'main/index',
+  'main/grid',
+  'main/list',
+  'main/scroll',
+  'main/projects',
+  'main/responsive';
+
+

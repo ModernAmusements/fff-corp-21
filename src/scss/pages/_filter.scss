@@ -1,0 +1,21 @@
+/* FILTERS
+================================================== */
+
+#filters {
+  display: none;
+  font-size: 250%;
+  padding: 10rem 2rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 9;
+}
+
+#filters span {
+  padding: 0 1rem;
+  display: inline-block;
+}
+
+main.filter-active .project:not(.filter-active) {
+  display: none !important;
+}

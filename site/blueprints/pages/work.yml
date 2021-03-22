@@ -97,6 +97,15 @@ columns:
         type: textarea
         size: medium
         width: 1/2
+      layout:
+        type: multiselect
+        max: 1
+        label: Cover Layout Size
+        width: 1/2
+        options:
+          small: Small
+          medium: Medium
+          big: Big
       concept:
         title: Concept
         type: textarea

@@ -1,0 +1,89 @@
+
+/*List*/
+
+main.list {
+  display: grid;
+  padding: 9.75rem 1rem 4.75rem;
+}
+
+main.list .project {
+  position: relative;
+}
+
+main:not(.list) .project>a {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+main.list .project>a {
+  width: 150px !important;
+  max-width: 150px;
+  display: none;
+  position: absolute;
+  transform: translate(-50%, calc(-50% + .5rem));
+  pointer-events: none;
+  z-index: 5;
+}
+
+.desktop main.list .project:hover>a {
+  z-index: 9;
+}
+
+/*List project info*/
+
+main.list .project .trigger {
+  width: 100%;
+  padding: .25rem 0;
+}
+
+main:not(.list) .project .trigger wrap span span,
+main:not(.list) .project .trigger .only-list {
+  display: none;
+}
+
+main.list .project .trigger wrap {
+  display: grid;
+  grid-template-columns: max-content 1fr min-content;
+  grid-gap: .3rem;
+}
+
+main.list .project .trigger wrap p {
+  height: calc(1rem/3*2.5);
+  background-image: linear-gradient(to right, black 16%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+}
+
+/*List Images Wrapper*/
+
+main:not(.list) .project .wrapper {
+  display: none !important;
+}
+
+main.list .project .wrapper {
+  padding: 1rem 0 2.75rem calc(7.3px*3 + .3rem);
+  text-align: center;
+}
+
+main.list .project:last-of-type .wrapper {
+  padding-bottom: 0;
+}
+
+main.list .project .wrapper .images {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.25rem 4rem;
+  padding-bottom: 3rem;
+}
+
+main.list .project .wrapper .images img,
+main.list .project .wrapper .images video {
+  height: auto;
+}
+
+/*List View Project Button*/
+
+main.list .project .wrapper .images+a {
+  padding-right: calc(7.3px*3 + .3rem);
+}

@@ -1025,13 +1025,13 @@ footer {
   display: none;
 }
 
-nav.categories {
+div.categories {
   padding: calc(var(--lineHeight) * 0.1) 0;
   border-bottom: 1px solid var(--foreground-color);
   display: grid;
 }
 
-nav.categories .categories-pills {
+div.categories .categories-pills {
   display: grid;
   align-items: baseline;
   justify-self: end;
@@ -1040,42 +1040,23 @@ nav.categories .categories-pills {
   margin-bottom: 0;
 }
 
-nav.categories li {
-  display: inline-block;
+div.categories .category-button:hover {
+  color: var(--primary-color);
 }
 
-nav.categories .category-button {
-  border: 1px solid var(--foreground-color);
-  border-radius: var(--b-r-small);
-  padding: 0 2em;
-  line-height: 1.5em;
+div.categories li.active .category-button {
+  color: var(--primary-color);
 }
 
-nav.categories .category-button:hover {
-  background-color: var(--foreground-color);
-  color: var(--background-color);
-  border-color: var(--foreground-color);
+div.categories li.active .category-button:hover {
+  color: var(--primary-color);
 }
 
-nav.categories li.active .category-button {
-  background-color: var(--primary-color);
-  color: var(--foreground-color);
-  border-color: var(--foreground-color);
+div.categories .category-button:active {
+  color: var(--primary-color);
 }
 
-nav.categories li.active .category-button:hover {
-  background-color: var(--foreground-color);
-  color: var(--background-color);
-  border-color: var(--foreground-color);
-}
-
-nav.categories .category-button:active {
-  background-color: var(--primary-color);
-  color: var(--foreground-color);
-  border-color: var(--primary-color);
-}
-
-nav.categories-mobile {
+div.categories-mobile {
   display: none;
 }
 
@@ -1223,20 +1204,6 @@ nav.categories-mobile {
 
 .toggle.post-title {
   white-space: initial;
-}
-
-.post {
-  position: relative;
-  overflow: hidden;
-  height: 5rem;
-  transition: height 0.5s ease-out;
-  border: 1px solid var(--foreground-color);
-  border-radius: var(--b-r-small);
-  margin-top: 1em;
-  padding: 0 1em;
-  background-color: var(--background-color-alpha);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-          backdrop-filter: saturate(180%) blur(20px);
 }
 
 .close-post::after {
@@ -1593,21 +1560,21 @@ button {
 }
 
 @media (min-width: 320px) and (max-width: 877px) {
-  nav.categories {
+  div.categories {
     padding: calc(var(--lineHeight) * 0.25) 0;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 25px;
     grid-row-gap: calc(var(--rowGap) * 0.25);
   }
 
-  nav.categories button {
+  div.categories button {
     background: 0 0;
     border: 0;
     outline: 0;
     color: var(--foreground-color);
   }
 
-  nav.categories .categories-pills {
+  div.categories .categories-pills {
     height: 0;
     overflow: hidden;
     opacity: 0;
@@ -1617,11 +1584,11 @@ button {
     transition: opacity 0.2s 0s, visibility 0s 0s, height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms;
   }
 
-  nav.categories .categories-pills li {
+  div.categories .categories-pills li {
     opacity: 0;
   }
 
-  nav.categories .categories-pills.active-filters {
+  div.categories .categories-pills.active-filters {
     margin: 0;
     margin: 0 -15px;
     overflow-x: scroll;
@@ -1649,47 +1616,47 @@ button {
     /* Firefox */
   }
 
-  nav.categories .categories-pills.active-filters li {
+  div.categories .categories-pills.active-filters li {
     opacity: 1;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(2) {
+  div.categories .categories-pills.active-filters li:nth-child(2) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.05s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(3) {
+  div.categories .categories-pills.active-filters li:nth-child(3) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(4) {
+  div.categories .categories-pills.active-filters li:nth-child(4) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(5) {
+  div.categories .categories-pills.active-filters li:nth-child(5) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(6) {
+  div.categories .categories-pills.active-filters li:nth-child(6) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(7) {
+  div.categories .categories-pills.active-filters li:nth-child(7) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(8) {
+  div.categories .categories-pills.active-filters li:nth-child(8) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.35s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(9) {
+  div.categories .categories-pills.active-filters li:nth-child(9) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
   }
 
-  nav.categories .categories-pills.active-filters li:nth-child(10) {
+  div.categories .categories-pills.active-filters li:nth-child(10) {
     transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.45s;
   }
 
-  nav.categories .categories-pills.active-filters::-webkit-scrollbar {
+  div.categories .categories-pills.active-filters::-webkit-scrollbar {
     display: none;
   }
 
@@ -3127,24 +3094,7 @@ h1.xxxlarge,
 
 /* small text */
 
-.small {
-  font-size: 0.85rem;
-  line-height: var(--lineHeight);
-}
-
 /* small text */
-
-.large {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: var(--lineHeight);
-}
-
-.medium {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: var(--lineHeight);
-}
 
 .medium.single-line {
   margin-top: var(--lineHeight);
@@ -3947,7 +3897,7 @@ button {
 
 .list {
   border-radius: 0 0 8px 0;
-  padding: 22px;
+  padding: 0;
 }
 
 .checklist {
@@ -4760,10 +4710,6 @@ section wrap:first-of-type + wrap ul {
   max-width: calc(812px - calc(7.3px*6) - 1.6rem);
 }
 
-ul {
-  padding: 1rem 1rem 2rem calc(7.3px*3 + .3rem);
-}
-
 li {
   display: grid;
   grid-template-columns: -webkit-min-content 1fr;
@@ -4771,10 +4717,6 @@ li {
   grid-gap: 0.3rem;
   -moz-column-break-inside: avoid;
        break-inside: avoid;
-}
-
-li::before {
-  content: "\B7";
 }
 
 /*Tags*/
@@ -5055,7 +4997,6 @@ main.grid .project .trigger {
 
 main.list {
   display: grid;
-  padding: 9.75rem 1rem 4.75rem;
 }
 
 main.list .project {

@@ -38,7 +38,7 @@ section wrap:first-of-type+wrap ul {
 }
 
 ul {
-  padding: 1rem 1rem 2rem calc(7.3px*3 + .3rem);
+  // padding: 1rem 1rem 2rem calc(7.3px*3 + .3rem);
 }
 
 li {
@@ -48,6 +48,6 @@ li {
   break-inside: avoid;
 }
 
-li::before {
-  content: '·';
-}
+// li::before {
+//   content: '·';
+// }

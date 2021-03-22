@@ -10,13 +10,16 @@
       </div>
 
       <!--Covers-->
-      <div id="covers" class="active">
+      <div id="covers">
           <span>Covers</span>
       </div>
       
       <!--List-->
-      <div id="list">
+      <!-- <div id="list">
           <span>List</span>
+      </div> -->
+      <div>
+          <a href="/works">List</a>
       </div>
 
   </nav> 

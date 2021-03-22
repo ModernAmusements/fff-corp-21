@@ -2,7 +2,7 @@
   display: none;
 }
 // Nav Filter
-nav.categories {
+div.categories {
   padding: calc(var(--lineHeight) * 0.1) 0;
   border-bottom: 1px solid var(--foreground-color);
   display: grid;
@@ -14,39 +14,25 @@ nav.categories {
     grid-auto-flow: column;
     margin-bottom: 0;
   }
-  li {
-    display: inline-block;
-  }
   .category-button {
-    border: 1px solid var(--foreground-color);
-    border-radius: var(--b-r-small);
-    padding: 0 2em;
-    line-height: 1.5em;
   }
   .category-button:hover {
-    background-color: var(--foreground-color);
-    color: var(--background-color);
-    border-color: var(--foreground-color);
+    color: var(--primary-color);
   }
   li.active {
     .category-button {
-      background-color: var(--primary-color);
-      color: var(--foreground-color);
-      border-color: var(--foreground-color);
+      color: var(--primary-color);
     }
     .category-button:hover {
-      background-color: var(--foreground-color);
-      color: var(--background-color);
-      border-color: var(--foreground-color);
+      color: var(--primary-color);
     }
   }
   .category-button:active {
-    background-color: var(--primary-color);
-    color: var(--foreground-color);
-    border-color: var(--primary-color);
+    color: var(--primary-color);
+
   }
 }
-nav.categories-mobile {
+div.categories-mobile {
   display: none;
 }
 .category-legend {
@@ -186,16 +172,7 @@ nav.categories-mobile {
 }
 // Post General
 .post {
-  position: relative;
-  overflow: hidden;
-  height: 5rem;
-  transition: height 0.5s ease-out;
-  border: 1px solid var(--foreground-color);
-  border-radius: var(--b-r-small);
-  margin-top: 1em;
-  padding: 0 1em;
-  background-color: var(--background-color-alpha);
-  backdrop-filter: saturate(180%) blur(20px);
+
 }
 
 .close-post::after {
@@ -530,7 +507,7 @@ button {
 @media (min-width: 320px) and (max-width: 877px) {
   // Pre Layout
   // Post Categories
-  nav.categories {
+  div.categories {
     padding: calc(var(--lineHeight) * 0.25) 0;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 25px;

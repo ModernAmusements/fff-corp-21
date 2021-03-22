@@ -34,7 +34,7 @@ header:not(.post-header) {
   text-transform: uppercase;
   color: var(--foreground-color);
   mix-blend-mode: difference;
-  z-index: 20;
+  z-index: 10;
   .dark-mode-toggle {
     display: flex;
     svg {
@@ -98,28 +98,31 @@ header:not(.post-header) {
   padding: 0;
 }
 .home-logo {
-  grid-column: 3 / 9;
+  grid-column: 1 / 9;
   grid-row: 1;
   justify-self: end;
   width: 100%;
-  height: 100%;
+  transition: width 0.6s ease-in-out;
+  pointer-events: none;
   svg {
+    top: 30px;
+    position: relative;
     transform: scale(1, 1);
     transform-origin: right top;
-    transition: transform 0.6s ease-in-out, transform-origin 0.6s ease-in-out;
+    transition: top 0.6s ease-in-out, transform 0.6s ease-in-out, transform-origin 0.6s ease-in-out;
   }
 }
 
 .scroll-logo {
-  grid-column: 3 / 9;
+  grid-column: 1 / 9;
   grid-row: 1;
   justify-self: end;
-  width: 100%;
-  height: 100%;
+  width: 15%;
+  pointer-events: all;
   svg {
-    transform: scale(0.2, 0.2);
-    transform-origin: right top;
-    transition: transform 1s ease-in-out, transform-origin 1s ease-in-out;
+    top: 0;
+    position: relative;
+    transform: scale(1, 1);
   }
 }
 

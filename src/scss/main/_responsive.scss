@@ -224,39 +224,6 @@
     body.scroll-active menu {
         margin-bottom: calc(10.25rem + 2em);
     }
-    /*Footer*/
-    .page-index footer {
-        padding-bottom: calc(1rem + 39px);
-    }
-    footer,
-    footer wrap+div {
-        grid-gap: 2rem 1rem;
-    }
-    footer wrap+div br {
-        display: block;
-    }
-    footer wrap {
-        grid-area: 4;
-    }
-    footer label span,
-    footer div:last-of-type a+span {
-        display: none;
-    }
-    footer div:last-of-type {
-        justify-self: flex-start;
-        align-self: flex-end;
-        grid-column: 2 span;
-        display: grid;
-    }
-    footer div:last-of-type a span:last-child {
-        display: inline-block !important;
-    }
-    footer div:last-of-type a span:first-child::after {
-        content: ':';
-    }
-    .desktop footer div:last-of-type a:hover span:first-child {
-        display: inline-block;
-    }
     /*Project Page*/
     #close {
         left: auto;

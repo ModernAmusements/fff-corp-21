@@ -1,8 +1,10 @@
 <?php
 
 return [
-    'email' => 'amusementsmodern@admin.de',
+    'email' => 'info@florian-nagel.de',
     'language' => 'en',
     'name' => 'Shady Tawfik',
     'role' => 'admin'
+
+    fff-corp333%
 ];

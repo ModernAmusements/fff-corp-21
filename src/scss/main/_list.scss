@@ -3,6 +3,7 @@
 
 main.list {
   display: grid;
+  grid-template-rows: 50px;
 }
 
 main.list .project {

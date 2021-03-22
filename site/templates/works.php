@@ -32,9 +32,7 @@
     <main id="index">
       <div class="categories">
         <div class="categories-title">
- 
-          Filter:
-
+        [+]
         </div>
         <ul class="categories-pills">
           <li class="category-li active">
@@ -72,44 +70,47 @@
       </div>
       <div class="category-legend">
         <div class="category-legend-title">
-          <span>Title:</span>
+          <span>Title</span>
         </div>
       <div class="category-legend-description">
-      <span>Year:</span>
-      <span>Type:</span>
-      <!-- <span>Client:</span> -->
+      <span>Client</span>
+      <span>Type</span>
       </div>
+      <span class="client">Year</span>
       </div>
-      <main class="list">
+
       <?php foreach ($page->children()->listed()->sortBy('date', 'desc') as
       $work) : ?>
       <article class="post" data-categories="<?= $tags = implode(' ', $work->tags()->split(','));?> all">
-      <div class="project">
-      <div class="trigger">
-        <!--Trigger-->
-        <span>
-          [<span class="dot"></span>]
-        </span>
-        <!--Title-->
-        <wrap>
-          <span><?= $work->date()->toDate('Y') ?>
-        </span>
-        <span><?= $work->title() ?></span>
-            <!--Year-->
+  
+      <header class="post-header">
+         
+          <div class="post-title">
+            <a href="<?= $work->url() ?>">
+            <span class="icon-right">↗</span>
+               <span class="title">
+               <?= $work->title() ?>
+               </span> 
+                </a>
+          </div>
+          <div class="post-meta-information">
+            <tags>
+              <?= $work->client() ?>
+            </tags>
             <?php foreach ($work->tags()->split() as $tag): ?>
-            <span>
-            <?= $tag ?>
-            </span>
-     
+              [<?= $tag ?>]
             <?php endforeach ?>
-        </wrap>
-    </div>
+          </div>
 
-
-    
+          <div class="client">
+          <tags>
+              <p><?= $work->date()->toDate('Y') ?></p>
+            </tags>
+           </div>
+        </header>    
       </article>
       <?php endforeach ?>
-      </main>
+
     </main>
   </div>
 </div>

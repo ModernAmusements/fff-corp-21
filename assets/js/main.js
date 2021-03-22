@@ -13884,16 +13884,19 @@ targets.forEach(lazyLoad);
 
 $(function () {
   var logo = $(".home-logo");
+  var layout = $("#wrapper");
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 25) {
       if (!logo.hasClass("scroll-logo")) {
         logo.removeClass('lrg-logo').addClass("scroll-logo").fadeIn("slow");
+        layout.addClass("scroll-layout").fadeIn("slow");
       }
     } else {
       if (!logo.hasClass("lrg-logo")) {
         logo.removeClass("scroll-logo").addClass('lrg-logo').fadeIn("slow");
+        layout.removeClass("scroll-layout").fadeIn("slow");
       }
     }
   });

@@ -183,69 +183,6 @@
 /*SMALL TABLET*/
 
 @media (max-width: 600px) {
-    /*Maintenance*/
-    #maintenance ul {
-        padding: 0;
-        justify-self: flex-start;
-    }
-    /*Tagline*/
-    .device #tagline {
-        font-size: 100%;
-    }
-    /*Header*/
-    header {
-        padding-bottom: .25rem;
-        grid-template-columns: 1fr;
-    }
-    header nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        padding: 1.25rem 1rem 1rem;
-        line-height: normal;
-        background: #F8F8F8;
-    }
-    header nav+a {
-        display: none;
-    }
-    /*Menu*/
-    menu .trigger,
-    menu .wrapper:last-of-type+a {
-        padding: .25rem 0;
-    }
-    #tags {
-        width: 100vw;
-        margin-left: -2rem;
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
-    }
-    #tags ul {
-        width: 85vw;
-        padding: .5rem 1rem 1.5rem 3rem;
-        column-count: 2;
-    }
-    #tags ul li {
-        padding: .25rem 0;
-    }
-    #tags ul li:nth-child(6n+6) {
-        break-after: column;
-    }
-    section {
-        padding: .75rem 0 0 1rem;
-    }
-    ul {
-        padding: .75rem 1rem 1.75rem;
-    }
-    section wrap p,
-    section ul {
-        padding-left: calc(7.3px*3 - .7rem);
-    }
-    /*Filters*/
-    #filters {
-        font-size: 200%;
-        padding: 4.75rem 2rem 2.25rem;
-    }
     /*Back to top*/
     #top {
         position: initial;
@@ -256,7 +193,7 @@
     }
     /*Index*/
     main {
-        padding: 2.75rem 1rem 0;
+        padding: 100vh 1rem 0;
     }
     main.list {
         padding: 2.5rem 1rem 0;

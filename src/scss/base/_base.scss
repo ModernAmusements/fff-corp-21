@@ -25,9 +25,8 @@
   --pixel: 1px;
   // ColorSettings
   --darkmode-black: #151516;
-  --foreground-color-rgb: 0, 0, 0;
-  --foreground-color: rgba(var(--foreground-color-rgb));
-  --background-color: #ffffff;
+  --foreground-color: #121217;
+  --background-color: #fbfbf9;
   --background-color-alpha: rgba(234, 240, 244, 0.7);
   --background-color-black-elevated: #151519;
   --background-color-elevated: #fbfbf9;
@@ -484,7 +483,6 @@ img,
 video {
   display: block;
   width: 100%;
-  border-radius: var(--b-r-small);
 }
 .flex-end {
   display: flex;

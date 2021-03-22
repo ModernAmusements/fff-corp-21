@@ -26,9 +26,8 @@
   --displayScale: 1;
   --pixel: 1px;
   --darkmode-black: #151516;
-  --foreground-color-rgb: 0, 0, 0;
-  --foreground-color: rgba(var(--foreground-color-rgb));
-  --background-color: #ffffff;
+  --foreground-color: #121217;
+  --background-color: #fbfbf9;
   --background-color-alpha: rgba(234, 240, 244, 0.7);
   --background-color-black-elevated: #151519;
   --background-color-elevated: #fbfbf9;
@@ -522,7 +521,6 @@ img,
 video {
   display: block;
   width: 100%;
-  border-radius: var(--b-r-small);
 }
 
 .flex-end {
@@ -619,11 +617,8 @@ a:hover span.icon-right {
 }
 
 header:not(.post-header) {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
   display: grid;
   grid-template-columns: 0.1fr repeat(7, 1fr);
   grid-template-rows: 1fr;
@@ -632,9 +627,10 @@ header:not(.post-header) {
   align-items: center;
   padding: 0 calc(var(--lineHeight) * 1);
   padding-top: calc(var(--lineHeight) * 1);
+  text-transform: uppercase;
   color: var(--foreground-color);
   mix-blend-mode: difference;
-  text-transform: uppercase;
+  z-index: 20;
 }
 
 header:not(.post-header) .dark-mode-toggle {
@@ -718,11 +714,10 @@ header:not(.post-header) .active {
   grid-row: 1;
   justify-self: end;
   width: 100%;
+  height: 100%;
 }
 
 .home-logo svg {
-  width: 100%;
-  height: 100%;
   transform: scale(1, 1);
   transform-origin: right top;
   transition: transform 0.6s ease-in-out, transform-origin 0.6s ease-in-out;
@@ -733,11 +728,10 @@ header:not(.post-header) .active {
   grid-row: 1;
   justify-self: end;
   width: 100%;
+  height: 100%;
 }
 
 .scroll-logo svg {
-  width: 100%;
-  height: 100%;
   transform: scale(0.2, 0.2);
   transform-origin: right top;
   transition: transform 1s ease-in-out, transform-origin 1s ease-in-out;
@@ -4850,14 +4844,17 @@ main.filter-active .project:not(.filter-active) {
 #wrapper {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 250px;
   padding-top: calc(var(--lineHeight) * 1);
   z-index: 20;
+  transition: top 0.6s ease-in-out;
+}
+
+.scroll-layout {
+  top: 0px !important;
 }
 
 nav {
-  color: var(--foreground-color);
-  mix-blend-mode: difference;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: -webkit-max-content;
@@ -4877,6 +4874,8 @@ nav div {
           user-select: none;
   justify-content: center;
   cursor: pointer;
+  mix-blend-mode: difference;
+  color: var(--foreground-color);
 }
 
 nav div.active {
@@ -4897,12 +4896,14 @@ nav div.active ::after {
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 600px) {
   #wrapper {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    padding-top: calc(var(--lineHeight) * 5);
+    top: 100vh;
+    transition: top 0.8s ease-in-out;
+  }
+
+  .scroll-layout {
+    top: 150px !important;
   }
 }
 
@@ -4971,8 +4972,9 @@ main.list ~ #top {
   opacity: 1 !important;
 }
 
-/* INDEX
-================================================== */
+main {
+  padding: 20rem 1rem 5rem;
+}
 
 /*Covers*/
 
@@ -5771,90 +5773,6 @@ transition: filter .3s linear;
 /*SMALL TABLET*/
 
 @media (max-width: 600px) {
-  /*Maintenance*/
-
-  #maintenance ul {
-    padding: 0;
-    justify-self: flex-start;
-  }
-
-  /*Tagline*/
-
-  .device #tagline {
-    font-size: 100%;
-  }
-
-  /*Header*/
-
-  header {
-    padding-bottom: 0.25rem;
-    grid-template-columns: 1fr;
-  }
-
-  header nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    padding: 1.25rem 1rem 1rem;
-    line-height: normal;
-    background: #F8F8F8;
-  }
-
-  header nav + a {
-    display: none;
-  }
-
-  /*Menu*/
-
-  menu .trigger,
-  menu .wrapper:last-of-type + a {
-    padding: 0.25rem 0;
-  }
-
-  #tags {
-    width: 100vw;
-    margin-left: -2rem;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  #tags ul {
-    width: 85vw;
-    padding: 0.5rem 1rem 1.5rem 3rem;
-    -moz-column-count: 2;
-         column-count: 2;
-  }
-
-  #tags ul li {
-    padding: 0.25rem 0;
-  }
-
-  #tags ul li:nth-child(6n+6) {
-    -moz-column-break-after: column;
-         break-after: column;
-  }
-
-  section {
-    padding: 0.75rem 0 0 1rem;
-  }
-
-  ul {
-    padding: 0.75rem 1rem 1.75rem;
-  }
-
-  section wrap p,
-  section ul {
-    padding-left: calc(7.3px*3 - .7rem);
-  }
-
-  /*Filters*/
-
-  #filters {
-    font-size: 200%;
-    padding: 4.75rem 2rem 2.25rem;
-  }
-
   /*Back to top*/
 
   #top {
@@ -5869,7 +5787,7 @@ transition: filter .3s linear;
   /*Index*/
 
   main {
-    padding: 2.75rem 1rem 0;
+    padding: 100vh 1rem 0;
   }
 
   main.list {

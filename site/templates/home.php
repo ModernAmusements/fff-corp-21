@@ -38,12 +38,15 @@
               <a class="thumbnail scroll" href="<?= $work->url() ?>">
 
               <?php if ($cover = $work->cover()->resize(1080)) : ?>
+                <div class="image">
+
+    
                   <img data-src="<?= $cover->url() ?>"
                       class="thumb lazy poster"
                       src="<?= $cover->url() ?>"
                       alt="<?= $cover->alt() ?>"
                       data-w="1600" data-h="1600" />
-
+                </div>
                 <?php endif ?>
               </a>
               <div class="project-information">           

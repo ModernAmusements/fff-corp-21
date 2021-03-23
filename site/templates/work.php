@@ -4,12 +4,12 @@
 ?>
 <?php snippet('header') ?>
 <main class="work-subpage">
-  <?php if ($cover = $page->cover()->resize(1080)): ?>
+  <!-- <?php if ($cover = $page->cover()->resize(1080)): ?>
   <section class="cover">
     <img class="lazy" data-src="<?= $cover->url() ?>" alt="<?= $cover->alt() ?>" />
     <time><?= $page->date()->toDate('d F Y') ?></time>
   </section>
-  <?php endif ?>
+  <?php endif ?> -->
   <section class="work-subpage-content">
     <article class="subpage-information">
       <div class="subpage-meta">
@@ -91,5 +91,5 @@
     </article>
   </section>
 </main>
-<?php snippet('subpageFooter/subpage') ?>
+<?php snippet('footer') ?>
 <?php snippet('footer/workFooter') ?>

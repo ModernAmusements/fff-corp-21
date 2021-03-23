@@ -13718,7 +13718,7 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
   };
 });
 
-$(".work-images").each(function () {
+$(".module-gallery").each(function () {
   var $status = $(this).find(".text-counter");
   var $slider = $(this).find(".slider");
   $slider.on("init reInit afterChange", function (event, slick, currentSlide, nextSlide) {

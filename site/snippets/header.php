@@ -29,9 +29,6 @@
     <?php echo $page->metaTags() ?>
     <!-- Stylesheets Async CSS-->
     <?= css('assets/css/index.css', true) ?>
-    <!-- jQeury-->
-    <?= js('assets/js/jquery.js') ?>
-
     <?= js('assets/js/jquery.min.js') ?>
     <?= js('assets/js/jquery-ui.min.js') ?>
     <?= js('assets/js/js.cookie.min.js') ?>

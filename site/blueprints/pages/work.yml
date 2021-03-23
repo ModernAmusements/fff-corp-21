@@ -89,32 +89,39 @@ columns:
           VueJs: VueJs
           MySQL: MySQL
           SPA: SPA
-      description:
-        type: textarea
-        size: medium
-        width: 1/2
-      contributors:
-        type: textarea
-        size: medium
-        width: 1/2
       layout:
         type: multiselect
-        max: 1
+        max: 3
         label: Cover Layout Size
         width: 1/2
         options:
           small: Small
           medium: Medium
           big: Big
+      galleryLayout:
+        type: multiselect
+        max: 1
+        label: Gallery Layout direction
+        width: 1/2
+        options:
+          right: Right
+          left: Left
+      contributors:
+        type: text
+        width: 1/2
+      client:
+        label: Clients
+        type: text
+        width: 1/2
+      description:
+        type: textarea
+        size: medium
+        width: 1
       concept:
         title: Concept
         type: textarea
         size: medium
-        width: 1/2
-      client:
-        label: Clients
-        type: textarea
-        width: 1/2
+        width: 1
       line:
        type: line
 

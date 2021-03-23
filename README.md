@@ -6,5 +6,5 @@ return [
     'name' => 'Shady Tawfik',
     'role' => 'admin'
 
-    fff-corp333%
+    fff-corp333
 ];

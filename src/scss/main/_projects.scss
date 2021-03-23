@@ -14,8 +14,6 @@ main.scroll .project .thumbnail {
 
 
 
-
-
 .project-information {
   cursor: pointer;
   display: flex;
@@ -181,29 +179,22 @@ main.scroll .project:nth-child(4n+4) .thumbnail .thumb {
 
 /*Project Header*/
 
-#close {
-  height: fit-content;
-  height: -moz-fit-content;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 9;
-}
 
 #project-header {
-  padding: 1rem 1rem 0;
   margin-bottom: 10rem;
   grid-template-columns: 4fr 2fr 5fr 1fr;
   display: grid;
-}
+  time {
+    justify-self: end;
+  }
+  span {
+    width: 100%;
+    display: block;
+  }
+  span+div {
+    padding-right: 2rem;
+  }
 
-#project-header span {
-  width: 100%;
-  display: block;
-}
-
-#project-header span+div {
-  padding-right: 2rem;
 }
 
 /*Module Full Width*/
@@ -265,59 +256,9 @@ main.scroll .project:nth-child(4n+4) .thumbnail .thumb {
 
 /*Module Slider*/
 
-.module-gallery-wrap {
-  display: flex;
-  flex-wrap: wrap;
+.module-gallery {
   padding: 0 1rem;
   margin: 10rem 0;
-  height: 50vw;
-  justify-content: flex-end;
-}
-
-.module-gallery-wrap .counter {
-  width: calc((100vw - 2rem)/12);
-  min-width: 50px;
-  text-align: right;
-  padding: 0 1rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.module-gallery-wrap.left {
-  direction: rtl;
-}
-
-.module-gallery-wrap.left .counter {
-  direction: ltr;
-  text-align: left;
-}
-
-.slider,
-.slick-list,
-.slick-track,
-.slick-slide {
-  width: auto !important;
-  height: inherit !important;
-}
-
-.slider {
-  max-width: calc((100vw - 2rem)/12*11);
-}
-
-.slick-slide {
-  width: auto;
-  /* max-width: calc(100%/12*11); */
-  cursor: pointer;
-}
-
-.slick-initialized .slick-slide {
-  display: none !important;
-}
-
-.slick-current.slick-active {
-  display: block !important;
 }
 
 /*Module Text*/

@@ -262,26 +262,7 @@
         width: 100%;
         margin: 0;
     }
-    .module-gallery-wrap {
-        height: auto;
-        margin: 1rem 0;
-        flex-wrap: wrap-reverse;
-    }
-    .module-gallery-wrap .counter {
-        width: 100%;
-        padding: .5rem 0 0;
-        direction: ltr;
-        text-align: left;
-    }
-    .slider {
-        max-width: none;
-    }
-    .slider,
-    .slick-list,
-    .slick-track,
-    .slick-slide {
-        width: 100% !important;
-    }
+
     .module-text {
         margin: 5rem 0;
     }

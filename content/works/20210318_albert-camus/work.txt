@@ -10,20 +10,32 @@ Tags: VueJs, SPA
 
 ----
 
-Description: 
+Layout: medium
 
 ----
 
-Contributors: 
+Gallerylayout: right
 
 ----
 
-Layout: small
-
-----
-
-Concept: 
+Contributors: Shady Tawfik
 
 ----
 
 Client: Hermes
+
+----
+
+Description:
+
+Meursault ist losgelöst von der Welt um ihn herum. Ereignisse und Themen, die für andere Menschen wichtig sind, berühren ihn nicht, scheinen ihn nicht zu interessieren, zumindest nicht auf einer emotionalen Ebene. Dazu gehören die Liebe Maries und ihr Wunsch ihn zu heiraten, der Tod seiner Mutter, der Tod eines anderen Menschen, ein berufliches Angebot seines Chefs, etc.
+
+Meursault ist vollkommen ehrlich, bis hin zur Naivität. Indem er seine Gleichgültigkeit offen zeigt, fordert er indirekt die von der Gesellschaft akzeptierten moralischen Standards heraus, die beispielsweise Trauer über den Tod nahestehender Menschen erwarten lassen. Im späteren Gerichtsverfahren beschädigt seine Reaktion auf den Tod der Mutter sein Ansehen fast mehr als der von ihm verursachte Tod des Arabers.
+
+Meursault ist weder moralisch noch gewissenlos. Er bewegt sich außerhalb der von der Gesellschaft festgesetzten moralischen Grundsätze und Werte. Er scheint zwischen Gut und Böse keinen Unterschied zu machen.
+
+Während er zunächst seine Gleichgültigkeit auf sich und seine eigenen Handlungen bezieht, weitet sich diese Perspektive aus, nachdem er zum Tode verurteilt wird: Nach seinem Treffen mit dem Geistlichen öffnet er sich der „zärtlichen Gleichgültigkeit der Welt“, in der jeder gleich ist und keiner eine Bedeutung hat. Angesicht seines nahen Todes beginnt er nachzudenken und wird sich bewusst, dass er glücklich war und ist. Er findet seinen Frieden.
+
+----
+
+Concept: Mit dem Tod seiner Mutter beginnt der Roman. Drei Jahre zuvor hatte Meursault seine Mutter in ein Senioren-/Pflegeheim gebracht, weil er weder die Zeit noch die finanziellen Mittel für die notwendige Pflege seiner Mutter aufbringen konnte. Trotz der äußerlichen Gleichgültigkeit glaubt er, dass sich beide ähnlich sind, beispielsweise in der Liebe zur Natur und der Fähigkeit sich an neue Situationen anzupassen. Kurz vor seinem Tod denkt er an seine Mutter und fühlt die Nähe zu ihr: „Dem Tod so nahe, hatte Mama sich dort befreit gefühlt und bereit, alles noch einmal zu leben. Niemand, niemand hatte das Recht, sie zu beweinen. … Als ich spürte wie ähnlich sie mir war, … habe ich gefühlt, dass ich glücklich gewesen war und dass ich es noch war.“

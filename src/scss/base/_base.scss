@@ -480,10 +480,13 @@ ol:not([start]) > li::before {
 a {
   text-decoration: none;
 }
-img,
-video {
-  display: block;
+img, video {
   width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  font-size: 0;
+  user-select: none;
 }
 .flex-end {
   display: flex;

@@ -1,0 +1,52 @@
+Title: Hephaistos
+
+----
+
+Date: 
+
+----
+
+Tags: Development
+
+----
+
+Layout: 
+
+----
+
+Gallerylayout: 
+
+----
+
+Fullrow:
+
+- 
+  headingc1: Hallo
+  textc1: ""
+  headingc2: ""
+  textc2: ""
+  headingc3: ""
+  textc3: ""
+  codeheadingc3: ""
+  codec3: ""
+  imagebuilder: [ ]
+  imagebuilderalt: ""
+  _key: moduleFullWidth
+  line-a: null
+  _uid: moduleFullWidth_1616533642483_452
+
+----
+
+Contributors: 
+
+----
+
+Client: 
+
+----
+
+Description: 
+
+----
+
+Concept: 

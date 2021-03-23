@@ -43,6 +43,15 @@ columns:
         layout: cards
         image:
           cover: true
+      images:
+        type: files
+        layout: list
+        template: work-image
+        info: "{{ file.dimensions }}"
+        image:
+          ratio: 5/4
+          cover: true
+        size: small
       videos:
         type: files
         layout: list
@@ -60,15 +69,6 @@ columns:
         info: "{{ file.dimensions }}"
         image:
           cover: true
-      images:
-        type: files
-        layout: list
-        template: work-image
-        info: "{{ file.dimensions }}"
-        image:
-          ratio: 5/4
-          cover: true
-        size: small
 
   - width: 2/3
     fields:
@@ -106,6 +106,13 @@ columns:
         options:
           right: Right
           left: Left
+      fullRow:
+        label: Archive Section Master
+        type: builder
+        max: 10
+        width: 3/3
+        fieldsets:
+          moduleFullWidth: fieldsets/moduleFullWidth
       contributors:
         type: text
         width: 1/2

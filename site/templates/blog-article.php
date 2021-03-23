@@ -35,6 +35,10 @@
         </div>
       </div>
     </section>
+    <?php foreach ($page->fullWidth()->toBuilderBlocks() as $block): ?>
+    <?php snippet('blocks/' . $block->_key(), ['data' => $block]) ?>
+    <?php endforeach ?>
+
     <?php foreach ($page->fullRow()->toBuilderBlocks() as $block): ?>
     <?php snippet('blocks/' . $block->_key(), ['data' => $block]) ?>
     <?php endforeach ?>

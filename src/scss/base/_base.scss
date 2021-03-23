@@ -480,7 +480,7 @@ ol:not([start]) > li::before {
 a {
   text-decoration: none;
 }
-img, video {
+img, video, iframe {
   width: 100%;
   height: 100%;
   display: block;

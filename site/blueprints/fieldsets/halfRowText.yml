@@ -11,7 +11,7 @@ fields:
     maxlength: 100
     size: small
     width: 1/4
-    buttons: false 
+    buttons: false
   headingC2:
     label: H-Col. 2 "Number"
     type: text
@@ -30,24 +30,24 @@ fields:
     label: Heading Col. 3 "Part"
     type: text
     width: 1/4
-    buttons: true 
+    buttons: true
   textC3:
     label: Text col.3
     type: textarea
     size: medium
     width: 3/4
-    buttons: true 
+    buttons: true
   imageBuilder:
       type: files
       multiple: false
   imageBuilderAlt:
       label: Blog Alt Text ((Seo))
-      type: text 
+      type: text
     headline:
       type: text
     description:
       type: textarea
-    tags: true  
+    tags: true
 
 
 

@@ -4970,8 +4970,6 @@ main.scroll + #scroll-wrapper {
 height: 300px;
 } */
 
-/*Projects*/
-
 main.scroll .project .thumbnail {
   position: fixed;
   top: 50% !important;
@@ -4984,6 +4982,46 @@ main.scroll .project .thumbnail {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 1;
+}
+
+.project-information {
+  cursor: pointer;
+  display: flex;
+}
+
+.project-information .work-informtion {
+  opacity: 0;
+}
+
+.project-information .work-title-toggle {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.project-information .work-title-toggle span.icon-plus {
+  transform: rotate(0deg);
+  position: absolute;
+}
+
+/*Projects*/
+
+.project:hover .project-information {
+  color: var(--primary-color);
+  display: flex;
+}
+
+.project:hover .project-information .work-informtion {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.project:hover .project-information .work-title-toggle span.icon-plus {
+  transform-origin: center;
+  transform: rotate(45deg) scale(1.08);
+  transition: transform 0.3s ease;
 }
 
 main.scroll .project:not(.active) {

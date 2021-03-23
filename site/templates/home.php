@@ -46,16 +46,12 @@
 
                 <?php endif ?>
               </a>
-              <div class="trigger">
-                  <!--Trigger-->
-                  <span class="only-list">[<span class="dot"></span>]</span>
-                  <!--Title-->
-                  <wrap>
-                    <span><?= $work->date()->toDate('Y') ?><span><?= $work->title() ?></span></span>
-                      <p class="only-list"></p>
-                      <!--Year-->
-                      <span class="only-list">2021</span>
-                  </wrap>
+              <div class="project-information">           
+                  <div class="work-title-toggle"><span class="icon-plus">+</span></div>
+                    <span class="work-informtion">
+                    <?= $work->date()->toDate('Y') ?>
+                    <?= $work->title() ?>
+                    </span>
               </div>
               <!--List Content-->
               <div class="wrapper">

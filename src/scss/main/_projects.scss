@@ -1,5 +1,3 @@
-/*Projects*/
-
 main.scroll .project .thumbnail {
   position: fixed;
   top: 50% !important;
@@ -13,6 +11,47 @@ main.scroll .project .thumbnail {
   pointer-events: none;
   z-index: 1;
 }
+
+
+.project-information {
+  cursor: pointer;
+  display: flex;
+  .work-informtion {
+    opacity: 0;
+  }
+  .work-title-toggle {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-right: 15px;
+    font-size: 18px;
+    span.icon-plus {
+      transform: rotate(0deg);
+      position: absolute;
+    }
+  }
+}
+
+/*Projects*/
+.project:hover {
+  .project-information {
+    color: var(--primary-color);
+    display: flex;
+    .work-informtion {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .work-title-toggle {
+      span.icon-plus {
+        transform-origin: center;
+        transform: rotate(45deg) scale(1.08);
+        transition: transform .3s ease;
+      }
+    }
+  }
+}
+
+
 
 main.scroll .project:not(.active) {
   display: none;

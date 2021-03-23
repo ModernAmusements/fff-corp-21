@@ -277,11 +277,10 @@ $(document).ready(function () {
 
       if (video.length) {
         video[0].play();
-      }
+      } // target.prev('.thumbnail').show().css({
+      //     left: e.pageX,
+      // });
 
-      target.prev('.thumbnail').show().css({
-        left: e.pageX
-      });
     });
   }); //Display menu
 

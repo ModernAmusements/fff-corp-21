@@ -4,6 +4,9 @@ fields:
   imageBuilderLeft:
       type: files
       multiple: true
+  imageBuilderWorkAlt:
+      label: Image Seo
+      type: text
       width: 1/3
   moduleLayoutSideBySide:
       type: multiselect
@@ -23,6 +26,9 @@ fields:
   imageBuilderRight:
       type: files
       multiple: true
+  imageBuilderWorkAltTwo:
+      label: Image Seo
+      type: text
       width: 1/3
   moduleLayoutSideBySideTwo:
       type: multiselect

@@ -3,6 +3,7 @@
     <?php if ($imageBuilder = $data->imageBuilderWork()->toFile()): ?>
         <img
           class="lazy"
+          alt="<?= $data->imageBuilderWorkAlt() ?>"
           data-src="<?= $imageBuilder->url() ?>"
         />
     <?php endif ?>

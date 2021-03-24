@@ -4,6 +4,9 @@ fields:
   imageBuilderWork:
       type: files
       multiple: false
+  imageBuilderWorkAlt:
+      label: Image Seo
+      type: text
   moduleLayoutTwoColumns:
       type: multiselect
       label: Module Two Columns Layout

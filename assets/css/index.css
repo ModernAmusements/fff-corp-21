@@ -717,6 +717,7 @@ header:not(.post-header) .active {
   grid-column: 2/3;
   display: flex;
   padding: 0;
+  font-size: 20px;
 }
 
 .home-logo {
@@ -4756,13 +4757,14 @@ main.list ~ #top {
 }
 
 main {
-  padding: 25rem 1rem 5rem;
+  padding: 20rem 1rem 5rem;
 }
 
 /*Covers*/
 
 main.covers {
   display: grid;
+  padding: 25rem 1rem 5rem;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10rem 1rem;
   align-items: flex-end;

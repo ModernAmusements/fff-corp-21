@@ -42,3 +42,16 @@ main.covers {
 }
 
 
+
+
+@media (min-width: 1440px) and (max-width: 1680px) {
+  main.covers {
+    padding: 28rem 1rem 5rem;
+
+  }
+
+main {
+  padding: 30rem 1rem 5rem;
+}
+
+}

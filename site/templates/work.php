@@ -3,7 +3,7 @@
 
 ?>
 <?php snippet('header') ?>
-<main class="works-subpage">
+<main>
   <div id="project-header">
     <a id="close" href="index.html">
       [BACK]
@@ -21,29 +21,25 @@
   <div class="module-text">
     <p class="Right"><?= $page->concept() ?></p>
   </div>
-  <?php if ($image = $page->image()): ?>
 
-  <div class="module-gallery-wrap <?= $page->galleryLayout() ?>">
-    <div class="counter">
-      [GALLERY]
-    </div>
-
-    <div class="module-gallery">
+<?php if ($image = $page->image()->isNotEmpty()): ?>
+  <div class="module-two-columns">
+    <div class="module-gallery  <?= $page->galleryLayout() ?> <?= $page->layout() ?>">
       <div class="slider">
-
-        <?php foreach ($page->images()->template('work-image') as $image): ?>
-        <img data-lazy="<?= $image->url() ?>" alt="<?= $image->alt() ?>" />
-        <?php endforeach ?>
- 
+      <?php if ($cover = $page->cover()->resize(1080)) : ?>
+                <img data-lazy="<?= $cover->url() ?>" alt="<?= $cover->alt() ?>" />
+      <?php endif ?>
+        <?php if ($image = $page->image()->resize(1080)): ?>
+          <?php foreach ($page->images()->template('work-image') as $image): ?>
+            <img data-lazy="<?= $image->url() ?>" alt="<?= $image->alt() ?>" />
+          <?php endforeach ?>
+        <?php endif ?>
       </div>
       <div class="text-counter">
-
       </div>
-      <p class="vid-sub-heading"><?= $image->alt() ?></p>
     </div>
   </div>
-
-  <?php endif ?>
+<?php endif ?>
 
 
 

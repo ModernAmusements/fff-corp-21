@@ -97,15 +97,14 @@ columns:
         options:
           small: Small
           medium: Medium
-          big: Big
       galleryLayout:
         type: multiselect
         max: 1
         label: Gallery Layout direction
         width: 1/2
         options:
-          right: Right
-          left: Left
+          module-right: Right
+          module-left: Left
       pageBuilder:
         label: Work Section Master
         type: builder
@@ -133,5 +132,6 @@ columns:
         width: 1
       line:
        type: line
+
 
 

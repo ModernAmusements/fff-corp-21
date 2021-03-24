@@ -43,9 +43,8 @@ main.scroll .project .thumbnail {
     height: 100%;
     object-fit: cover;
     border: 0;
-    transform: scale(1);
-    filter: saturate(500%) blur(20px);
-    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    filter: saturate(1000%) blur(100px);
+    transition: filter 0.3s linear;
   }
  }
 }
@@ -60,9 +59,8 @@ main.scroll .project .thumbnail {
       height: 100%;
       object-fit: cover;
       border: 0;
-      transform: scale(1);
       filter: saturate(100%) blur(0px);
-      transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transition: filter 0.3s linear;
     }
    }
   .project-information {
@@ -81,7 +79,6 @@ main.scroll .project .thumbnail {
     }
   }
 }
-
 
 
 main.scroll .project:not(.active) {

@@ -50,6 +50,13 @@ nav {
 }
 
 
+@media (min-width: 1440px) and (max-width: 1680px) {
+  #wrapper {
+    top: 350px;
+  }
+}
+
+
 
 @media only screen and (max-width: 600px) {
   #wrapper {

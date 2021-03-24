@@ -4680,6 +4680,12 @@ nav div.active ::after {
   justify-content: space-between;
 }
 
+@media (min-width: 1440px) and (max-width: 1680px) {
+  #wrapper {
+    top: 350px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #wrapper {
     top: 100vh;
@@ -4800,6 +4806,16 @@ main.covers .project.medium {
 main.covers .project.small {
   padding: 0 25%;
   align-self: flex-start;
+}
+
+@media (min-width: 1440px) and (max-width: 1680px) {
+  main.covers {
+    padding: 28rem 1rem 5rem;
+  }
+
+  main {
+    padding: 30rem 1rem 5rem;
+  }
 }
 
 /*Grid*/
@@ -5030,9 +5046,8 @@ main.scroll .project .thumbnail {
   -o-object-fit: cover;
      object-fit: cover;
   border: 0;
-  transform: scale(1);
-  filter: saturate(500%) blur(20px);
-  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  filter: saturate(1000%) blur(100px);
+  transition: filter 0.3s linear;
 }
 
 /*Projects*/
@@ -5048,9 +5063,8 @@ main.scroll .project .thumbnail {
   -o-object-fit: cover;
      object-fit: cover;
   border: 0;
-  transform: scale(1);
   filter: saturate(100%) blur(0px);
-  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: filter 0.3s linear;
 }
 
 .project:hover .project-information {

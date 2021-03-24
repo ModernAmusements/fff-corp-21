@@ -12,45 +12,14 @@
     <p class="Right"><?= $page->description() ?></p>
     <time><?= $page->date()->toDate('Y') ?></time>
   </div>
-  
-  <div class="module-gallery-wrap <?= $page->galleryLayout() ?>">
-    <div class="counter">
-      [GALLERY]
-    </div>
-    <div class="module-gallery">
-      <div class="slider">
-        <?php if ($image = $page->image()): ?>
-        <?php foreach ($page->images()->template('work-image') as $image): ?>
-        <img data-lazy="<?= $image->url() ?>" alt="<?= $image->alt() ?>" />
-        <?php endforeach ?>
-        <?php endif ?>
-      </div>
-      <div class="text-counter">
 
-      </div>
-      <p class="vid-sub-heading"><?= $image->alt() ?></p>
-    </div>
-  </div>
-
-  <div class="module-full-width small">
-    <?php if ($cover = $page->cover()->resize(1080)): ?>
-    <img
-      class="lazy"
-      data-src="<?= $cover->url() ?>"
-      alt="<?= $cover->alt() ?>"
-    />
-    <?php endif ?>
-  </div>
+  <?php foreach ($page->pageBuilder()->toBuilderBlocks() as $block): ?>
+        <?php snippet('blocks/' . $block->_key(), ['data' => $block]) ?>
+  <?php endforeach ?>
 
 
-  <?php foreach ($page->moduleFullWidth()->toBuilderBlocks() as $block): ?>
-    <?php snippet('blocks/' . $block->_key(), ['data' => $block]) ?>
-    <?php endforeach ?>
 
 
-    <?php foreach ($page->fullRow()->toBuilderBlocks() as $block): ?>
-    <?php snippet('blocks/' . $block->_key(), ['data' => $block]) ?>
-    <?php endforeach ?>
   <div class="module-text">
     <p class="Right"><?= $page->concept() ?></p>
   </div>

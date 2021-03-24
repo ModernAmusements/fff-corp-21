@@ -15,7 +15,7 @@ status:
 columns:
   - width: 2/3
     fields:
-      fullRow:
+      pageBuilder:
         label: Archive Section Master
         type: builder
         max: 10
@@ -23,7 +23,7 @@ columns:
         fieldsets:
           fullRow: fieldsets/fullRow
           halfRow: fieldsets/halfRow
-          fullWidth: fieldsets/FullWidth
+          fullWidth: fieldsets/moduleFullWidth
       cover:
         type: files
         size: large

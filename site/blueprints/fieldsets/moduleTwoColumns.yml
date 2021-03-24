@@ -1,0 +1,24 @@
+name: Module Two Columns
+label: Module Two Columns
+fields:
+  imageBuilderWork:
+      type: files
+      multiple: false
+  moduleLayoutTwoColumns:
+      type: multiselect
+      label: Module Two Columns Layout
+      width: 1/2
+      options:
+        module-right: Right
+        module-left: Left
+  moduleLayoutTwoColumnsSize:
+      type: multiselect
+      label: Module Two Columns Layout Size
+      width: 1/2
+      options:
+        small: Small
+        medium: Medium
+
+
+
+

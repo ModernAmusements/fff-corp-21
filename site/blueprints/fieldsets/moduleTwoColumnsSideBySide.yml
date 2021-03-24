@@ -1,0 +1,45 @@
+name: Module Two Columns Side By Side
+label: Module Two Columns Side By Side
+fields:
+  imageBuilderLeft:
+      type: files
+      multiple: true
+      width: 1/3
+  moduleLayoutSideBySide:
+      type: multiselect
+      label: Side By Side Direction
+      width: 1/3
+      options:
+        module-right: Right
+        module-left: Left
+  moduleLayoutLeft:
+      type: multiselect
+      label: Side By Side Layout Size
+      width: 1/3
+      options:
+        small: Small
+        medium: Medium
+
+  imageBuilderRight:
+      type: files
+      multiple: true
+      width: 1/3
+  moduleLayoutSideBySideTwo:
+      type: multiselect
+      label: Side By Side Direction
+      width: 1/3
+      options:
+        module-right: Right
+        module-left: Left
+  moduleLayoutRight:
+      type: multiselect
+      label: Side By Side Layout Size
+      width: 1/3
+      options:
+        small: Small
+        medium: Medium
+
+
+
+
+

@@ -1,0 +1,81 @@
+Title: Gebrüder Montgolfier
+
+----
+
+Date: 2021-01-06
+
+----
+
+Tags: PHP/Laravel
+
+----
+
+Layout: small
+
+----
+
+Gallerylayout: 
+
+----
+
+Pagebuilder:
+
+- 
+  imagebuilderwork:
+    - test_cv01-10.11.13.png
+  modulelayouttwocolumns: module-right
+  modulelayouttwocolumnssize: medium
+  _key: twoColumns
+  _uid: twoColumns_1616593926197_824
+- 
+  imagebuilderwork:
+    - affichen1.png
+  modulelayout: medium
+  _key: fullWidth
+  _uid: fullWidth_1616592091010_556
+- 
+  imagebuilderwork:
+    - next.png
+  modulelayouttwocolumns: module-left
+  modulelayouttwocolumnssize: small
+  _key: twoColumns
+  _uid: twoColumns_1616593876664_572
+- 
+  imagebuilderwork:
+    - posterfff-slider.png
+  modulelayout: small
+  _key: fullWidth
+  _uid: fullWidth_1616591717017_546
+- 
+  imagebuilderleft:
+    - >
+      dc73750fa470f64feaac0af24abe1e76cf8005ae-2400x1800.jpg
+  modulelayoutsidebyside: module-left
+  modulelayoutleft: medium
+  imagebuilderright:
+    - >
+      f1c0920896e585bc52b34c9954dcc4b1c3a6ff64-2048x1240.jpg
+  modulelayoutsidebysidetwo: module-right
+  modulelayoutright: medium
+  _key: twoColumnsSideBySide
+  _uid: twoColumnsSideBySide_1616595737863_707
+
+----
+
+Contributors: Shady Tawfik
+
+----
+
+Client: Gucci
+
+----
+
+Description: Joseph Michel war das 12., Jacques Étienne das 15. von 16 Kindern des Papierfabrikanten Pierre Montgolfier und seiner Frau Anne Duret. Die Brüder wurden in Naturwissenschaften unterrichtet und in Architektur ausgebildet. Sie leiteten später gemeinsam die seit 1557 im Familienbesitz befindliche Papierfabrik. Seit Mitte der 1770er Jahre beschäftigte sich Joseph Michel mit der Luftfahrt, und zwar zunächst mit dem Fallschirm. 1777 machte er einen Selbstversuch vom Dach seines Hauses, der gut ausging. Auf Bitten seiner Familie unterließ er weitere Versuche dieser Art.
+
+----
+
+Concept: 
+
+----
+
+Blogbuilder: 

@@ -106,13 +106,15 @@ columns:
         options:
           right: Right
           left: Left
-      fullRow:
-        label: Archive Section Master
+      pageBuilder:
+        label: Work Section Master
         type: builder
         max: 10
         width: 3/3
         fieldsets:
-          moduleFullWidth: fieldsets/moduleFullWidth
+          fullWidth: fieldsets/moduleFullWidth
+          twoColumns: fieldsets/moduleTwoColumns
+          twoColumnsSideBySide: fieldsets/moduleTwoColumnsSideBySide
       contributors:
         type: text
         width: 1/2

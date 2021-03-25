@@ -129,8 +129,7 @@ header:not(.post-header) {
 @media only screen and (max-width: 720px) {
   header:not(.post-header) {
     grid-template-columns: 0.5fr 4fr 2fr;
-    padding-top: calc(var(--lineHeight) * 1);
-    padding: var(--lineHeight);
+    padding: 1em;
     padding-bottom: 0;
     .dark-mode-toggle {
       grid-column: 1 / 2;
@@ -146,6 +145,7 @@ header:not(.post-header) {
   }
   .home-logo {
     svg {
+      top: 0;
       transform: scale(2, 2);
     }
   }
@@ -160,8 +160,7 @@ header:not(.post-header) {
   header:not(.post-header) {
     height: 100vh;
     grid-template-columns: 1fr 1fr;
-    padding-top: calc(var(--lineHeight) * 1);
-    padding: var(--lineHeight);
+    padding: 1em;
     .dark-mode-toggle {
       grid-column: 1 / 3;
       grid-row: 2;
@@ -172,7 +171,7 @@ header:not(.post-header) {
       font-size: 45px;
       line-height: 48px;
       grid-column: 1 / 3;
-      top: calc(100vh - 145px);
+      top: calc(100vh - 125px);
       position: absolute;
       flex-direction: column;
       align-items: start;

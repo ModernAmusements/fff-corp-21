@@ -53,7 +53,6 @@
                 </g>
             </svg>
           </span>
-        <!-- <span id="inverted-msg"></span>  -->
             <label class="switch">
                 <span class="sliderToggle">
                     <div id="circle"></div>
@@ -63,20 +62,15 @@
             </label>
         </span>
         <menu class="desktop-nav lrg-nav">
-      
-                <?php $items = $site->children(); $items->prepend('home', page('home'));
+              <?php $items = $site->children(); $items->prepend('home', page('home')); 
                   if ($items->isNotEmpty()) :?>
-                <?php foreach ($items->listed() as $item) : ?>
-                 
-                    <a <?php e($item->isOpen(), 'class="active"') ?> href="<?= $item->url() ?>">
-                        <?= $item->title()->html() ?><span class="icon-right">↗</span>
-                    </a>
-
-                <?php endforeach ?>
-                <?php endif ?>
-       
+                  <?php foreach ($items->listed() as $item) : ?>
+                      <a <?php e($item->isOpen(), 'class="active"') ?> href="<?= $item->url() ?>">
+                          <?= $item->title()->html() ?><span class="icon-right">↗</span>
+                      </a>
+                  <?php endforeach ?>
+            <?php endif ?>
         </menu>
-
         <a href="/home" class="home-logo lrg-logo">
           <svg viewBox="0 0 1344 262" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M387.026 243.921L406.355 184.539H420.878L393.504 260.448H380.705L353.435 184.539H367.906L387.026 243.921Z" fill="currentColor"/>
@@ -106,6 +100,5 @@
             <path d="M1250.47 153.674H1148.67V136.343L1199.1 81.4412C1206.38 73.3461 1211.55 66.6002 1214.6 61.2035C1217.72 55.7376 1219.28 50.2716 1219.28 44.8057C1219.28 37.6101 1217.23 31.7982 1213.14 27.3701C1209.12 22.942 1203.68 20.728 1196.81 20.728C1188.63 20.728 1182.29 23.2188 1177.78 28.2004C1173.28 33.182 1171.02 39.9971 1171.02 48.6457H1145.75C1145.75 39.4436 1147.83 31.1755 1151.99 23.8415C1156.22 16.4383 1162.22 10.6956 1169.98 6.61345C1177.82 2.53131 1186.83 0.490234 1197.02 0.490234C1211.72 0.490234 1223.3 4.19184 1231.76 11.5951C1240.28 18.9291 1244.55 29.0998 1244.55 42.1074C1244.55 49.6489 1242.4 57.5711 1238.1 65.8737C1233.87 74.1072 1226.9 83.4823 1217.2 93.999L1180.18 133.54H1250.47V153.674Z" fill="currentColor"/>
             <path d="M1338.57 153.674H1313.4V32.3517L1276.27 45.0133V23.7377L1335.34 2.04698H1338.57V153.674Z" fill="currentColor"/>
           </svg>
-
         </a>
     </header>

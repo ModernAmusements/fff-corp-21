@@ -31,7 +31,7 @@ header:not(.post-header) {
   align-items: center;
   padding: 1rem 1rem 5rem;
   text-transform: uppercase;
-  color: var(--foreground-color);
+  color: var(--foregroundMix-color);
   mix-blend-mode: difference;
   z-index: 10;
   .dark-mode-toggle {
@@ -76,9 +76,11 @@ header:not(.post-header) {
   a:not(.dark-mode-toggle):hover {
     color: var(--primary-color);
     transition: color 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms;
+    mix-blend-mode: normal;
   }
   .active {
     color: var(--primary-color);
+    mix-blend-mode: normal;
   }
 }
 .desktop-nav,
@@ -161,6 +163,7 @@ header:not(.post-header) {
     height: 100vh;
     grid-template-columns: 1fr 1fr;
     padding: 1em;
+    transition: heihgt 0.8s ease-in-out;
     .dark-mode-toggle {
       grid-column: 1 / 3;
       grid-row: 2;
@@ -207,5 +210,9 @@ header:not(.post-header) {
           transform-origin 0.8s ease-in-out;
       }
     }
+  }
+  .scroll-header {
+    height: 10vh!important;
+    transition: heihgt 0.8s ease-in-out;
   }
 }

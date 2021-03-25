@@ -22,17 +22,19 @@ $(function() {
 
 $(function() {
   var nav = $(".desktop-nav"); $(window).scroll(function() {
-
+  var header = $("header")
   var scroll = $(window).scrollTop();
       if (window.innerWidth < 460) {
 
       if (scroll >= 25) {
         if(!nav.hasClass("scroll-nav")) {
-          nav.removeClass('lrg-nav').addClass("scroll-nav").fadeIn("slow");
+          nav.removeClass('lrg-nav').addClass("scroll-nav").fadeIn("slow"),
+          header.addClass("scroll-header");
         }
       } else {
         if(!nav.hasClass("lrg-nav")) {
-          nav.removeClass("scroll-nav").addClass('lrg-nav').fadeIn("slow");
+          nav.removeClass("scroll-nav").addClass('lrg-nav').fadeIn("slow"),
+          header.removeClass("scroll-header");;
         }
       }
     }

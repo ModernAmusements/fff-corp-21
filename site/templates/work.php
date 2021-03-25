@@ -1,11 +1,10 @@
 <?php
-
-
 ?>
 <?php snippet('header') ?>
 <main>
+
   <div id="project-header">
-    <a id="close" href="index.html">
+    <a id="close" href="/">
       [BACK]
     </a>
     <div><?= $page->title() ?></div>
@@ -41,7 +40,40 @@
   </div>
 <?php endif ?>
 
-
+<?php foreach ($page->videos()->template('work-videos') as
+        $video): ?>
+  <div class="module-full-width-video">
+    <div id="barba-wrapper">
+      <div class="barba-container <?= $page->videoLayout() ?>" data-namespace="index-page">
+        <div class="video-wrapper post-video" data-state="not-init">
+          <video loop playsinline preload="auto" alt="<?= $video->alt() ?>" poster="<?= $image->url() ?>">
+            <source src="<?= $video->url() ?>" type="video/mp4" />
+          </video>
+          <button class="intro-play"><span>Play</span></button>
+          <div class="vid-controls">
+            <button class="vid-icon vid-playpause" data-state="play">
+              Play
+            </button>
+            <button class="vid-icon vid-mute" data-state="mute">
+              Sound
+            </button>
+            <button class="vid-icon vid-fullscreen" data-state="go-fullscreen">
+              Fullscreen
+            </button>
+            <div class="vid-progress-wrap" max="14.53756">
+              <div class="vid-progress-bar" data-value="0" min="0"></div>
+            </div>
+          </div>
+        </div>
+        <?php foreach ($page->videos()->template('work-videos') as
+        $video): ?>
+        <p class="vid-sub-heading">
+          <?= $video->alt() ?> </p>
+        <?php endforeach ?>
+      </div>
+    </div>
+  </div>
+<?php endforeach ?>
 
   <div id="credits">
     <br />

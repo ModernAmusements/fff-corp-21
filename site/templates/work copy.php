@@ -38,7 +38,7 @@
         <?= $page->concept()->kt() ?>
       </div>
       <div id="barba-wrapper">
-        <div class="barba-container one left" data-namespace="index-page">
+        <div class="barba-container" data-namespace="index-page">
           <div class="subpage-gallery" id="index">
             <section class="post-gallery">
               <article class="work-images">

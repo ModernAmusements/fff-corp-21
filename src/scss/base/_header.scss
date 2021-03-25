@@ -29,8 +29,7 @@ header:not(.post-header) {
   grid-column-gap: 10px;
   grid-row-gap: var(--rowGap);
   align-items: center;
-  padding: 0 calc(var(--lineHeight) * 1);
-  padding-top: calc(var(--lineHeight) * 1);
+  padding: 1rem 1rem 5rem;
   text-transform: uppercase;
   color: var(--foreground-color);
   mix-blend-mode: difference;

@@ -18,6 +18,10 @@ Gallerylayout: module-left
 
 ----
 
+Videolayout: right
+
+----
+
 Pagebuilder:
 
 - 
@@ -48,6 +52,13 @@ Pagebuilder:
   modulelayouttwocolumnssize: medium
   _key: twoColumns
   _uid: twoColumns_1616606194797_2492
+- 
+  imagebuilderwork:
+    - abstract18.png
+  imagebuilderworkalt: Turm
+  modulelayout: small
+  _key: fullWidth
+  _uid: fullWidth_1616667111279_1012
 
 ----
 

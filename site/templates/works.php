@@ -27,9 +27,9 @@
   </nav> 
 
 </div>
+<main>
 <div id="barba-wrapper">
-  <div class="barba-container one left" data-namespace="index-page">
-    <main id="index">
+  <div class="barba-container cat-list" data-namespace="index-page">
       <div class="categories">
         <div class="categories-title">
         [+]
@@ -110,9 +110,8 @@
         </header>    
       </article>
       <?php endforeach ?>
-
-    </main>
   </div>
 </div>
+</main>
 <?php snippet('footer') ?>
 <?php snippet('footer/workFooter') ?>

@@ -105,6 +105,14 @@ columns:
         options:
           module-right: Right
           module-left: Left
+      videoLayout:
+        type: multiselect
+        max: 1
+        label: Video Layout direction
+        width: 1/2
+        options:
+          right: Right
+          left: Left
       pageBuilder:
         label: Work Section Master
         type: builder

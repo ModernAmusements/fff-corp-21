@@ -24,6 +24,10 @@ footer {
   display: none;
 }
 
+.footer-social {
+  padding-right: 20px;
+}
+
 @media only screen and (max-width: 768px) {
   footer {
     display: grid;

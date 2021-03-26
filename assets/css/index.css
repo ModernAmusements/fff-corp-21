@@ -12,31 +12,13 @@
   --h3-size: 1.6rem;
   --h4-size: 1.1rem;
   --ratio: 1.25;
-  --ms-0: 1rem;
-  --ms--1: calc(var(--ms-0) / var(--ratio));
-  --ms-1: calc(var(--ms-0) * var(--ratio));
-  --ms-2: calc(var(--ms-1) * var(--ratio));
-  --ms-3: calc(var(--ms-2) * var(--ratio));
-  --ms-4: calc(var(--ms-3) * var(--ratio));
-  --ms-5: calc(var(--ms-4) * var(--ratio));
-  --ms-6: calc(var(--ms-5) * var(--ratio));
-  --ms-7: calc(var(--ms-6) * var(--ratio));
   --columnGap: calc(var(--lineHeight) * 2);
   --rowGap: var(--lineHeight);
   --displayScale: 1;
   --pixel: 1px;
-  --darkmode-black: #151516;
-  --foreground-color: #121217;
-  --foregroundMix-color: #fff;
+  --background-color: #F5FBFF;
+  --foreground-color: #17181E;
   --primary-color: #ff4c00;
-  --primaryMix-color: #04AFF9;
-  --background-color: #fbfbf9;
-  --background-color-alpha: rgba(234, 240, 244, 0.7);
-  --background-color-black-elevated: #151519;
-  --background-color-elevated: #fbfbf9;
-  --background-color-dark: #d0ccff;
-  --primary-color-hover: #544ac1;
-  --primary-color-hover-dark: #544ac1;
   --overlay: rgba(0, 0, 0, 0.5);
   --error-form: #f91153;
   --sub-headline: #7b7b81;
@@ -45,15 +27,6 @@
   --trackBg: #bdbdbd;
   --trackFocus: #cacaca;
   --thumbBg: #666;
-  --trackHeight: 1px;
-  --thumbHeight: 12px;
-  --thumbTouchHeight: 48px;
-  --sliderToggleComponentBg: #f4f4f4;
-  --shadow-dark: rgba(143, 54, 2, 0.3);
-  --blur: 30px;
-  --spacing: 0;
-  --rotation: (0deg);
-  --b-r-small: 8px;
 }
 
 @supports (font-variation-settings: normal) {
@@ -574,7 +547,7 @@ a:hover span.icon-right {
 
 @-webkit-keyframes blinker-dark-sun {
   0% {
-    fill: var(--background-color);
+    fill: var(--primary-color);
   }
 
   49% {
@@ -592,7 +565,7 @@ a:hover span.icon-right {
 
 @keyframes blinker-dark-sun {
   0% {
-    fill: var(--background-color);
+    fill: var(--primary-color);
   }
 
   49% {
@@ -639,9 +612,8 @@ header:not(.post-header) {
   align-items: center;
   padding: 1rem 1rem 5rem;
   text-transform: uppercase;
-  color: var(--foregroundMix-color);
-  mix-blend-mode: difference;
   z-index: 10;
+  color: var(--foreground-color);
 }
 
 header:not(.post-header) .dark-mode-toggle {
@@ -668,7 +640,7 @@ header:not(.post-header) .dark-mode-toggle #sun:hover {
 }
 
 header:not(.post-header) .dark-mode-toggle #sun:hover path {
-  fill: var(--primary-color);
+  fill: var(--primary-color-blend);
   -webkit-animation: blinker-dark-sun 0.5s linear infinite;
           animation: blinker-dark-sun 0.5s linear infinite;
 }
@@ -696,12 +668,10 @@ header:not(.post-header) a:not(.home-logo):not(.dark-mode-toggle) {
 header:not(.post-header) a:not(.dark-mode-toggle):hover {
   color: var(--primary-color);
   transition: color 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms;
-  mix-blend-mode: normal;
 }
 
 header:not(.post-header) .active {
   color: var(--primary-color);
-  mix-blend-mode: normal;
 }
 
 .desktop-nav,
@@ -4911,8 +4881,7 @@ main.covers .project.small {
 
 main.grid {
   display: grid;
-  grid-template-columns: repeat(5, calc(60%/3));
-  grid-gap: 5rem calc(40%/4);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   align-items: flex-start;
 }
 
@@ -5464,8 +5433,7 @@ transition: filter .3s linear;
   /*Index Grid*/
 
   main.grid {
-    grid-template-columns: repeat(7, calc(60%/7));
-    grid-gap: 5rem calc(40%/6);
+    grid-template-columns: repeat(auto-fill, minmax(322px, 1fr));
   }
 
   /*Index List*/
@@ -5495,8 +5463,7 @@ transition: filter .3s linear;
   /*Index Grid*/
 
   main.grid {
-    grid-template-columns: repeat(6, calc(60%/6));
-    grid-gap: 5rem calc(40%/5);
+    grid-template-columns: repeat(auto-fill, minmax(322px, 1fr));
   }
 
   /*Index List*/
@@ -5534,13 +5501,6 @@ transition: filter .3s linear;
 
   main.covers .project.small {
     padding: 0 20%;
-  }
-
-  /*Index Grid*/
-
-  main.grid {
-    grid-template-columns: repeat(4, calc(60%/4));
-    grid-gap: 5rem calc(40%/3);
   }
 
   /*Index List*/
@@ -5594,8 +5554,7 @@ transition: filter .3s linear;
   /*Index Grid*/
 
   main.grid {
-    grid-template-columns: repeat(3, calc(60%/3));
-    grid-gap: 5rem calc(40%/2);
+    grid-template-columns: repeat(auto-fill, minmax(322px, 1fr));
   }
 
   /*Index Covers*/
@@ -5711,7 +5670,6 @@ transition: filter .3s linear;
 
   main.grid {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 3rem 1rem;
   }
 
   /*Index List*/

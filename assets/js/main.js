@@ -13762,7 +13762,7 @@ var invertedToggle = document.querySelector('#circle');
 var slider = document.querySelector('.sliderToggle');
 var darkModeToggle = document.querySelector('.dark-mode-toggle');
 var tapevent = 'PointerEvent';
-var css = "\n    html {\n        --pointer - move - line - color: #03f;\n    }\n    html.inverted {\n        --pointer - move - line - color: #f3a;\n\n      /*--background-color: #101214;\n      --foreground-color-rgb: 250,255,240;*/\n\n      /*--background-color: #101214;\n      --foreground-color-rgb: 250,255,240;*/\n\n      /*--background-color: #131310;\n      --foreground-color-rgb: 210,230,255;*/\n\n\n\n      /*--background-color: #111;\n      --foreground-color-rgb: 234,240,244;*/\n\n      --background-color-alpha: rgb(23,23,29, 0.7);\n      --background-color: #111;\n      --background-color-elevated: #121217;\n\n      --foreground-color: #DFF1FD;\n      --background-color-dark: #000;\n\n\n\n\n\n\n\n      --foreground-color-a: 0.8;\n      --base-grid-color1: rgba(240,155,255, 0.1);\n      --base-grid-color2: rgba(240,155,255, 0.05);\n    }\n    html.size-mode-relative {\n      --fontSize: calc(100vw / 80);\n      --hrThickness: 0.17rem;\n    }\n    .settings c:nth-child(2n+2) {\n        font - feature - settings:'ss02' 1;\n      user-select:none;\n    }\n    .baselineBeacon {\n        height: var(--baseline);\n      overflow: hidden;\n      display: none;\n      position: absolute;\n    }\n    .pointerMoveLine {\n        height: 1px;\n      pointer-events: none;\n      visibility: hidden;\n      position: absolute;\n      left:0; top:0; right:0;\n      background: var(--pointer-move-line-color);\n      transform: translate3d(0,0,0);\n      opacity:0.4;\n    }\n    .pointerMoveLine.active {visibility:visible; }\n    .pointerMoveLine.pressed {\n        opacity:0.8;\n      box-shadow:\n        0 1px 0 0 var(--pointer-move-line-color),\n        0 -1px 0 0 var(--pointer-move-line-color);\n    }\n    ".trim();
+var css = "\n    html {\n        --pointer - move - line - color: #03f;\n    }\n    html.inverted {\n        --pointer - move - line - color: #f3a;\n\n      --background-color: #17181E;\n      --foreground-color: #F5FBFF;\n    }\n    ".trim();
 var style = document.createElement('style');
 style.appendChild(document.createTextNode(css));
 document.head.appendChild(style);
@@ -14072,10 +14072,85 @@ $(function () {
 
 /***/ }),
 
-/***/ "./src/js/10_current-device.min.js":
-/*!*****************************************!*\
-  !*** ./src/js/10_current-device.min.js ***!
-  \*****************************************/
+/***/ "./src/js/11_cookieConsent.js":
+/*!************************************!*\
+  !*** ./src/js/11_cookieConsent.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// jshint ignore: start
+
+/* eslint-disable */
+var cookieStorage = {
+  getItem: function getItem(item) {
+    var cookies = document.cookie.split(';').map(function (cookie) {
+      return cookie.split('=');
+    }).reduce(function (acc, _ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+          key = _ref2[0],
+          value = _ref2[1];
+
+      return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, key.trim(), value));
+    }, {});
+    return cookies[item];
+  },
+  setItem: function setItem(item, value) {
+    document.cookie = "".concat(item, "=").concat(value, ";");
+  }
+};
+var storageType = cookieStorage;
+var consentPropertyName = 'jdc_consent';
+
+var shouldShowPopup = function shouldShowPopup() {
+  return !storageType.getItem(consentPropertyName);
+};
+
+var saveToStorage = function saveToStorage() {
+  return storageType.setItem(consentPropertyName, true);
+};
+
+window.onload = function () {
+  var acceptFn = function acceptFn(event) {
+    saveToStorage(storageType);
+    consentPopup.classList.add('hidden');
+  };
+
+  var consentPopup = document.getElementById('consent-popup');
+  var acceptBtn = document.getElementById('accept');
+  acceptBtn.addEventListener('click', acceptFn);
+
+  if (shouldShowPopup(storageType)) {
+    setTimeout(function () {
+      consentPopup.classList.remove('hidden');
+    }, 2000);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/js/current-device-browser.min.js":
+/*!**********************************************!*\
+  !*** ./src/js/current-device-browser.min.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14269,118 +14344,49 @@ $(function () {
   }])["default"];
 });
 /*
- * jQBrowser v0.2: http://davecardwell.co.uk/javascript/jquery/plugins/jquery-browserdetect/
+ * If Device
  */
 
-eval(function (r, e, s, a, _o, i) {
-  for (_o = function o(r) {
-    return (r < 77 ? "" : _o(r / 77)) + String.fromCharCode(r % 77 + 161);
-  }; s--;) {
-    a[s] && (r = r.replace(new RegExp(_o(s), "g"), a[s]));
-  }
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('html').addClass('device');
+}
+/*
+CSS Browser Selector v0.4.0 (Nov 02, 2010)
+Rafael Lima (http://rafael.adm.br)
+http://rafael.adm.br/css_browser_selector
+License: http://creativecommons.org/licenses/by/2.5/
+Contributors: http://rafael.adm.br/css_browser_selector#contributors
+*/
 
-  return r;
-}("Ö ¡(){® Ø={'¥':¡(){¢ £.¥},'©':{'±':¡(){¢ £.©.±},'¯':¡(){¢ £.©.¯}},'¬':¡(){¢ £.¬},'¶':¡(){¢ £.¶},'º':¡(){¢ £.º},'Á':¡(){¢ £.Á},'À':¡(){¢ £.À},'½':¡(){¢ £.½},'¾':¡(){¢ £.¾},'¼':¡(){¢ £.¼},'·':¡(){¢ £.·},'Â':¡(){¢ £.Â},'³':¡(){¢ £.³},'Ä':¡(){¢ £.Ä},'Ã':¡(){¢ £.Ã},'Å':¡(){¢ £.Å},'¸':¡(){¢ £.¸}};$.¥=Ø;® £={'¥':'¿','©':{'±':²,'¯':'¿'},'¬':'¿','¶':§,'º':§,'Á':§,'À':§,'½':§,'¾':§,'¼':§,'·':§,'Â':§,'³':§,'Ä':§,'Ã':§,'Å':§,'¸':§};Î(® i=0,«=».ì,°=».í,¦=[{'¤':'Ý','¥':¡(){¢/Ù/.¨(°)}},{'¤':'Ú','¥':¡(){¢ Û.³!=²}},{'¤':'È','¥':¡(){¢/È/.¨(°)}},{'¤':'Ü','¥':¡(){¢/Þ/.¨(°)}},{'ª':'¶','¤':'ß Ñ','¥':¡(){¢/à á â/.¨(«)},'©':¡(){¢ «.¹(/ã(\\d+(?:\\.\\d+)+)/)}},{'¤':'Ì','¥':¡(){¢/Ì/.¨(«)}},{'¤':'Í','¥':¡(){¢/Í/.¨(°)}},{'¤':'Ï','¥':¡(){¢/Ï/.¨(«)}},{'¤':'Ð','¥':¡(){¢/Ð/.¨(«)}},{'ª':'·','¤':'å Ñ','¥':¡(){¢/Ò/.¨(«)},'©':¡(){¢ «.¹(/Ò (\\d+(?:\\.\\d+)+(?:b\\d*)?)/)}},{'¤':'Ó','¥':¡(){¢/æ|Ó/.¨(«)},'©':¡(){¢ «.¹(/è:(\\d+(?:\\.\\d+)+)/)}}];i<¦.Ë;i++){µ(¦[i].¥()){® ª=¦[i].ª?¦[i].ª:¦[i].¤.Õ();£[ª]=É;£.¥=¦[i].¤;® ­;µ(¦[i].©!=²&&(­=¦[i].©())){£.©.¯=­[1];£.©.±=Ê(­[1])}ê{® Ç=Ö ë(¦[i].¤+'(?:\\\\s|\\\\/)(\\\\d+(?:\\\\.\\\\d+)+(?:(?:a|b)\\\\d*)?)');­=«.¹(Ç);µ(­!=²){£.©.¯=­[1];£.©.±=Ê(­[1])}}×}};Î(® i=0,´=».ä,¦=[{'ª':'¸','¤':'ç','¬':¡(){¢/é/.¨(´)}},{'¤':'Ô','¬':¡(){¢/Ô/.¨(´)}},{'¤':'Æ','¬':¡(){¢/Æ/.¨(´)}}];i<¦.Ë;i++){µ(¦[i].¬()){® ª=¦[i].ª?¦[i].ª:¦[i].¤.Õ();£[ª]=É;£.¬=¦[i].¤;×}}}();", 0, 77, "function|return|Private|name|browser|data|false|test|version|identifier|ua|OS|result|var|string|ve|number|undefined|opera|pl|if|aol|msie|win|match|camino|navigator|mozilla|icab|konqueror|Unknown|flock|firefox|netscape|linux|safari|mac|Linux|re|iCab|true|parseFloat|length|Flock|Camino|for|Firefox|Netscape|Explorer|MSIE|Mozilla|Mac|toLowerCase|new|break|Public|Apple|Opera|window|Konqueror|Safari|KDE|AOL|America|Online|Browser|rev|platform|Internet|Gecko|Windows|rv|Win|else|RegExp|userAgent|vendor".split("|")));
-var aol = $.browser.aol(),
-    camino = $.browser.camino(),
-    firefox = $.browser.firefox(),
-    flock = $.browser.flock(),
-    icab = $.browser.icab(),
-    konqueror = $.browser.konqueror(),
-    mozilla = $.browser.mozilla(),
-    msie = $.browser.msie(),
-    netscape = $.browser.netscape(),
-    opera = $.browser.opera(),
-    safari = $.browser.safari(),
-    userbrowser = $.browser.browser(),
-    linux = $.browser.linux(),
-    mac = $.browser.mac(),
-    win = $.browser.win(),
-    userversion = $.browser.version.number();
-1 == mac ? $("html").addClass("mac") : 1 == linux ? $("html").addClass("linux") : 1 == win && $("html").addClass("windows"), "Safari" == userbrowser ? $("html").addClass("safari") : "Firefox" == userbrowser ? $("html").addClass("firefox") : "Camino" == userbrowser ? $("html").addClass("camino") : "AOL Explorer" == userbrowser ? $("html").addClass("aol") : "Flock" == userbrowser ? $("html").addClass("flock") : "iCab" == userbrowser ? $("html").addClass("icab") : "Konqueror" == userbrowser ? $("html").addClass("konqueror") : "Mozilla" == userbrowser ? $("html").addClass("mozilla") : "Netscape" == userbrowser ? $("html").addClass("netscape") : "Opera" == userbrowser ? $("html").addClass("opera") : "Internet Explorer" == userbrowser && $("html").addClass("ie"), $("html").addClass("" + userversion);
+
+function css_browser_selector(u) {
+  var ua = u.toLowerCase(),
+      is = function is(t) {
+    return ua.indexOf(t) > -1;
+  },
+      g = 'gecko',
+      w = 'webkit',
+      s = 'safari',
+      o = 'opera',
+      m = 'mobile',
+      h = document.documentElement,
+      b = [!/opera|webtv/i.test(ua) && /msie\s(\d)/.test(ua) ? 'ie ie' + RegExp.$1 : is('firefox/2') ? g + ' ff2' : is('firefox/3.5') ? g + ' ff3 ff3_5' : is('firefox/3.6') ? g + ' ff3 ff3_6' : is('firefox/3') ? g + ' ff3' : is('gecko/') ? g : is('opera') ? o + (/version\/(\d+)/.test(ua) ? ' ' + o + RegExp.$1 : /opera(\s|\/)(\d+)/.test(ua) ? ' ' + o + RegExp.$2 : '') : is('konqueror') ? 'konqueror' : is('blackberry') ? m + ' blackberry' : is('android') ? m + ' android' : is('chrome') ? w + ' chrome' : is('iron') ? w + ' iron' : is('applewebkit/') ? w + ' ' + s + (/version\/(\d+)/.test(ua) ? ' ' + s + RegExp.$1 : '') : is('mozilla/') ? g : '', is('j2me') ? m + ' j2me' : is('iphone') ? m + ' iphone' : is('ipod') ? m + ' ipod' : is('ipad') ? m + ' ipad' : is('mac') ? 'mac' : is('darwin') ? 'mac' : is('webtv') ? 'webtv' : is('win') ? 'win' + (is('windows nt 6.0') ? ' vista' : '') : is('freebsd') ? 'freebsd' : is('x11') || is('linux') ? 'linux' : '', 'js'];
+
+  c = b.join(' ');
+  h.className += ' ' + c;
+  return c;
+}
+
+;
+css_browser_selector(navigator.userAgent);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
-/***/ "./src/js/11_cookieConsent.js":
-/*!************************************!*\
-  !*** ./src/js/11_cookieConsent.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-// jshint ignore: start
-
-/* eslint-disable */
-var cookieStorage = {
-  getItem: function getItem(item) {
-    var cookies = document.cookie.split(';').map(function (cookie) {
-      return cookie.split('=');
-    }).reduce(function (acc, _ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          key = _ref2[0],
-          value = _ref2[1];
-
-      return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, key.trim(), value));
-    }, {});
-    return cookies[item];
-  },
-  setItem: function setItem(item, value) {
-    document.cookie = "".concat(item, "=").concat(value, ";");
-  }
-};
-var storageType = cookieStorage;
-var consentPropertyName = 'jdc_consent';
-
-var shouldShowPopup = function shouldShowPopup() {
-  return !storageType.getItem(consentPropertyName);
-};
-
-var saveToStorage = function saveToStorage() {
-  return storageType.setItem(consentPropertyName, true);
-};
-
-window.onload = function () {
-  var acceptFn = function acceptFn(event) {
-    saveToStorage(storageType);
-    consentPopup.classList.add('hidden');
-  };
-
-  var consentPopup = document.getElementById('consent-popup');
-  var acceptBtn = document.getElementById('accept');
-  acceptBtn.addEventListener('click', acceptFn);
-
-  if (shouldShowPopup(storageType)) {
-    setTimeout(function () {
-      consentPopup.classList.remove('hidden');
-    }, 2000);
-  }
-};
-
-/***/ }),
-
 /***/ 1:
-/*!****************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/02_swiper.min.js ./src/js/03_darkmode.js ./src/js/04_intersectionObserver.js ./src/js/06_mobile-nav.js ./src/js/07_modal.js ./src/js/09_plugins.js ./src/js/10_current-device.min.js ./src/js/11_cookieConsent.js ***!
-  \****************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/02_swiper.min.js ./src/js/03_darkmode.js ./src/js/04_intersectionObserver.js ./src/js/06_mobile-nav.js ./src/js/07_modal.js ./src/js/09_plugins.js ./src/js/current-device-browser.min ./src/js/11_cookieConsent.js ***!
+  \******************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14390,7 +14396,7 @@ __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/04_intersectionObs
 __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/06_mobile-nav.js */"./src/js/06_mobile-nav.js");
 __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/07_modal.js */"./src/js/07_modal.js");
 __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/09_plugins.js */"./src/js/09_plugins.js");
-__webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/10_current-device.min.js */"./src/js/10_current-device.min.js");
+__webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/current-device-browser.min */"./src/js/current-device-browser.min.js");
 module.exports = __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/11_cookieConsent.js */"./src/js/11_cookieConsent.js");
 
 

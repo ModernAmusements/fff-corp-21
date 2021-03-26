@@ -4,7 +4,7 @@ const mix = require('laravel-mix');
 
 mix.js([
   'src/js/01_homePageScripts.js',
-  'src/js/global.js'
+  'src/js/global.js',
   ], 'assets/js/homePageScripts.js');
 
 mix.js([
@@ -14,8 +14,8 @@ mix.js([
     'src/js/06_mobile-nav.js',
     'src/js/07_modal.js',
     'src/js/09_plugins.js',
-    'src/js/10_current-device.min.js',
-    'src/js/11_cookieConsent.js'
+    'src/js/current-device-browser.min',
+    'src/js/11_cookieConsent.js',
     ], 'assets/js/main.js');
 
 mix.sass('src/scss/index.scss', 'assets/css');

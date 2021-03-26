@@ -2,8 +2,7 @@
 
 main.grid {
   display: grid;
-  grid-template-columns: repeat(5, calc(60%/3));
-  grid-gap: 5rem calc(40%/4);
+  grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
   align-items: flex-start;
 }
 

@@ -1,5 +1,4 @@
 <?php snippet('header')?>
-
 <div id="wrapper">
   <nav>
       <div id="grid">
@@ -47,12 +46,5 @@
         <?php endforeach?>
       <?php endif?>
     </main>
-
-    <?=js('assets/js/grade.js', true)?>
-      <script type="text/javascript">
-          window.addEventListener('load', function(){
-              Grade(document.querySelectorAll('.auto-gradient'))
-          });
-      </script>
 <?=js('assets/js/homePageScripts.js', true)?>
 <?php snippet('footer')?>

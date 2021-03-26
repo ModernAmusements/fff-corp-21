@@ -1,7 +1,7 @@
 // Header
 @keyframes blinker-dark-sun {
   0% {
-    fill: var(--background-color);
+    fill: var(--primary-color);
   }
   49% {
     fill: var(--background-color);
@@ -31,9 +31,8 @@ header:not(.post-header) {
   align-items: center;
   padding: 1rem 1rem 5rem;
   text-transform: uppercase;
-  color: var(--foregroundMix-color);
-  mix-blend-mode: difference;
   z-index: 10;
+  color: var(--foreground-color);
   .dark-mode-toggle {
     display: flex;
     svg {
@@ -48,7 +47,7 @@ header:not(.post-header) {
     #sun:hover {
       cursor: pointer;
         path {
-          fill: var(--primary-color);
+          fill: var(--primary-color-blend);
           animation: blinker-dark-sun 0.5s linear infinite;
         }
     }
@@ -76,11 +75,9 @@ header:not(.post-header) {
   a:not(.dark-mode-toggle):hover {
     color: var(--primary-color);
     transition: color 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms;
-    mix-blend-mode: normal;
   }
   .active {
     color: var(--primary-color);
-    mix-blend-mode: normal;
   }
 }
 .desktop-nav,

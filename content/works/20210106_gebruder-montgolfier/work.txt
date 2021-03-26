@@ -10,7 +10,7 @@ Tags: PHP/Laravel
 
 ----
 
-Layout: small
+Layout: medium
 
 ----
 
@@ -25,14 +25,6 @@ Videolayout: right
 Pagebuilder:
 
 - 
-  imagebuilderwork:
-    - next.png
-  imagebuilderworkalt: nextry
-  modulelayouttwocolumns: module-right
-  modulelayouttwocolumnssize: small
-  _key: twoColumns
-  _uid: twoColumns_1616605791267_1328
-- 
   imagebuilderleft:
     - green.png
   imagebuilderworkalt: "1"
@@ -44,6 +36,14 @@ Pagebuilder:
   modulelayoutright: small
   _key: twoColumnsSideBySide
   _uid: twoColumnsSideBySide_1616605886646_1840
+- 
+  imagebuilderwork:
+    - next.png
+  imagebuilderworkalt: nextry
+  modulelayouttwocolumns: module-right
+  modulelayouttwocolumnssize: small
+  _key: twoColumns
+  _uid: twoColumns_1616605791267_1328
 - 
   imagebuilderwork:
     - test2_cv01.png

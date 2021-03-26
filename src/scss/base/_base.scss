@@ -10,32 +10,15 @@
   --h3-size: 1.6rem;
   --h4-size: 1.1rem;
   --ratio: 1.25;
-  --ms-0: 1rem;
-  --ms--1: calc(var(--ms-0) / var(--ratio));
-  --ms-1: calc(var(--ms-0) * var(--ratio));
-  --ms-2: calc(var(--ms-1) * var(--ratio));
-  --ms-3: calc(var(--ms-2) * var(--ratio));
-  --ms-4: calc(var(--ms-3) * var(--ratio));
-  --ms-5: calc(var(--ms-4) * var(--ratio));
-  --ms-6: calc(var(--ms-5) * var(--ratio));
-  --ms-7: calc(var(--ms-6) * var(--ratio));
   --columnGap: calc(var(--lineHeight) * 2);
   --rowGap: var(--lineHeight);
   --displayScale: 1;
   --pixel: 1px;
   // ColorSettings
-  --darkmode-black: #151516;
-  --foreground-color: #121217;
-  --foregroundMix-color: #fff;
+  --background-color: #F5FBFF;
+  --foreground-color: #17181E;
   --primary-color: #ff4c00;
-  --primaryMix-color: #04AFF9;
-  --background-color: #fbfbf9;
-  --background-color-alpha: rgba(234, 240, 244, 0.7);
-  --background-color-black-elevated: #151519;
-  --background-color-elevated: #fbfbf9;
-  --background-color-dark: #d0ccff;
-  --primary-color-hover: #544ac1;
-  --primary-color-hover-dark: #544ac1;
+  // Modal
   --overlay: rgba(0, 0, 0, 0.5);
   --error-form: #f91153;
   --sub-headline: #7b7b81;
@@ -44,17 +27,6 @@
   --trackBg: #bdbdbd;
   --trackFocus: #cacaca;
   --thumbBg: #666;
-  // FoontSettings
-  --trackHeight: 1px;
-  --thumbHeight: 12px;
-  --thumbTouchHeight: 48px;
-  --sliderToggleComponentBg: #f4f4f4;
-  --shadow-dark: rgba(143, 54, 2, 0.3);
-  --blur: 30px;
-  --spacing: 0;
-  --rotation: (0deg);
-  // BTN
-  --b-r-small: 8px;
 }
 @supports (font-variation-settings: normal) {
   :root {

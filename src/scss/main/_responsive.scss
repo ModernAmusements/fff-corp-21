@@ -21,8 +21,7 @@
     }
     /*Index Grid*/
     main.grid {
-        grid-template-columns: repeat(7, calc(60%/7));
-        grid-gap: 5rem calc(40%/6);
+        grid-template-columns: repeat(auto-fill,minmax(322px,1fr))
     }
     /*Index List*/
     main.list .project .wrapper .images {
@@ -46,8 +45,7 @@
     }
     /*Index Grid*/
     main.grid {
-        grid-template-columns: repeat(6, calc(60%/6));
-        grid-gap: 5rem calc(40%/5);
+        grid-template-columns: repeat(auto-fill,minmax(322px,1fr))
     }
     /*Index List*/
     main.list .project .wrapper .images {
@@ -79,11 +77,7 @@
     main.covers .project.small {
         padding: 0 20%;
     }
-    /*Index Grid*/
-    main.grid {
-        grid-template-columns: repeat(4, calc(60%/4));
-        grid-gap: 5rem calc(40%/3);
-    }
+
     /*Index List*/
     main.list .project .wrapper .images {
         grid-template-columns: repeat(10, 1fr);
@@ -122,8 +116,7 @@
     }
     /*Index Grid*/
     main.grid {
-        grid-template-columns: repeat(3, calc(60%/3));
-        grid-gap: 5rem calc(40%/2);
+        grid-template-columns: repeat(auto-fill,minmax(322px,1fr))
     }
     /*Index Covers*/
     main.covers {
@@ -212,7 +205,7 @@
     /*Index Grid*/
     main.grid {
         grid-template-columns: 1fr 1fr;
-        grid-gap: 3rem 1rem;
+
     }
     /*Index List*/
     main.list .project .wrapper .images {

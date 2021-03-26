@@ -28,12 +28,16 @@
     <!-- Meta Information-->
     <?php echo $page->metaTags() ?>
     <!-- Stylesheets Async CSS-->
+    <?=js('assets/js/grade.js')?>
+      <script type="text/javascript">
+          window.addEventListener('load', function(){
+              Grade(document.querySelectorAll('.auto-gradient'))
+          });
+      </script>
     <?= css('assets/css/index.css', true) ?>
     <?= js('assets/js/jquery.min.js') ?>
-    <?= js('assets/js/jquery-ui.min.js') ?>
-    <?= js('assets/js/js.cookie.min.js') ?>
-    <?= js('assets/js/current-device-browser.min.js') ?>
-
+    <?= js('assets/js/jquery-ui.min.js', true) ?>
+    <?= js('assets/js/js.cookie.min.js', true) ?>
 </head>
 <body>
     <header>

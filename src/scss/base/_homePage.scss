@@ -12,7 +12,7 @@
   justify-content: center;
   transition: background var(--duration) ease;
   background-color: var(--background-color-alpha);
-  backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(180%) blur(150px);
   .intro {
     align-items: center;
     grid-auto-flow: row;

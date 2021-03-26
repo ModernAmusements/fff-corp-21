@@ -27,13 +27,16 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Meta Information-->
     <?php echo $page->metaTags() ?>
-    <!-- Stylesheets Async CSS-->
-    <?=js('assets/js/grade.js')?>
+    <!-- Homepage Gradient Async CSS-->
+    <?=js('assets/js/homePageScripts.js', true)?>
+    <!-- Homepage Gradient Async CSS-->
+    <?=js('assets/js/grade.js', true) ?>
       <script type="text/javascript">
           window.addEventListener('load', function(){
               Grade(document.querySelectorAll('.auto-gradient'))
           });
-      </script>
+    </script>
+    <!-- Stylesheets Async CSS-->
     <?= css('assets/css/index.css', true) ?>
     <?= js('assets/js/jquery.min.js') ?>
     <?= js('assets/js/jquery-ui.min.js', true) ?>

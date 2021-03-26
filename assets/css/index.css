@@ -900,8 +900,8 @@ footer {
   justify-content: center;
   transition: background var(--duration) ease;
   background-color: var(--background-color-alpha);
-  -webkit-backdrop-filter: saturate(180%) blur(5px);
-          backdrop-filter: saturate(180%) blur(5px);
+  -webkit-backdrop-filter: saturate(180%) blur(150px);
+          backdrop-filter: saturate(180%) blur(150px);
 }
 
 #preload-homepage .intro {

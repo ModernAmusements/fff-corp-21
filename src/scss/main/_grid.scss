@@ -58,3 +58,12 @@ main.grid .project .trigger {
 
 
 
+
+
+
+section.grid {
+  padding: 20rem 1rem 5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}

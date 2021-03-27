@@ -15,7 +15,7 @@
 <main class="covers">
     <?php if ($worksPage = page('works')): ?>
       <?php foreach ($worksPage->children()->sortBy('date', 'desc') as $work): ?>
-          <div class="project <?= $work->layout() ?>">
+          <div id="works" class="project <?= $work->layout() ?>">
               <a class="scroll poster" href="<?= $work->url() ?>">
                 <?php if ($cover = $work->cover()->resize(1080)) : ?>
                   <div class="image auto-gradient">

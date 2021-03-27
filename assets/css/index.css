@@ -4226,6 +4226,13 @@ main.grid .project .trigger {
   white-space: nowrap;
 }
 
+section.grid {
+  padding: 20rem 1rem 5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 /*List*/
 
 main.list {
@@ -4786,6 +4793,10 @@ transition: filter .3s linear;
   main.list .project .wrapper .images {
     grid-template-columns: repeat(14, 1fr);
   }
+
+  section.grid {
+    grid-template-columns: repeat(auto-fill, minmax(322px, 1fr));
+  }
 }
 
 /*BIG LAPTOP DESKTOP*/
@@ -4876,6 +4887,11 @@ transition: filter .3s linear;
 
   main.covers {
     padding: 100vh 1rem 0;
+  }
+
+  section.grid {
+    padding: 100vh 1rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(322px, 1fr));
   }
 
   main.covers .project {
@@ -4984,6 +5000,10 @@ transition: filter .3s linear;
   /*Index Grid*/
 
   main.grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section.grid {
     grid-template-columns: 1fr 1fr;
   }
 

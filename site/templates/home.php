@@ -4,7 +4,7 @@
         <div id="grid">
             <span>Grid</span>
         </div>
-        <div id="covers">
+        <div id="covers" class="active">
             <span>Covers</span>
         </div>
         <div id="list">

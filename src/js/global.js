@@ -32,6 +32,7 @@ $(document).ready(function() {
   });
   //Cookies Views
 
+
   $('#covers').click(function() {
     Cookies.remove('Grid');
     Cookies.remove('List');

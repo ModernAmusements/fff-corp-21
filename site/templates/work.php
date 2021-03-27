@@ -1,10 +1,9 @@
 <?php
 ?>
 <?php snippet('header') ?>
-<main>
-
+<main class="grid">
   <div id="project-header">
-    <a id="close" href="/">
+    <a id="close"  href="/">
       [BACK]
     </a>
     <div><?= $page->title() ?></div>
@@ -96,7 +95,6 @@
       </div>
     </wrap>
   </div>
-
 </main>
 <?php snippet('footer') ?>
 <?php snippet('footer/workFooter') ?>

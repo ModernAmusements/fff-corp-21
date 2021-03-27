@@ -24,7 +24,7 @@ main.covers {
       cursor: auto;
     }
   }
-  .project.big {
+  .project.large {
     width: 100%;
     max-width: 1800px;
     grid-column: auto/span 2;
@@ -35,7 +35,7 @@ main.covers {
     margin: 10rem 0;
   }
   .project.small {
-    padding: 0 25%;
+    margin: 0 25%;
     align-self: flex-start;
   }
 

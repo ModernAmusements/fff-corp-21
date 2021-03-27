@@ -122,16 +122,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-/*
- * General Scripts
- */
 $(document).ready(function () {
-  //Tagline Cookie
-  // if(Cookies.get('Tagline')){
-  //      $('#tagline').remove();
-  // }else{
-  //      Cookies.set('Tagline', '1');
-  // }
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
     //Hide Tagline on devices
     var taglineT = setTimeout(function () {
@@ -204,85 +195,64 @@ $(document).ready(function () {
     $('main').removeClass().addClass(style);
     $('main').find('.trigger').next().slideUp('slow', 'easeInOutQuint');
     $('main .trigger').removeClass('active');
-  }); //Cookies Views
+  }); // //Cookies Views
+  // $('#covers').click(function() {
+  //     Cookies.remove('Grid');
+  //     Cookies.remove('List');
+  //     Cookies.set('Covers', '1');
+  // });
+  // $('#grid').click(function() {
+  //     Cookies.remove('Covers');
+  //     Cookies.remove('List');
+  //     Cookies.set('Grid', '1');
+  // });
+  // $('#list').click(function() {
+  //     Cookies.remove('Covers');
+  //     Cookies.remove('Grid');
+  //     Cookies.set('List', '1');
+  // });
+  // if (Cookies.get('Covers')) {
+  //     $('nav div').removeClass();
+  //     $('#covers').addClass('active');
+  //     $('main').removeClass().addClass('covers');
+  // } else if (Cookies.get('Grid')) {
+  //     $('nav div').removeClass();
+  //     $('#grid').addClass('active');
+  //     $('main').removeClass().addClass('grid');
+  // } else if (Cookies.get('List')) {
+  //     $('nav div').removeClass();
+  //     $('#list').addClass('active');
+  //     $('main').removeClass().addClass('list');
+  // }
+  //Cookies Views
 
   $('#covers').click(function () {
     Cookies.remove('Grid');
     Cookies.remove('List');
-    Cookies.remove('Scroll');
     Cookies.set('Covers', '1');
   });
   $('#grid').click(function () {
     Cookies.remove('Covers');
     Cookies.remove('List');
-    Cookies.remove('Scroll');
     Cookies.set('Grid', '1');
   });
   $('#list').click(function () {
     Cookies.remove('Covers');
     Cookies.remove('Grid');
-    Cookies.remove('Scroll');
     Cookies.set('List', '1');
-  });
-  $('#scroll').click(function () {
-    $('body').addClass('scroll-active');
-    $('#scroll-wrapper').scrollTop(0);
-    $('main.scroll .project:first-child .thumbnail').css('width', '100%');
-    Cookies.remove('Covers');
-    Cookies.remove('Grid');
-    Cookies.remove('List');
-    Cookies.set('Scroll', '1');
-
-    if ($('#search-tags').hasClass('active')) {
-      $('#search-tags').removeClass('active');
-      $('#search-tags').next().slideUp('slow', 'easeInOutQuint');
-    }
   });
 
   if (Cookies.get('Covers')) {
-    $('nav div').removeClass();
     $('#covers').addClass('active');
     $('main').removeClass().addClass('covers');
   } else if (Cookies.get('Grid')) {
-    $('nav div').removeClass();
     $('#grid').addClass('active');
     $('main').removeClass().addClass('grid');
   } else if (Cookies.get('List')) {
-    $('nav div').removeClass();
     $('#list').addClass('active');
     $('main').removeClass().addClass('list');
-  } else if (Cookies.get('Scroll')) {
-    $('body').addClass('scroll-active');
-    $('nav div').removeClass();
-    $('#scroll').addClass('active');
-    $('main').removeClass().addClass('scroll');
-  } //Project images
+  } //Display menu
 
-
-  $('.desktop main .trigger').each(function (index) {
-    var target = $(this);
-    var video = target.prev('.thumbnail').find('video');
-    var timer;
-    target.on('mouseleave', function (e) {
-      if (video.length) {
-        video[0].pause();
-      }
-
-      timer = setTimeout(function () {
-        target.prev('.thumbnail').fadeOut();
-      }, 250);
-    });
-    target.on('mousemove', function (e) {
-      clearTimeout(timer);
-
-      if (video.length) {
-        video[0].play();
-      } // target.prev('.thumbnail').show().css({
-      //     left: e.pageX,
-      // });
-
-    });
-  }); //Display menu
 
   if ($(window).width() > 600) {
     $('menu .trigger:first-of-type').next().show();
@@ -306,55 +276,10 @@ $(document).ready(function () {
       target.addClass('active');
       target.next().slideDown('slow', 'easeInOutQuint');
     }
-  }); //Close Filters
-
-  $('menu .trigger, #scroll').click(function () {
-    var filters = $('#filters').children().length;
-
-    if (filters > 0) {
-      $('main').removeClass('filter-active');
-      $('#filters').slideUp('slow', 'easeInOutQuint', function () {
-        $('.tag').removeClass('active');
-        $('.project').removeClass('filter-active');
-        $('#filters span').remove();
-      });
-    }
-  }); //Filter functions
-
-  $('.tag').click(function () {
-    var value = $(this).children('span:first-of-type').text();
-    var slug = $(this).children('span:first-of-type').attr('id');
-    var filters = $('#filters').children().length; // $('.project').hide().filter(slug).show();
-
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $('.project.' + slug).removeClass('filter-active');
-
-      if (filters == 1) {
-        $('main').removeClass('filter-active');
-        $('.project').removeClass('filter-active');
-        $('#filters').slideUp('slow', 'easeInOutQuint', function () {
-          $('#filter' + slug).remove();
-        });
-      } else {
-        $('#filter' + slug).remove();
-      }
-    } else {
-      $(this).addClass('active');
-      $('.project.' + slug).addClass('filter-active');
-
-      if (filters == 0) {
-        $('main').addClass('filter-active');
-        $('#filters').append('<span id="filter' + slug + '">' + value + '</span>');
-        $('#filters').slideDown('slow', 'easeInOutQuint');
-      } else {
-        $('#filters').append('<span id="filter' + slug + '">' + value + '</span>');
-      }
-    }
   });
 }); //Lazy Loading for images
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   var imageObserver = new IntersectionObserver(function (entries, imgObserver) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {

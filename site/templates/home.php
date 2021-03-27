@@ -1,22 +1,22 @@
 <?php snippet('header')?>
-<div id="wrapper">
-  <nav>
-      <div id="grid">
-          <span>Grid</span>
-      </div>
-      <div id="covers" class="active">
-          <span>Covers</span>
-      </div>
-      <div>
-          <a href="/works">List</a>
-      </div>
-  </nav> 
-</div>
+  <div id="wrapper">
+    <nav>
+        <div id="grid">
+            <span>Grid</span>
+        </div>
+        <div id="covers">
+            <span>Covers</span>
+        </div>
+        <div id="list">
+            <a href="/works"><span>List</span></a>
+        </div>
+    </nav> 
+  </div>
 <main class="covers">
     <?php if ($worksPage = page('works')): ?>
       <?php foreach ($worksPage->children()->sortBy('date', 'desc') as $work): ?>
           <div class="project <?= $work->layout() ?>">
-              <a class="thumbnail scroll" href="<?= $work->url() ?>">
+              <a class="scroll poster" href="<?= $work->url() ?>">
                 <?php if ($cover = $work->cover()->resize(1080)) : ?>
                   <div class="image auto-gradient">
                     <img 
@@ -132,5 +132,10 @@
           </div>
         </div>
       </div>
-    </main>
+  </main>
+  <script type="text/javascript">
+        window.addEventListener('load', function(){
+            Grade(document.querySelectorAll('.auto-gradient'))
+        });
+  </script>
 <?php snippet('footer')?>

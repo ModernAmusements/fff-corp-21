@@ -4,13 +4,14 @@
 main.list {
   display: grid;
   grid-template-rows: 50px;
+  padding: 20rem 1rem 5rem;
 }
 
 main.list .project {
   position: relative;
 }
 
-main:not(.list) .project>a {
+main:not(.list):not(.grid) .project>a {
   display: block !important;
   opacity: 1 !important;
 }

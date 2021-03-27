@@ -495,3 +495,15 @@ a:hover {
     transition: all 0.2s ease-in-out;
   }
 }
+
+
+
+
+
+
+::selection {
+  background: var(--primary-color); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--primary-color) /* Gecko Browsers */
+}

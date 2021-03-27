@@ -15,23 +15,14 @@ main.scroll {
   padding: 0;
 }
 
-main.scroll .project .trigger,
-/* main.scroll ~ #top, */
 
-main.scroll~footer {
-  display: none !important;
-}
 
 main:not(.scroll) .project .thumbnail {
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
+  height: auto ;
 }
 
-main:not(.scroll) .project .thumbnail img {
-  height: auto !important;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+
 
 /*Scroll Wrapper*/
 

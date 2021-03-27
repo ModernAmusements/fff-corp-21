@@ -10,7 +10,7 @@
       <div id="grid">
           <a href="/">
           <span>Grid</span>
-          </a> 
+          </a>
       </div>
 
       <!--Covers-->
@@ -20,7 +20,7 @@
           </a>
       </div>
 
-      <div id="list" class="active">
+      <div id="list">
           <a href="/works">List</a>
       </div>
 

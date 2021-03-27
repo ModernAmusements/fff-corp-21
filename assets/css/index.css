@@ -545,6 +545,20 @@ a:hover span.icon-right {
   transition: all 0.2s ease-in-out;
 }
 
+::-moz-selection {
+  background: var(--primary-color);
+  /* WebKit/Blink Browsers */
+}
+
+::selection {
+  background: var(--primary-color);
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+}
+
 @-webkit-keyframes blinker-dark-sun {
   0% {
     fill: var(--primary-color);
@@ -2981,13 +2995,6 @@ ul.grid li {
   margin: 0;
 }
 
-.grid {
-  --gutter: 10px;
-  display: grid;
-  grid-gap: var(--gutter);
-  grid-template-columns: 1fr;
-}
-
 .grid > .column {
   margin-bottom: var(--gutter);
   --columns: 4;
@@ -3128,16 +3135,6 @@ ul.grid li {
     grid-column: span var(--columns);
     margin-bottom: var(--gutter);
     --columns: 2;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  .grid {
-    grid-template-columns: repeat(12, 1fr);
-  }
-
-  .grid > .column {
-    grid-column: span var(--columns);
   }
 }
 
@@ -4533,7 +4530,7 @@ main.filter-active .project:not(.filter-active) {
   position: -webkit-sticky;
   position: sticky;
   top: 300px;
-  padding-top: 1rem;
+  padding: 1rem 0;
   transition: top 0.9s ease-in-out;
   width: 50%;
   margin: auto;
@@ -4850,7 +4847,7 @@ main.covers .project .trigger {
   cursor: auto;
 }
 
-main.covers .project.big {
+main.covers .project.large {
   width: 100%;
   max-width: 1800px;
   grid-column: auto/span 2;
@@ -4863,7 +4860,7 @@ main.covers .project.medium {
 }
 
 main.covers .project.small {
-  padding: 0 25%;
+  margin: 0 25%;
   align-self: flex-start;
 }
 
@@ -4880,14 +4877,53 @@ main.covers .project.small {
 /*Grid*/
 
 main.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 main.grid .project {
-  display: flex;
-  flex-wrap: wrap-reverse;
+  width: 415px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: width 0.6s ease-in-out;
+}
+
+main.grid .project:hover {
+  width: calc( 1.2 * 415px);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: width 0.3s ease-in-out;
+}
+
+main.grid .image {
+  overflow: hidden;
+  position: relative;
+  --w: 9;
+  --h: 14;
+  padding-bottom: calc(50%/var(--w)*var(--h));
+}
+
+main.grid .image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main.grid .project-information {
+  display: none;
+}
+
+main.grid {
+  /*Projects*/
+}
+
+main.grid .project:hover .project-information {
+  display: none;
 }
 
 main.grid .project .trigger {
@@ -4906,13 +4942,14 @@ main.grid .project .trigger {
 main.list {
   display: grid;
   grid-template-rows: 50px;
+  padding: 20rem 1rem 5rem;
 }
 
 main.list .project {
   position: relative;
 }
 
-main:not(.list) .project > a {
+main:not(.list):not(.grid) .project > a {
   display: block !important;
   opacity: 1 !important;
 }
@@ -5006,20 +5043,9 @@ main.scroll {
   padding: 0;
 }
 
-main.scroll .project .trigger,
-main.scroll ~ footer {
-  display: none !important;
-}
-
 main:not(.scroll) .project .thumbnail {
-  width: 100% !important;
-  height: auto !important;
-}
-
-main:not(.scroll) .project .thumbnail img {
-  height: auto !important;
-  background-repeat: no-repeat;
-  background-size: contain;
+  width: 100%;
+  height: auto;
 }
 
 /*Scroll Wrapper*/

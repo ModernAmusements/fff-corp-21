@@ -97,6 +97,7 @@ columns:
         options:
           small: Small
           medium: Medium
+          large: Large
       galleryLayout:
         type: multiselect
         max: 1

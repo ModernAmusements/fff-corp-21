@@ -125,15 +125,9 @@ $(function () {
 $(document).ready(function () {
   //Back to top
   $('#top').click(function () {
-    if ($('main').hasClass('scroll')) {
-      $('#scroll-wrapper').animate({
-        scrollTop: 0
-      }, 'slow', 'easeInOutQuint');
-    } else {
-      $('html, body').animate({
-        scrollTop: 0
-      }, 'slow', 'easeInOutQuint');
-    }
+    $('html, body').animate({
+      scrollTop: 0
+    }, 'slow', 'easeInOutQuint');
   }); //Projects style
 
   $('nav div').click(function () {

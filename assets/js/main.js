@@ -13885,18 +13885,17 @@ targets.forEach(lazyLoad);
 $(function () {
   var logo = $(".home-logo");
   var layout = $("#wrapper");
+  var backTop = $("#top");
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 25) {
       if (!logo.hasClass("scroll-logo")) {
-        logo.removeClass('lrg-logo').addClass("scroll-logo").fadeIn("slow");
-        layout.addClass("scroll-layout").fadeIn("slow");
+        logo.removeClass('lrg-logo').addClass("scroll-logo").fadeIn("slow"), layout.addClass("scroll-layout").fadeIn("slow"), backTop.addClass("active");
       }
     } else {
       if (!logo.hasClass("lrg-logo")) {
-        logo.removeClass("scroll-logo").addClass('lrg-logo').fadeIn("slow");
-        layout.removeClass("scroll-layout").fadeIn("slow");
+        logo.removeClass("scroll-logo").addClass('lrg-logo').fadeIn("slow"), layout.removeClass("scroll-layout").fadeIn("slow"), backTop.removeClass("active");
       }
     }
   });

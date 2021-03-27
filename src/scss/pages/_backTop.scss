@@ -1,5 +1,18 @@
-/* BACK TO TOP
-================================================== */
+
+@keyframes blinker{
+	0% {
+	    color: var(--primary-color);
+	}
+	49%{
+		 color: var(--primary-color);
+	}
+	50% {
+	  color: transparent;
+	}
+	100% {
+		color: transparent;
+	}
+}
 
 #top {
   position: sticky;
@@ -15,48 +28,24 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity .2s ease-out;
+  span {
+    cursor: pointer;
+    pointer-events: all;
+    :first-child::after {
+      content: 'BACK TO TOP'
+    }
+    :last-child::after {
+      content: '↑';
+    }
+  }
+  span:hover {
+    span:last-child {
+      animation: blinker .5s linear infinite;
+    }
+  }
 }
 
-#top span {
-  cursor: pointer;
+#top.active {
+  opacity: 1;
   pointer-events: all;
-}
-
-#top span span:first-child::after {
-  content: 'BACK TO TOP'
-}
-
-#top span span:last-child::after {
-  content: '↑';
-}
-
-.desktop #top span:hover span:last-child {
-  animation: blinker .5s linear infinite;
-}
-
-main.scroll~#top {
-  position: fixed;
-  bottom: 0;
-  opacity: 1 !important;
-}
-
-main.scroll~#top:not(.active) span {
-  pointer-events: none;
-}
-
-main.scroll~#top:not(.active) span span:first-child::after {
-  content: 'SCROLL DOWN';
-}
-
-main.scroll~#top:not(.active) span span:last-child::after {
-  content: '↓';
-}
-
-main.scroll~#top:not(.active) span span:last-child {
-  animation: blinker .5s linear infinite;
-}
-
-main.list~#top {
-  position: initial;
-  opacity: 1 !important;
 }

@@ -1,3 +1,7 @@
+<div id="top">
+    <span>[ <span></span> <span></span> ]</span>
+</div>
+
 <footer>
 <div class="footer-mobile">
     <a aria-label="link to about" href="/about">

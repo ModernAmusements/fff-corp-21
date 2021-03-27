@@ -1,34 +1,24 @@
-/* LOADING
-================================================== */
-
-#loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100%;
-    display: grid;
+#preload-homepage {
+  display: none;
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overflow-y: scroll;
+  justify-content: center;
+  transition: background var(--duration) ease;
+  background-color: var(--background-color-alpha);
+  backdrop-filter: saturate(180%) blur(150px);
+  .intro {
     align-items: center;
-    text-align: center;
-    background: rgba(0, 0, 0, .4);
-    backdrop-filter: blur(5px);
-    z-index: 9999999999999999;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    padding: calc(var(--lineHeight) * 3);
+    .intro-items {
+      text-align: center;
+    }
+  }
 }
-
-body:not(.scroll-active) #loading {
-    display: none !important;
-}
-
-#loading span span {
-    animation: blinker .5s linear infinite;
-}
-
-body.scroll-active #loading~#top:not(.active) span span:last-child {
-    animation: none;
-}
-
-/*#loading ~ #top{
-	display: none;
-}*/

@@ -7,12 +7,9 @@
   'base/error';
 
 @import
-  'components/card',
   'components/type',
-  'components/menuMobile',
   'components/fffmodal',
-  'components/loading',
-  'components/cardMobile';
+  'components/loading';
 
 
   @import
@@ -20,15 +17,10 @@
   'pages/footer',
   'pages/homePage',
   'pages/homepageLayout',
-  'pages/imprint',
   'pages/work',
   'pages/work-subpage',
   'pages/blog',
   'pages/blogSubpage',
-  'pages/sections',
-  'pages/tags',
-  'pages/filter',
-  'pages/about',
   'pages/backTop';
 
 
@@ -36,7 +28,6 @@
   'main/index',
   'main/grid',
   'main/list',
-  'main/scroll',
   'main/projects',
   'main/responsive';
 

@@ -3,29 +3,23 @@
 ?>
 <?php snippet('header') ?>
 <div id="wrapper">
-
   <nav>
-
-      <!--Grid-->
       <div id="grid">
           <a href="/">
           <span>Grid</span>
           </a>
       </div>
-
-      <!--Covers-->
       <div id="covers">
         <a href="/">
           <span>Covers</span>
           </a>
       </div>
-
       <div id="list">
-          <a href="/works">List</a>
+          <a href="/works">
+            List
+        </a>
       </div>
-
   </nav> 
-
 </div>
 <main>
 <div id="barba-wrapper">

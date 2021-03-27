@@ -37,10 +37,10 @@ nav {
     pointer-events: none;
     color: var(--primary-color);
     ::before {
-      content: '[';
+      content: '[ ';
     }
     ::after {
-      content: ']';
+      content: ' ]';
     }
   }
 }

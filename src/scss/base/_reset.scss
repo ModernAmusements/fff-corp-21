@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* RESET CSS
+================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+header,
+footer,
+section,
+article,
+aside,
+menu,
+nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+a,
+strong,
+b,
+i,
+s,
+address,
+sub,
+sup,
+form,
+label,
+iframe,
+embed,
+audio {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+input,
+button,
+select {
+    font-size: 12px;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    background: transparent;
+    background-color: transparent;
+    line-height: 1.4 !important;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+input:disabled,
+button:disabled,
+select:disabled {
+    pointer-events: none;
+    opacity: 1;
+}
+
+
+
+blockquote::after,
+blockquote::before,
+q::after,
+q::before {
+  content: '';
+  content: none;
+}
+a,
+a:active,
+a:visited {
+  color: inherit;
+}
+
+::-webkit-input-placeholder,
+::placeholder {
+    color: #a2a2a2;
+    line-height: 1.4 !important;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:focus {
+    outline: none !important;
+}
+
+:focus::-ms-value {
+    background-color: none;
+    color: inherit;
+}
+
+::-moz-focus-inner {
+    border: none !important;
+}
+

@@ -1,37 +1,33 @@
 @charset "UTF-8";
 
 @import
+  'base/reset',
   'base/base',
-  'base/header',
-  'base/footer',
-  'base/homePage',
-  'base/work',
-  'base/work-subpage',
-  'base/error',
-  'base/about',
-  'base/imprint';
+  'base/fonts',
+  'base/error';
 
 @import
-  'components/button',
-  'components/tags',
-  'components/badge',
   'components/card',
   'components/type',
-  'components/blog',
   'components/menuMobile',
-  'components/blogSubpage',
   'components/fffmodal',
   'components/loading',
-  'components/cardMobile',
-  'components/tagline';
+  'components/cardMobile';
 
 
   @import
-  'pages/menu',
+  'pages/header',
+  'pages/footer',
+  'pages/homePage',
+  'pages/homepageLayout',
+  'pages/imprint',
+  'pages/work',
+  'pages/work-subpage',
+  'pages/blog',
+  'pages/blogSubpage',
   'pages/sections',
   'pages/tags',
   'pages/filter',
-  'pages/homepageLayout',
   'pages/about',
   'pages/backTop';
 

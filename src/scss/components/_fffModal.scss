@@ -53,6 +53,11 @@ button {
   left: -9999px;
 }
 
+
+body.modal-show {
+  position: fixed;
+}
+
 //Modal Layout + Autogrid
 
 #fffModal {

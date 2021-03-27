@@ -26,7 +26,9 @@
   <div class="barba-container cat-list" data-namespace="index-page">
       <div class="categories">
         <div class="categories-title">
-        [+]
+        <strong>
+            <a>Filter:</a>
+          </strong>
         </div>
         <ul class="categories-pills">
           <li class="category-li active">

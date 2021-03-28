@@ -1,7 +1,7 @@
 <?php
 ?>
 <!doctype html>
-<html lang="de" id="invertme">
+<html lang="de">
 <head>
     <!-- Meta Styling -->
     <meta charset="utf-8">
@@ -27,19 +27,19 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Meta Information-->
     <?php echo $page->metaTags() ?>
+    <!-- Homepage Gradient Async-->
     <?=js('assets/js/grade.js', true) ?>
-      <script type="text/javascript">
-          window.addEventListener('load', function(){
-              Grade(document.querySelectorAll('.auto-gradient'))
-          });
-    </script>
-    <!-- Stylesheets Async CSS-->
-    <?= css('assets/css/index.css', true) ?>
+ 
+    <!-- jquery js -->
     <?= js('assets/js/jquery.min.js') ?>
     <?= js('assets/js/jquery-ui.min.js', true) ?>
     <?= js('assets/js/js.cookie.min.js', true) ?>
-    <!-- Homepage Gradient Async CSS-->
+   
     <?=js('assets/js/homePageScripts.js', true)?>
+
+    <!-- Stylesheets Async CSS-->
+    <?= css('assets/css/index.css', true) ?>
+
 </head>
 <body>
     <header>

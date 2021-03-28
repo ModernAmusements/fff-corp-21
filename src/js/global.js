@@ -68,6 +68,3 @@ $(document).ready(function() {
       .addClass('list');
   }
 });
-
-
-

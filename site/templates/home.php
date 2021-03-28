@@ -15,7 +15,7 @@
 <main class="covers">
     <?php if ($worksPage = page('works')): ?>
       <?php foreach ($worksPage->children()->sortBy('date', 'desc') as $work): ?>
-          <div class="project <?= $work->layout() ?>">
+          <div class="animation transition-fade project <?= $work->layout() ?>">
               <a class="poster" href="<?= $work->url() ?>">
                 <?php if ($cover = $work->cover()->resize(1080)) : ?>
                   <div class="image auto-gradient">
@@ -133,9 +133,4 @@
         </div>
       </div>
   </main>
-  <script type="text/javascript">
-        window.addEventListener('load', function(){
-            Grade(document.querySelectorAll('.auto-gradient'))
-        });
-  </script>
 <?php snippet('footer')?>

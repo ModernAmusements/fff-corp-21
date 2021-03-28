@@ -13852,6 +13852,7 @@ updateInvertedLabel();
 /***/ (function(module, exports) {
 
 var targets = document.querySelectorAll('.lazy');
+var animations = document.querySelectorAll('.animation');
 
 var lazyLoad = function lazyLoad(target) {
   var io = new IntersectionObserver(function (entries, observer) {
@@ -13871,7 +13872,24 @@ var lazyLoad = function lazyLoad(target) {
   io.observe(target);
 };
 
+var aniMate = function aniMate(target) {
+  var io = new IntersectionObserver(function (entries, observer) {
+    console.log(entries);
+    entries.forEach(function (entry) {
+      console.log('Animate');
+
+      if (entry.isIntersecting) {
+        var img = entry.target;
+        img.classList.add('fade-in');
+        observer.disconnect();
+      }
+    });
+  });
+  io.observe(target);
+};
+
 targets.forEach(lazyLoad);
+animations.forEach(aniMate);
 
 /***/ }),
 

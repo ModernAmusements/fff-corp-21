@@ -1,4 +1,5 @@
 const targets = document.querySelectorAll('.lazy');
+const animations = document.querySelectorAll('.animation');
 
 const lazyLoad = target => {
   const io = new IntersectionObserver((entries, observer) => {
@@ -21,4 +22,27 @@ const lazyLoad = target => {
   io.observe(target)
 };
 
+const aniMate = target => {
+  const io = new IntersectionObserver((entries, observer) => {
+    console.log(entries)
+    entries.forEach(entry => {
+      console.log('Animate');
+
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.classList.add('fade-in');
+
+        observer.disconnect();
+      }
+    });
+  });
+
+  io.observe(target)
+};
+
+
 targets.forEach(lazyLoad);
+animations.forEach(aniMate);
+
+
+

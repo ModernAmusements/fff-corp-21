@@ -362,3 +362,8 @@
     [1],
   )(1);
 });
+
+
+window.addEventListener('load', function(){
+  Grade(document.querySelectorAll('.auto-gradient'))
+});

@@ -1,0 +1,49 @@
+//
+// Icon buttons
+//
+// General styles
+.btn {
+  --y: 0;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease,
+    opacity 0.3s ease;
+  transform: translateY(var(--y)) translateZ(0);
+
+  ::before {
+    content: '[ ';
+  }
+  ::after {
+    content: ' ]';
+  }
+
+
+
+
+  .btn:link,
+  .btn:active,
+  .btn:visited,
+  .btn:focus {
+    color: var(--primary-color);
+  }
+  &:hover {
+    --y: -1px;
+    color: var(--primary-color);
+  }
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+// Remove translateY and margin animation when btn is included in a btn-group or input-group
+.btn-group,
+.input-group {
+  .btn {
+    margin-right: 0;
+    transform: translateY(0);
+  }
+}

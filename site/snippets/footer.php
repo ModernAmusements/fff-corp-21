@@ -21,8 +21,8 @@
         <a aria-label="link to about" href="/about">
           Privacy & Cookies<span class="icon-right">↗</span>
         </a>
-        <a aria-label="link to about" href="/about">
-           Imprint<span class="icon-right">↗</span>
+        <a href="#fffModal" category="header-navigation" action="home" label="consultation-modal" rel="modal:open">
+           Hit me up<span class="icon-right">↗</span>
         </a>
     </div>
     <div class="legal">

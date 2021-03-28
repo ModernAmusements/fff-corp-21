@@ -13879,8 +13879,8 @@ var aniMate = function aniMate(target) {
       console.log('Animate');
 
       if (entry.isIntersecting) {
-        var img = entry.target;
-        img.classList.add('fade-in');
+        var obj = entry.target;
+        obj.classList.add('fade-in');
         observer.disconnect();
       }
     });

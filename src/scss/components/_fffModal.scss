@@ -126,12 +126,10 @@ body.modal-show {
     display: block;
     border-left: 1px solid var(--foreground-color);
     border-bottom: 1px solid var(--foreground-color);
-    border-radius: 0 5px 0 0;
   }
 }
 
 .list {
-  border-radius: 0 0 8px 0;
   padding: 0 ;
 }
 
@@ -186,7 +184,6 @@ body.modal-show {
     grid-template-columns: 1fr;
     margin-top: 24px;
     .form-img img {
-      border-radius: 0;
       border-left: 0 solid var(--foreground-color);
       border-bottom: 1px solid var(--foreground-color);
       border-top: 1px solid var(--foreground-color);
@@ -239,23 +236,21 @@ body.modal-show {
         button {
           grid-column: 1 / 3;
         }
-        .phone,
         .email {
           grid-row: 2;
         }
-        .reason,
-        .birthday {
-          grid-row: 3;
+        .reason {
+          grid-row: 2;
         }
         .interest {
-          grid-row: 4;
+          grid-row: 3;
         }
 
         small {
-          grid-row: 5;
+          grid-row: 4;
         }
         button {
-          grid-row: 6;
+          grid-row: 5;
         }
       }
     }
@@ -272,7 +267,6 @@ body.modal-show {
   height: 100%;
   overflow: auto;
   overflow-y: scroll;
-
   z-index: 1000;
   padding: 20px;
   display: flex;
@@ -306,7 +300,6 @@ body.modal-show {
   background: var(--background-color);
   max-width: 500px;
   width: 100%;
-  border-radius: var(--b-r-small);
   padding: 24px;
   opacity: 0;
   margin: auto;
@@ -318,7 +311,6 @@ body.modal-show {
     position: absolute;
     width: 24px;
     height: 24px;
-    border-radius: var(--b-r-small);
     background: var(--foreground-color);
     z-index: 2;
     top: 16px;
@@ -335,7 +327,6 @@ body.modal-show {
     position: absolute;
     left: 50%;
     top: 50%;
-    border-radius: 1px;
     transform: translate(-50%, -50%) rotate(var(--rotate));
   }
 
@@ -348,7 +339,6 @@ body.modal-show {
     position: absolute;
     left: 50%;
     top: 50%;
-    border-radius: 1px;
     transform: translate(-50%, -50%) rotate(var(--rotate));
   }
 
@@ -373,10 +363,8 @@ body.modal-show {
   .confirm-img {
     display: block;
     width: 100%;
-    border-radius: var(--b-r-small);
     margin-bottom: var(--blockSpacingBottom);
   }
-
   h2 {
     color: var(--primary-color);
   }
@@ -430,11 +418,9 @@ select:-webkit-autofill:focus {
   --border-color: var(--foreground-color);
   --padding: 10px 16px;
   --font-size: 16px;
-  --border-radius: var(--b-r-small);
   outline: none;
   display: block;
   font-size: var(--font-size);
-  border-radius: var(--border-radius);
   padding: var(--padding);
   border: 1px solid var(--border-color);
   color: var(--foreground-color);
@@ -449,11 +435,9 @@ textarea {
   --line-height: 19px;
   --padding: 12px 16px;
   --font-size: 16px;
-  --border-radius: 12px;
   outline: none;
   font-size: var(--font-size);
   line-height: var(--line-height);
-  border-radius: var(--border-radius);
   padding: var(--padding);
   border: 1px solid var(--border-color);
   color: var(--foreground-color);
@@ -509,13 +493,11 @@ textarea:hover,
   select {
     --padding: 10px 16px;
     --font-size: 16px;
-    --border-radius: var(--b-r-small);
     -webkit-appearance: none;
     outline: none;
     display: block;
     font-size: var(--font-size);
     font-weight: 400;
-    border-radius: var(--border-radius);
     padding: var(--padding);
     border: 1px solid var(--foreground-color);
     color: var(--foreground-color);
@@ -523,7 +505,6 @@ textarea:hover,
     transition: border 0.3s ease, color 0.3s ease, background 0.3s ease;
     padding-right: 34px;
     width: 100%;
-    // cursor: pointer;
   }
   select:focus {
     border-color: var(--primary-color);

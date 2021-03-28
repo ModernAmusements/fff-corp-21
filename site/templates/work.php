@@ -1,8 +1,8 @@
 <?php
 ?>
-<?php snippet('header') ?>
+<?php snippet('headerWorkSubpage') ?>
 <section class="grid">
-  <div id="project-header">
+  <div class="animation transition-fade" id="project-header">
     <a id="homeIndex" href="/home">
       [BACK]
     </a>

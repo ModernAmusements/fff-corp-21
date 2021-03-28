@@ -42,7 +42,7 @@
 
 </head>
 <body>
-    <header>
+    <header class="animation transition-fade">
        <span class="hide dark-mode-toggle">
         <span id="sun" class="pointer">
             <svg viewBox="0 0 50 50">

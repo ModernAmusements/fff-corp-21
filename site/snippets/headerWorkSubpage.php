@@ -1,7 +1,7 @@
 <?php
 ?>
 <!doctype html>
-<html lang="de" id="invertme">
+<html lang="de">
 <head>
     <!-- Meta Styling -->
     <meta charset="utf-8">
@@ -27,19 +27,19 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Meta Information-->
     <?php echo $page->metaTags() ?>
+    <!-- Homepage Gradient Async-->
     <?=js('assets/js/grade.js', true) ?>
-      <script type="text/javascript">
-          window.addEventListener('load', function(){
-              Grade(document.querySelectorAll('.auto-gradient'))
-          });
-    </script>
-    <!-- Stylesheets Async CSS-->
-    <?= css('assets/css/index.css', true) ?>
+ 
+    <!-- jquery js -->
     <?= js('assets/js/jquery.min.js') ?>
     <?= js('assets/js/jquery-ui.min.js', true) ?>
     <?= js('assets/js/js.cookie.min.js', true) ?>
-    <!-- Homepage Gradient Async CSS-->
+   
     <?=js('assets/js/homePageScripts.js', true)?>
+
+    <!-- Stylesheets Async CSS-->
+    <?= css('assets/css/index.css', true) ?>
+
 </head>
 <body>
     <header>
@@ -77,7 +77,7 @@
                   <?php endforeach ?>
             <?php endif ?>
         </menu>
-        <a href="/home" class="home-logo lrg-logo">
+        <a id="homeIndex" href="/home" class="home-logo lrg-logo">
           <svg viewBox="0 0 1344 262" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M387.026 243.921L406.355 184.539H420.878L393.504 260.448H380.705L353.435 184.539H367.906L387.026 243.921Z" fill="currentColor"/>
             <path d="M443.445 260.448H430.281V184.539H443.445V260.448Z" fill="currentColor"/>

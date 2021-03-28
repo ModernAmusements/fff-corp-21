@@ -791,11 +791,9 @@ body.modal-show {
   display: block;
   border-left: 1px solid var(--foreground-color);
   border-bottom: 1px solid var(--foreground-color);
-  border-radius: 0 5px 0 0;
 }
 
 .list {
-  border-radius: 0 0 8px 0;
   padding: 0;
 }
 
@@ -852,7 +850,6 @@ body.modal-show {
   }
 
   #fffModal .form-img img {
-    border-radius: 0;
     border-left: 0 solid var(--foreground-color);
     border-bottom: 1px solid var(--foreground-color);
     border-top: 1px solid var(--foreground-color);
@@ -906,26 +903,24 @@ body.modal-show {
     grid-column: 1/3;
   }
 
-  #fffModal .form form .phone,
   #fffModal .form form .email {
     grid-row: 2;
   }
 
-  #fffModal .form form .reason,
-  #fffModal .form form .birthday {
-    grid-row: 3;
+  #fffModal .form form .reason {
+    grid-row: 2;
   }
 
   #fffModal .form form .interest {
-    grid-row: 4;
+    grid-row: 3;
   }
 
   #fffModal .form form small {
-    grid-row: 5;
+    grid-row: 4;
   }
 
   #fffModal .form form button {
-    grid-row: 6;
+    grid-row: 5;
   }
 }
 
@@ -970,7 +965,6 @@ body.modal-show {
   background: var(--background-color);
   max-width: 500px;
   width: 100%;
-  border-radius: var(--b-r-small);
   padding: 24px;
   opacity: 0;
   margin: auto;
@@ -983,7 +977,6 @@ body.modal-show {
   position: absolute;
   width: 24px;
   height: 24px;
-  border-radius: var(--b-r-small);
   background: var(--foreground-color);
   z-index: 2;
   top: 16px;
@@ -1000,7 +993,6 @@ body.modal-show {
   position: absolute;
   left: 50%;
   top: 50%;
-  border-radius: 1px;
   transform: translate(-50%, -50%) rotate(var(--rotate));
 }
 
@@ -1013,7 +1005,6 @@ body.modal-show {
   position: absolute;
   left: 50%;
   top: 50%;
-  border-radius: 1px;
   transform: translate(-50%, -50%) rotate(var(--rotate));
 }
 
@@ -1040,7 +1031,6 @@ body.modal-show {
 .modal .confirm-img {
   display: block;
   width: 100%;
-  border-radius: var(--b-r-small);
   margin-bottom: var(--blockSpacingBottom);
 }
 
@@ -1094,11 +1084,9 @@ select:-webkit-autofill:focus {
   --border-color: var(--foreground-color);
   --padding: 10px 16px;
   --font-size: 16px;
-  --border-radius: var(--b-r-small);
   outline: none;
   display: block;
   font-size: var(--font-size);
-  border-radius: var(--border-radius);
   padding: var(--padding);
   border: 1px solid var(--border-color);
   color: var(--foreground-color);
@@ -1113,11 +1101,9 @@ textarea {
   --line-height: 19px;
   --padding: 12px 16px;
   --font-size: 16px;
-  --border-radius: 12px;
   outline: none;
   font-size: var(--font-size);
   line-height: var(--line-height);
-  border-radius: var(--border-radius);
   padding: var(--padding);
   border: 1px solid var(--border-color);
   color: var(--foreground-color);
@@ -1189,13 +1175,11 @@ textarea:hover,
 .form-select select {
   --padding: 10px 16px;
   --font-size: 16px;
-  --border-radius: var(--b-r-small);
   -webkit-appearance: none;
   outline: none;
   display: block;
   font-size: var(--font-size);
   font-weight: 400;
-  border-radius: var(--border-radius);
   padding: var(--padding);
   border: 1px solid var(--foreground-color);
   color: var(--foreground-color);
@@ -1435,6 +1419,48 @@ html.is-leaving .transition-fade {
 
 html.is-animating .transition-swipe {
   transform: translateY(100px);
+}
+
+.btn {
+  --y: 0;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(var(--y)) translateZ(0);
+}
+
+.btn ::before {
+  content: "[ ";
+}
+
+.btn ::after {
+  content: " ]";
+}
+
+.btn .btn:link,
+.btn .btn:active,
+.btn .btn:visited,
+.btn .btn:focus {
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  --y: -1px;
+  color: var(--primary-color);
+}
+
+.btn:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.btn-group .btn,
+.input-group .btn {
+  margin-right: 0;
+  transform: translateY(0);
 }
 
 @-webkit-keyframes blinker-dark-sun {

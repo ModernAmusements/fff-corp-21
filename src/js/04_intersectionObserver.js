@@ -29,8 +29,8 @@ const aniMate = target => {
       console.log('Animate');
 
       if (entry.isIntersecting) {
-        const img = entry.target;
-        img.classList.add('fade-in');
+        const obj = entry.target;
+        obj.classList.add('fade-in');
 
         observer.disconnect();
       }

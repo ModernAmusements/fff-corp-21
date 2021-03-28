@@ -70,18 +70,7 @@
           <input name="email" type="email" class="form-field" data-parsley-trigger="change" required=""
             value="<?= $data['email'] ?? '' ?>" />
         </div>
-        <div class="form-parsley phone">
-          <label for="phoneNumber">Phone number*</label>
-          <input name="phoneNumber" type="tel" class="form-field" data-parsley-trigger="change"
-            data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$"
-            data-parsley-pattern-message="Ungültig (0-9,+,-,() sind erlaubt)." required=""
-            value="<?= $data['phoneNumber'] ?? '' ?>" />
-        </div>
-        <div class="form-parsley birthday">
-          <label for="birthday">Date of birth*</label>
-          <input name="birthday" type="text" class="form-field birthdayMask" placeholder="TT.MM.JJJJ"
-            data-parsley-valid-date ="" value="<?= $data['birthday'] ?? '' ?>" />
-        </div>
+
         <div class="form-parsley reason">
           <label for="interests">Reason*</label>
           <div class="form-select">
@@ -104,8 +93,8 @@
           <a class="accept" href="#disclaimerModal" rel="modal:open">Consent</a> to be contacted by Shady Tawfik.
           The data will be deleted immediately and automatically after contacting us.
         </small>
-        <button class="btn-large consultation-modal" name="submit" value="validate" type="submit">
-          HIT ME UP
+        <button class="btn consultation-modal" name="submit" value="validate" type="submit">
+         <span>HIT ME UP</span>
         </button>
       </form>
     </div>

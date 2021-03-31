@@ -13852,7 +13852,9 @@ updateInvertedLabel();
 /***/ (function(module, exports) {
 
 var targets = document.querySelectorAll('.lazy');
-var animations = document.querySelectorAll('.animation');
+var titleAnimation = document.querySelectorAll('.title-animation');
+var coverAnimation = document.querySelectorAll('.cover-animation');
+var menuAnimation = document.querySelectorAll('.menu-animation');
 
 var lazyLoad = function lazyLoad(target) {
   var io = new IntersectionObserver(function (entries, observer) {
@@ -13876,11 +13878,43 @@ var aniMate = function aniMate(target) {
   var io = new IntersectionObserver(function (entries, observer) {
     console.log(entries);
     entries.forEach(function (entry) {
-      console.log('Animate');
+      console.log('Type');
 
       if (entry.isIntersecting) {
         var obj = entry.target;
-        obj.classList.add('fade-in');
+        obj.classList.add('fade-up');
+        observer.disconnect();
+      }
+    });
+  });
+  io.observe(target);
+};
+
+var aniMateCovers = function aniMateCovers(target) {
+  var io = new IntersectionObserver(function (entries, observer) {
+    console.log(entries);
+    entries.forEach(function (entry) {
+      console.log('Covers');
+
+      if (entry.isIntersecting) {
+        var obj = entry.target;
+        obj.classList.add('fade-up-covers');
+        observer.disconnect();
+      }
+    });
+  });
+  io.observe(target);
+};
+
+var aniMateMenu = function aniMateMenu(target) {
+  var io = new IntersectionObserver(function (entries, observer) {
+    console.log(entries);
+    entries.forEach(function (entry) {
+      console.log('Covers');
+
+      if (entry.isIntersecting) {
+        var obj = entry.target;
+        obj.classList.add('fade-up-menu');
         observer.disconnect();
       }
     });
@@ -13889,7 +13923,9 @@ var aniMate = function aniMate(target) {
 };
 
 targets.forEach(lazyLoad);
-animations.forEach(aniMate);
+titleAnimation.forEach(aniMate);
+coverAnimation.forEach(aniMateCovers);
+menuAnimation.forEach(aniMateMenu);
 
 /***/ }),
 

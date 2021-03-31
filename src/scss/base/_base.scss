@@ -191,3 +191,12 @@ a:hover {
     transition: all 0.2s ease-in-out;
   }
 }
+
+a.active {
+  color: var(--primary-color);
+  transition: color 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms;
+  span.icon-right {
+    transform: rotate(90deg);
+    transition: all 0.2s ease-in-out;
+  }
+}

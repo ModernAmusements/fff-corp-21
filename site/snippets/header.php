@@ -42,8 +42,8 @@
 
 </head>
 <body>
-    <header class="animation transition-fade">
-       <span class="hide dark-mode-toggle">
+    <header class="title-animation">
+       <span class="hide menu-animation dark-mode-toggle">
         <span id="sun" class="pointer">
             <svg viewBox="0 0 50 50">
               <g id="sun-group">
@@ -67,7 +67,7 @@
                 </span>
             </label>
         </span>
-        <menu class="desktop-nav lrg-nav">
+        <menu class="desktop-nav lrg-nav menu-animation">
               <?php $items = $site->children(); $items->prepend('home', page('home')); 
                   if ($items->isNotEmpty()) :?>
                   <?php foreach ($items->listed() as $item) : ?>

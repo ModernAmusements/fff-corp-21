@@ -1,21 +1,8 @@
 <?php snippet('header')?>
-  <div id="wrapper">
-    <nav>
-        <div id="grid">
-            <span>Grid</span>
-        </div>
-        <div id="covers" class="active">
-            <span>Covers</span>
-        </div>
-        <div id="list">
-            <a href="/works"><span>List</span></a>
-        </div>
-    </nav> 
-  </div>
 <main class="covers">
     <?php if ($worksPage = page('works')): ?>
       <?php foreach ($worksPage->children()->sortBy('date', 'desc') as $work): ?>
-          <div class="animation transition-fade project <?= $work->layout() ?>">
+          <div class="cover-animation project <?= $work->layout() ?>">
               <a class="poster" href="<?= $work->url() ?>">
                 <?php if ($cover = $work->cover()->resize(1080)) : ?>
                   <div class="image auto-gradient">
@@ -45,7 +32,7 @@
             </div>
         <?php endforeach?>
       <?php endif?>
-      <div id="preload-homepage">
+      <!-- <div id="preload-homepage">
         <div class="intro">
           <div class="intro-items">
             <svg width="182" height="62" viewBox="0 0 182 62" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -131,6 +118,6 @@
             <span class="intro-enter medium">(Click to Enter)</span>
           </div>
         </div>
-      </div>
+      </div> -->
   </main>
 <?php snippet('footer')?>

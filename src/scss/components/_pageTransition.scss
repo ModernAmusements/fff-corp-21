@@ -1,26 +1,45 @@
-body {
-  overflow-x: hidden;
-}
-
-.transition-fade {
-  transition: 500ms;
-  transform: translateX(100%);
-}
-
-.fade-in {
-  transform: translateX(0);
-}
-
-html.is-leaving .transition-fade {
+.title-animation {
   opacity: 0;
-  transform: translateX(0);
+  transform: translateY(200%);
+  transform-origin: 0% 0%;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1),
+  transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.transition-swipe {
-  transition: 500ms;
+.menu-animation {
+  opacity: 0;
+  transform: translateY(100%);
+  transform-origin: 0% 0%;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1),
+  transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.cover-animation{
+  opacity: 0;
+  transform: translateY(50%);
+  transform-origin: 0% 0%;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1),
+  transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+
+
+
+.fade-up {
+  opacity: 1;
+  transform-origin: 100% 0%;
   transform: translateY(0);
 }
 
-html.is-animating .transition-swipe {
-  transform: translateY(100px);
+.fade-up-covers {
+  transition-delay: 0.75s;
+  opacity: 1;
+  transform-origin: 100% 0%;
+  transform: translateY(0);
+}
+
+.fade-up-menu {
+  opacity: 1;
+  transform-origin: 100% 0%;
+  transform: translateY(0);
 }

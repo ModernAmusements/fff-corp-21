@@ -2,26 +2,8 @@
 
 ?>
 <?php snippet('header') ?>
-<div id="wrapper">
-  <nav>
-      <div id="grid">
-          <a href="/">
-          <span>Grid</span>
-          </a>
-      </div>
-      <div id="covers">
-        <a href="/">
-          <span>Covers</span>
-          </a>
-      </div>
-      <div id="list">
-          <a href="/works">
-            List
-        </a>
-      </div>
-  </nav> 
-</div>
-<main>
+
+<main class="list cover-animation">
 <div id="barba-wrapper">
   <div class="barba-container cat-list" data-namespace="index-page">
       <div class="categories">

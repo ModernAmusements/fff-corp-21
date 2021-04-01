@@ -74,16 +74,6 @@
       justify-self: start;
     }
   }
-  .intro-items {
-    h1.xlarge {
-      font-size: 2em;
-    }
-    h1 {
-      font-size: 1.5em;
-      margin-top: calc(var(--lineHeight) * 1);
-      margin-bottom: calc(var(--lineHeight) * 1);
-    }
-  }
 }
 
 @media (min-width: 10px) and (max-width: 322px) {

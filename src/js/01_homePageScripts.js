@@ -7,14 +7,9 @@ $(function() {
       .remove();
   });
   if (!sessionStorage.getItem('homePagePreloader')) {
-    sessionStorage.setItem('homePagePreloader', true);
-    $('#preload-homepage').css('display', 'block');
-    setTimeout(function() {
-      $('#preload-homepage').fadeOut();
-    }, 3000);
-    setTimeout(function() {
-      $('#preload-homepage').remove();
-    }, 3500);
+    // sessionStorage.setItem('homePagePreloader', true);
+    $('#preload-homepage').css('opacity', '1');
+    $('#preload-homepage').addClass('is-desktop');
   } else {
     $('#preload-homepage').css('display', 'none');
   }

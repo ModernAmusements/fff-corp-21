@@ -1,24 +1,87 @@
 #preload-homepage {
-  display: none;
+  width: 100vw;
+  height: 100vh;
   z-index: 1001;
   position: fixed;
+  display: flex;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  overflow-y: scroll;
   justify-content: center;
-  transition: background var(--duration) ease;
-  background-color: var(--background-color-alpha);
-  backdrop-filter: saturate(180%) blur(150px);
-  .intro {
-    align-items: center;
-    grid-auto-flow: row;
-    grid-template-columns: repeat(3, 1fr);
-    padding: calc(var(--lineHeight) * 3);
-    .intro-items {
-      text-align: center;
+  align-items: center;
+  pointer-events: none;
+
+  #loader-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+  #loader-txt-wrap {
+    opacity: 1;
+    font-size: 10vw;
+    .loader-txt {
+      opacity: 0;
+      float: left;
+      transform: translate3d(0, -100vh, 0);
+    }
+  }
+}
+
+#preload-homepage.is-desktop {
+  #loader-bg {
+    font-size: 10vw;
+    overflow: hidden;
+  }
+  #loader-txt-wrap {
+    .loader-txt {
+      opacity: 1;
+      float: left;
+      transform: translate3d(0, 100%, 0);
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.01s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.01s;
+    }
+    .loader-txt:nth-child(2) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.05s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.05s;
+    }
+    .loader-txt:nth-child(3) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+    }
+    .loader-txt:nth-child(4) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s;
+    }
+    .loader-txt:nth-child(5) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+    }
+    .loader-txt:nth-child(6) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s;
+    }
+    .loader-txt:nth-child(7) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    }
+    .loader-txt:nth-child(8) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.35s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.35s;
+    }
+    .loader-txt:nth-child(9) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+    }
+    .loader-txt:nth-child(10) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.45s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.45s;
+    }
+    .loader-txt:nth-child(11) {
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s,
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
     }
   }
 }

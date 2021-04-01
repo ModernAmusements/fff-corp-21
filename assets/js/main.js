@@ -13922,10 +13922,12 @@ var aniMateMenu = function aniMateMenu(target) {
   io.observe(target);
 };
 
-targets.forEach(lazyLoad);
-titleAnimation.forEach(aniMate);
-coverAnimation.forEach(aniMateCovers);
-menuAnimation.forEach(aniMateMenu);
+setTimeout(function () {
+  targets.forEach(lazyLoad);
+  titleAnimation.forEach(aniMate);
+  coverAnimation.forEach(aniMateCovers);
+  menuAnimation.forEach(aniMateMenu);
+}, 5000);
 
 /***/ }),
 

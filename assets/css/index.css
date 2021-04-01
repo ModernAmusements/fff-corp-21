@@ -1406,7 +1406,14 @@ select:-webkit-autofill:focus {
 #preload-homepage #loader-txt-wrap .loader-txt {
   opacity: 0;
   float: left;
+  transform-origin: 0% 0%;
   transform: translate3d(0, -100vh, 0);
+}
+
+.loader-txt.fade-up {
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-delay: 1s;
 }
 
 #preload-homepage.is-desktop #loader-bg {
@@ -1459,6 +1466,14 @@ select:-webkit-autofill:focus {
 
 #preload-homepage.is-desktop #loader-txt-wrap .loader-txt:nth-child(11) {
   transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s, opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+#preload-homepage.preload-end #loader-txt-wrap .loader-txt {
+  opacity: 1;
+  float: left;
+  transform-origin: 0% 0%;
+  transform: translate3d(0, -100vh, 0);
+  transition: transform 2s cubic-bezier(0.86, 0, 0.07, 1), opacity 2s cubic-bezier(0.86, 0, 0.07, 1), transform-origin 2s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .title-animation {

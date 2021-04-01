@@ -76,12 +76,11 @@ const aniMateMenu = target => {
   io.observe(target)
 };
 
-
+setTimeout(() => {
 targets.forEach(lazyLoad);
 titleAnimation.forEach(aniMate);
 coverAnimation.forEach(aniMateCovers);
 menuAnimation.forEach(aniMateMenu);
-
-
+}, 5000);
 
 

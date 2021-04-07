@@ -1,15 +1,4 @@
-<?php
-
-return [
-    'email' => 'info@florian-nagel.de',
-    'language' => 'en',
-    'name' => 'Shady Tawfik',
-    'role' => 'admin'
-
-    fff-corp333
-];
-
-
-
-
 valet.conf change 
+
+
+composer require diverently/laravel-mix-kirby

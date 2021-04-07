@@ -1,6 +1,7 @@
 // jshint ignore: start
 /* eslint-disable */
-const mix = require('laravel-mix');
+let mix = require("laravel-mix")
+mix.setPublicPath("assets")
 
 mix.js([
   'src/js/01_homePageScripts.js',
@@ -21,3 +22,9 @@ mix.js([
 mix.sass('src/scss/index.scss', 'assets/css');
 
 mix.browserSync('http://fffcorp21.test/');
+
+
+if (mix.inProduction()) {
+  mix.version()
+     .sourceMaps();
+}

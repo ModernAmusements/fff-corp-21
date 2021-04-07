@@ -38,7 +38,7 @@
 <?php snippet('subpageFooter/popUpSubpage') ?>
 
 <?= js('assets/js/libs.js') ?>
-<?= js('assets/js/main.js', ['async' => false, 'defer' => true ]) ?>
+<?php echo mix('/js/main.js') ?>
 
 </body>
 </html>

@@ -25,20 +25,21 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <!-- Meta Information-->
+
     <?php echo $page->metaTags() ?>
-    <!-- Homepage Gradient Async-->
+
     <?=js('assets/js/grade.js', true) ?>
  
-    <!-- jquery js -->
+
     <?= js('assets/js/jquery.min.js') ?>
     <?= js('assets/js/jquery-ui.min.js', true) ?>
     <?= js('assets/js/js.cookie.min.js', true) ?>
    
-    <?=js('assets/js/homePageScripts.js', true)?>
 
-    <!-- Stylesheets Async CSS-->
-    <?= css('assets/css/index.css', true) ?>
+    <?php echo mix('/js/homePageScripts.js', true)?>
+
+
+    <?php echo mix('/css/index.css', true)?>
 
 </head>
 <body>

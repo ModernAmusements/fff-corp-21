@@ -62,8 +62,10 @@ return [
               'url' => $page->url()
           ]
       ];
-  }
+  },
 
-
+  'schnti.cachebuster.active' => false,
+  'diverently.laravel-mix-kirby.manifestPath.assetsDirectory' => true,
+  'diverently.laravel-mix-kirby.assetsPath.assetsDirectory' => true,
 ];
 

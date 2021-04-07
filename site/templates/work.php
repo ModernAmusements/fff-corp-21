@@ -25,11 +25,11 @@
     <div class="module-gallery  <?= $page->galleryLayout() ?> <?= $page->layout() ?>">
       <div class="slider">
       <?php if ($cover = $page->cover()->resize(1080)) : ?>
-                <img data-lazy="<?= $cover->url() ?>" alt="<?= $cover->alt() ?>" />
+                <img class="lazy" data-lazy="<?= $cover->url() ?>" alt="<?= $cover->alt() ?>" />
       <?php endif ?>
         <?php if ($image = $page->image()->resize(1080)): ?>
           <?php foreach ($page->images()->template('work-image') as $image): ?>
-            <img data-lazy="<?= $image->url() ?>" alt="<?= $image->alt() ?>" />
+            <img class="lazy"  data-lazy="<?= $image->url() ?>" alt="<?= $image->alt() ?>" />
           <?php endforeach ?>
         <?php endif ?>
       </div>

@@ -53,7 +53,6 @@
       1: [
         function(require, module, exports) {
           'use strict';
-
           var _createClass = (function() {
             function defineProperties(target, props) {
               for (var i = 0; i < props.length; i++) {
@@ -71,19 +70,15 @@
               return Constructor;
             };
           })();
-
           function _classCallCheck(instance, Constructor) {
             if (!(instance instanceof Constructor)) {
               throw new TypeError('Cannot call a class as a function');
             }
           }
-
           var prefixes = ['webkit'];
-
           var Grade = (function() {
             function Grade(container, img_selector, callback) {
               _classCallCheck(this, Grade);
-
               this.callback = callback || null;
               this.container = container;
               this.image =
@@ -102,7 +97,6 @@
               this.imageData = [];
               this.readImage();
             }
-
             _createClass(Grade, [
               {
                 key: 'readImage',
@@ -127,17 +121,15 @@
               {
                 key: 'getChunkedImageData',
                 value: function getChunkedImageData() {
-                  var perChunk = 4;
-
-                  var chunked = this.imageData.reduce(function(ar, it, i) {
-                    var ix = Math.floor(i / perChunk);
-                    if (!ar[ix]) {
-                      ar[ix] = [];
+                  var perChunk = 700;
+                  var chunked = this.imageData.reduce(function(arrey, iteger, individuel) {
+                    var itegerX = Math.floor(individuel / perChunk);
+                    if (!arrey[itegerX]) {
+                      arrey[itegerX] = [];
                     }
-                    ar[ix].push(it);
-                    return ar;
+                    arrey[itegerX].push(iteger);
+                    return arrey;
                   }, []);
-
                   var filtered = chunked.filter(function(rgba) {
                     return (
                       rgba.slice(0, 2).every(function(val) {
@@ -148,7 +140,6 @@
                       })
                     );
                   });
-
                   return filtered;
                 },
               },
@@ -158,11 +149,8 @@
                   return top
                     .map(function(color, index) {
                       return (
-                        'rgb(' +
-                        color.rgba.slice(0, 3).join(',') +
-                        ') ' +
-                        (index == 0 ? '0%' : '75%')
-                      );
+                        'rgb(' + color.rgba.slice(0, 3).join(',') + ') ' + (index == 0 ? '0%' : '100%')
+                        );
                     })
                     .join(',');
                 },
@@ -174,17 +162,11 @@
                   return prefixes
                     .map(function(prefix) {
                       return (
-                        'background-image: -' +
-                        prefix +
-                        '-linear-gradient(\n                        135deg,\n                        ' +
-                        val +
-                        '\n                    )'
+                        'background-image: - ' + prefix + ' -linear-gradient( 135deg, ' + val + ' )'
                       );
                     })
                     .concat([
-                      'background-image: linear-gradient(\n                    135deg,\n                    ' +
-                        val +
-                        '\n                )',
+                      'background-image: linear-gradient( 135deg, ' + val + ' )',
                     ])
                     .join(';');
                 },
@@ -280,27 +262,21 @@
                   var ls = window.localStorage;
                   var item_name = 'grade-' + this.image.getAttribute('src');
                   var top = null;
-
                   if (ls && ls.getItem(item_name)) {
                     top = JSON.parse(ls.getItem(item_name));
                   } else {
                     var chunked = this.getChunkedImageData();
                     top = this.getTopValues(this.getUniqValues(chunked));
-
                     if (ls) {
                       ls.setItem(item_name, JSON.stringify(top));
                     }
                   }
-
                   if (this.callback) {
                     this.gradientData = top;
                     return;
                   }
-
                   var gradientProperty = this.getCSSGradientProperty(top);
-
                   var textProperty = this.getTextProperty(top);
-
                   var style =
                     (this.container.getAttribute('style') || '') +
                     '; ' +
@@ -327,10 +303,8 @@
                 },
               },
             ]);
-
             return Grade;
           })();
-
           module.exports = function(containers, img_selector, callback) {
             var init = function init(container, img_selector, callback) {
               var grade = new Grade(container, img_selector, callback),
@@ -349,7 +323,6 @@
                 })
               : [init(containers, img_selector, callback)]
             ).filter(Boolean);
-
             if (results.length) {
               return callback(results);
             }
@@ -362,8 +335,6 @@
     [1],
   )(1);
 });
-
-
 window.addEventListener('load', function(){
   Grade(document.querySelectorAll('.auto-gradient'))
 });

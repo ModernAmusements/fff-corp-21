@@ -13923,11 +13923,11 @@ var aniMateMenu = function aniMateMenu(target) {
 };
 
 setTimeout(function () {
-  targets.forEach(lazyLoad);
   titleAnimation.forEach(aniMate);
   coverAnimation.forEach(aniMateCovers);
   menuAnimation.forEach(aniMateMenu);
 }, 5000);
+targets.forEach(lazyLoad);
 
 /***/ }),
 

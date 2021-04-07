@@ -1395,7 +1395,7 @@ select:-webkit-autofill:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #fff;
+  background: var(--primary-color);
 }
 
 #preload-homepage #loader-txt-wrap {
@@ -1406,6 +1406,7 @@ select:-webkit-autofill:focus {
 #preload-homepage #loader-txt-wrap .loader-txt {
   opacity: 0;
   float: left;
+  color: var(--background-color);
   transform-origin: 0% 0%;
   transform: translate3d(0, -100vh, 0);
 }

@@ -1,6 +1,6 @@
 <?php
 ?>
-<?php snippet('headerWorkSubpage') ?>
+<?php snippet('header') ?>
 <section class="grid">
   <div class="animation transition-fade" id="project-header">
     <a id="homeIndex" href="/home">

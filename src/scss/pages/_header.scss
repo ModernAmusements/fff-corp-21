@@ -100,28 +100,51 @@ header:not(.post-header) {
   grid-column: 1 / 9;
   grid-row: 1;
   justify-self: end;
-  width: 100%;
-  transition: width 0.6s ease-in-out;
   pointer-events: none;
-  svg {
-    top: 30px;
-    position: relative;
-    transform: scale(1, 1);
-    transform-origin: right top;
-    transition: top 0.6s ease-in-out, transform 0.6s ease-in-out, transform-origin 0.6s ease-in-out;
+  width: 100%;
+  transition: width 1s cubic-bezier(0.86, 0, 0.07, 1);
+  .noise {
+    .title {
+      position: relative;
+      font-size: 14.4vw;
+      line-height: 16.8vw;
+      top: 50vh;
+      transition: font-size 0.3s cubic-bezier(0.86, 0, 0.07, 1),
+      top 1s cubic-bezier(0.86, 0, 0.07, 1);
+    }
   }
 }
 
-.scroll-logo {
-  grid-column: 1 / 9;
-  grid-row: 1;
-  justify-self: end;
-  width: 15%;
-  pointer-events: all;
-  svg {
+
+.page-title-animation {
+  .noise {
+    position: absolute;
     top: 0;
-    position: relative;
-    transform: scale(1, 1);
+    left: 0;
+    overflow: hidden;
+    .title {
+      top: 0;
+    }
+  }
+}
+
+.scroll-active {
+  pointer-events: all;
+  width: 10%;
+  transition: width 1s cubic-bezier(0.86, 0, 0.07, 1);
+  .noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    .title {
+      position: relative;
+      font-size: 1.7vw;
+      top: 0;
+      line-height: 0px;
+      right: 1em;
+      transition: font-size 0.3s cubic-bezier(0.86, 0, 0.07, 1), top 1s cubic-bezier(0.86, 0, 0.07, 1);;
+    }
   }
 }
 

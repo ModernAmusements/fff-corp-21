@@ -1,44 +1,62 @@
-// Preloader
-
 $(function() {
-  $('#preload-homepage').click(function() {
-    $(this)
-      .fadeOut('3000')
-      .remove();
-  });
+  var preloader = $("#preload-homepage");
+  var menu = $(".menu-animation");
+  var covers = $(".cover-animation");
+  var logo = $(".home-logo");
+
   if (!sessionStorage.getItem('homePagePreloader')) {
-    // sessionStorage.setItem('homePagePreloader', true);
-    $('#preload-homepage').css('opacity', '1');
-    $('#preload-homepage').addClass('is-desktop');
-    setTimeout(() => {
-      var c = document.getElementById('loader-txt-wrap').children;
-      c[1].innerHTML = '6';
-      c[1].classList.add('fade-up');
+     sessionStorage.setItem('homePagePreloader', true);
+    preloader.css('opacity', '1').addClass('is-desktop');
       setTimeout(() => {
-        c[4].innerHTML = '8';
-        c[4].classList.add('fade-up');
+        preloader.removeClass('is-desktop').addClass('preload-end')
         setTimeout(() => {
-          c[7].innerHTML = '5';
-          c[7].classList.add('fade-up');
-          setTimeout(() => {
-            c[2].innerHTML = '7';
-            c[2].classList.add('fade-up');
-            setTimeout(() => {
-              c[5].innerHTML = '1';
-              c[5].classList.add('fade-up');
-            }, 500);
-          }, 500);
-        }, 500);
-      }, 500);
+          preloader.css('display', 'none');
+      }, 1500);
     }, 2000);
     setTimeout(() => {
-      $('#preload-homepage').removeClass('is-desktop');
-      $('#preload-homepage').addClass('preload-end');
-      setTimeout(() => {
-      $('#preload-homepage').css('display', 'none');
-    }, 1000);
-  }, 4000);
+      menu.addClass('fade-up'),
+      covers.addClass('fade-up'),
+      logo.addClass('page-title-animation');
+    }, 3000);
+
   } else {
-    $('#preload-homepage').css('display', 'none');
+    preloader.css('display', 'none');
+    menu.addClass('fade-up'),
+    covers.addClass('fade-up'),
+    logo.addClass('page-title-animation');
   }
+
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+        if (scroll >= 50) {
+          setTimeout(() => {
+            if(!logo.hasClass("scroll-logo")) {
+              logo.removeClass('lrg-logo').addClass("scroll-active"),
+              logo.removeClass('page-title-animation');
+            }
+          }, 150);
+        } else {
+          setTimeout(() => {
+            if(!logo.hasClass("lrg-logo")) {
+              logo.removeClass("scroll-active").addClass('lrg-logo'),
+              logo.addClass('page-title-animation');
+            }
+          }, 150);
+
+        }
+    });
 });
+
+
+
+
+// $('.home-logo').addClass('scroll-active')
+
+
+
+
+
+
+
+
+

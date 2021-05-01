@@ -121,7 +121,7 @@
               {
                 key: 'getChunkedImageData',
                 value: function getChunkedImageData() {
-                  var perChunk = 700;
+                  var perChunk = 1000;
                   var chunked = this.imageData.reduce(function(arrey, iteger, individuel) {
                     var itegerX = Math.floor(individuel / perChunk);
                     if (!arrey[itegerX]) {
@@ -162,11 +162,11 @@
                   return prefixes
                     .map(function(prefix) {
                       return (
-                        'background-image: - ' + prefix + ' -linear-gradient( 135deg, ' + val + ' )'
+                        'background-image: - ' + prefix + ' -linear-gradient( 180deg, ' + val + ' )'
                       );
                     })
                     .concat([
-                      'background-image: linear-gradient( 135deg, ' + val + ' )',
+                      'background-image: linear-gradient( 180deg, ' + val + ' )',
                     ])
                     .join(';');
                 },

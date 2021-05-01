@@ -14386,10 +14386,79 @@ css_browser_selector(navigator.userAgent);
 
 /***/ }),
 
+/***/ "./src/js/cursor.js":
+/*!**************************!*\
+  !*** ./src/js/cursor.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var updateProperties = function updateProperties(elem, state) {
+  elem.style.setProperty('--x', "".concat(state.x, "px"));
+  elem.style.setProperty('--y', "".concat(state.y, "px"));
+  elem.style.setProperty('--width', "".concat(state.width, "px"));
+  elem.style.setProperty('--height', "".concat(state.height, "px"));
+  elem.style.setProperty('--radius', state.radius);
+  elem.style.setProperty('--scale', state.scale);
+};
+
+document.querySelectorAll('.cursor').forEach(function (cursor) {
+  var onElement;
+
+  var createState = function createState(e) {
+    var defaultState = {
+      x: e.clientX,
+      y: e.clientY,
+      width: 40,
+      height: 40,
+      radius: '50%'
+    };
+    var computedState = {};
+
+    if (onElement != null) {
+      var _onElement$getBoundin = onElement.getBoundingClientRect(),
+          top = _onElement$getBoundin.top,
+          left = _onElement$getBoundin.left,
+          width = _onElement$getBoundin.width,
+          height = _onElement$getBoundin.height;
+
+      var radius = window.getComputedStyle(onElement).borderTopLeftRadius;
+      computedState.x = left + width / 2;
+      computedState.y = top + height / 2;
+      computedState.width = width;
+      computedState.height = height;
+      computedState.radius = radius;
+    }
+
+    return _objectSpread(_objectSpread({}, defaultState), computedState);
+  };
+
+  document.addEventListener('mousemove', function (e) {
+    var state = createState(e);
+    updateProperties(cursor, state);
+  });
+  document.querySelectorAll('a, button').forEach(function (elem) {
+    elem.addEventListener('mouseenter', function () {
+      return onElement = elem;
+    });
+    elem.addEventListener('mouseleave', function () {
+      return onElement = undefined;
+    });
+  });
+});
+
+/***/ }),
+
 /***/ 1:
-/*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/02_swiper.min.js ./src/js/03_darkmode.js ./src/js/04_intersectionObserver.js ./src/js/06_mobile-nav.js ./src/js/07_modal.js ./src/js/09_plugins.js ./src/js/current-device-browser.min ./src/js/11_cookieConsent.js ***!
-  \******************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/02_swiper.min.js ./src/js/03_darkmode.js ./src/js/04_intersectionObserver.js ./src/js/06_mobile-nav.js ./src/js/07_modal.js ./src/js/09_plugins.js ./src/js/current-device-browser.min ./src/js/11_cookieConsent.js ./src/js/cursor.js ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14400,7 +14469,8 @@ __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/06_mobile-nav.js *
 __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/07_modal.js */"./src/js/07_modal.js");
 __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/09_plugins.js */"./src/js/09_plugins.js");
 __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/current-device-browser.min */"./src/js/current-device-browser.min.js");
-module.exports = __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/11_cookieConsent.js */"./src/js/11_cookieConsent.js");
+__webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/11_cookieConsent.js */"./src/js/11_cookieConsent.js");
+module.exports = __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/cursor.js */"./src/js/cursor.js");
 
 
 /***/ })

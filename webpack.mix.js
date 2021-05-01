@@ -17,6 +17,7 @@ mix.js([
     'src/js/09_plugins.js',
     'src/js/current-device-browser.min',
     'src/js/11_cookieConsent.js',
+    'src/js/cursor.js',
     ], 'assets/js/main.js');
 
 mix.sass('src/scss/index.scss', 'assets/css');

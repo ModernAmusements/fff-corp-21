@@ -2,15 +2,15 @@ Title: FFFCorp - Florian Nagel Portfolio
 
 ----
 
-Description: Shady Tawfik is a Web Developer that specializes in website design, custom development, mobile apps. Top rated web design.
+Description: My name is Florian Nagel and I’m a 3D artist and Artdirector. Informed by a background in graphic design and art Florian has established a colorful style, expressed through surreal images with a contemporary aesthetic.
 
 ----
 
-Additionaldescription: Web Development made in Germany. From a small town called Bielefeld
+Additionaldescription: My name is Florian Nagel and I’m a 3D artist and Artdirector. Informed by a background in graphic design and art Florian has established a colorful style, expressed through surreal images with a contemporary aesthetic.
 
 ----
 
-Behanceid: Shady Tawfik
+Behanceid: fnagel1992256a
 
 ----
 
@@ -26,11 +26,11 @@ Social:
 
 ----
 
-Email: hello@modernamusements.de
+Email: info@florian-nagel.xyz
 
 ----
 
-Emailpress: press@modernamusements.de
+Emailpress: press@florian-nagel.xyz
 
 ----
 
@@ -40,7 +40,7 @@ Phone: (+31) 6 46 79 52 91
 
 Metaimage:
 
-- group75.png
+- florian-nagel-art-work.png
 
 ----
 
@@ -66,17 +66,17 @@ Popupimage:
 
 ----
 
-Altpopup: Javascript/TypeScript PHP/Laravel/MVC HTML/CSS/Bootstrap/SCSS vuejs/vuetify/vuex Apache/Nginx
+Altpopup: MY NAME IS FLORIAN NAGEL AND I’M A 3D ARTIST AND ARTDIRECTOR. INFORMED BY A BACKGROUND IN GRAPHIC DESIGN AND ART FLORIAN HAS ESTABLISHED A COLORFUL STYLE, EXPRESSED THROUGH SURREAL IMAGES WITH A CONTEMPORARY AESTHETIC
 
 ----
 
 Succesimage:
 
-- shady1000px.png
+- art-director-florian-nagel.png
 
 ----
 
-Altsucces: Webpack/Babel AWS(EC2/ECS) MySQL/SQLite VersionControl:Git VariousCMS
+Altsucces: MY NAME IS FLORIAN NAGEL AND I’M A 3D ARTIST AND ARTDIRECTOR. INFORMED BY A BACKGROUND IN GRAPHIC DESIGN AND ART FLORIAN HAS ESTABLISHED A COLORFUL STYLE, EXPRESSED THROUGH SURREAL IMAGES WITH A CONTEMPORARY AESTHETIC
 
 ----
 
@@ -92,7 +92,7 @@ Consentdeclaration02: We use your data exclusively for consulting and informatio
 
 ----
 
-Consentdeclaration03: You can object to being contacted at any time. The best way is to send an email to (link: mailto:info@fff-corp.de text: info@ModernAmusements.de).
+Consentdeclaration03: You can object to being contacted at any time. The best way is to send an email to (link: mailto:info@fff-corp.de text: info@florian-nagel.xyz).
 
 ----
 

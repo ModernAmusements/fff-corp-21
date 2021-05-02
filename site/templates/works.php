@@ -57,7 +57,7 @@
       <span class="client">Year</span>
       </div>
 
-      <?php foreach ($page->children()->listed()->sortBy('date', 'desc') as
+      <!--  <?php foreach ($page->children()->listed()->sortBy('date', 'desc') as
       $work) : ?>
       <article class="post" data-categories="<?= $tags = implode(' ', $work->tags()->split(','));?> all">
   
@@ -88,8 +88,8 @@
         </header>    
       </article>
       <?php endforeach ?>
-  </div>
-</div>
+      </div>
+    </div> -->
 </main>
 <?php snippet('footer') ?>
 <?php snippet('footer/workFooter') ?>

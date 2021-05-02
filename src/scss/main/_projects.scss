@@ -58,9 +58,10 @@
 }
 
 #project-header {
-  margin-top: 5rem;
+  padding-top: 2rem;
   grid-template-columns: 4fr 2fr 5fr 1fr;
   display: grid;
+  border-top: solid 1px var(--foreground-color);
   time {
     justify-self: end;
   }
@@ -71,7 +72,6 @@
   span+div {
     padding-right: 2rem;
   }
-
 }
 
 /*Module Full Width*/
@@ -156,9 +156,8 @@
 
 #credits {
   padding: 0 1rem;
-  margin-top: 10rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 #credits wrap {

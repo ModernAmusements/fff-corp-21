@@ -3,7 +3,7 @@
 <?php snippet('header') ?>
 <section class="grid cover-animation">
   <div class="animation transition-fade" id="project-header">
-    <a href="/home">
+    <a class="work-header-back" href="/home">
       [BACK]
     </a>
     <div><?= $page->title() ?></div>
@@ -15,10 +15,6 @@
         <?php snippet('blocks/' . $block->_key(), ['data' => $block]) ?>
   <?php endforeach ?>
 
-
-  <div class="module-text">
-    <p class="Right"><?= $page->concept() ?></p>
-  </div>
 
 <?php if ($image = $page->image()->isNotEmpty()): ?>
   <div class="module-two-columns">
@@ -74,8 +70,12 @@
   </div>
 <?php endforeach ?>
 
-  <div id="credits">
-    <br />
+    <div  id="project-header">
+    <a href="/home">
+      [BACK]
+    </a>
+    <div><?= $page->title() ?></div>
+    <div id="credits">
     <wrap>
       <div>
         <span>PROJECT:</span>
@@ -86,6 +86,10 @@
         <span><?= $page->client() ?></span>
       </div>
       <div>
+        <span>CONCEPT:</span>
+        <span><?= $page->concept() ?></span>
+      </div>
+      <div>
         <span>YEAR:</span>
         <span><?= $page->date()->toDate('Y') ?></span>
       </div>
@@ -94,6 +98,7 @@
         <span><?= $page->contributors() ?></span>
       </div>
     </wrap>
+  </div>
   </div>
 </section>
 

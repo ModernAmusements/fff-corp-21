@@ -21,8 +21,9 @@
 
 
 header:not(.post-header) {
-  position: fixed;
+  position: sticky;
   width: 100%;
+  top: 0;
   display: grid;
   grid-template-columns: 0.1fr repeat(7, 1fr);
   grid-template-rows: 1fr;
@@ -178,6 +179,7 @@ header:not(.post-header) {
 @media only screen and (max-width: 460px) {
   header:not(.post-header) {
     height: 100vh;
+    position: fixed;
     grid-template-columns: 1fr 1fr;
     padding: 1em;
     transition: height 1s cubic-bezier(0.39, 0.575, 0.565, 1);

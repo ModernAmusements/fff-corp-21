@@ -1655,8 +1655,10 @@ select:-webkit-autofill:focus {
 }
 
 header:not(.post-header) {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   width: 100%;
+  top: 0;
   display: grid;
   grid-template-columns: 0.1fr repeat(7, 1fr);
   grid-template-rows: 1fr;
@@ -1826,6 +1828,7 @@ header:not(.post-header) .active {
 @media only screen and (max-width: 460px) {
   header:not(.post-header) {
     height: 100vh;
+    position: fixed;
     grid-template-columns: 1fr 1fr;
     padding: 1em;
     transition: height 1s cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -1971,6 +1974,20 @@ footer {
 
   .footer-mobile a span {
     right: 0px;
+  }
+
+  .legal {
+    display: flex;
+    grid-column: 1/5;
+    flex-direction: row;
+  }
+
+  .legal a {
+    margin-right: 0;
+  }
+
+  .legal a:last-child {
+    margin-right: 0;
   }
 }
 
@@ -3284,7 +3301,7 @@ main.grid .project:hover .project-information {
 }
 
 section.grid {
-  padding: 20rem 1rem 5rem;
+  padding: 10rem 1rem 5rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -3296,6 +3313,7 @@ main.list {
   display: grid;
   grid-template-rows: 50px;
   padding: 25rem 1rem 5rem;
+  margin-top: 100vh;
   height: 100vh;
 }
 
@@ -3621,9 +3639,10 @@ main:not(.list) .project .wrapper {
 }
 
 #project-header {
-  margin-top: 5rem;
+  padding-top: 2rem;
   grid-template-columns: 4fr 2fr 5fr 1fr;
   display: grid;
+  border-top: solid 1px var(--foreground-color);
 }
 
 #project-header time {
@@ -3721,9 +3740,8 @@ main:not(.list) .project .wrapper {
 
 #credits {
   padding: 0 1rem;
-  margin-top: 10rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 #credits wrap {
@@ -4088,8 +4106,11 @@ transition: filter .3s linear;
     justify-self: start;
   }
 
+  #project-header .work-header-back {
+    justify-self: end;
+  }
+
   #project-header span {
-    margin-bottom: 2rem;
     justify-self: flex-end;
   }
 
@@ -4151,7 +4172,6 @@ transition: filter .3s linear;
   }
 
   #credits {
-    margin: 5rem 0;
     grid-template-columns: 1fr;
     padding: 0;
   }

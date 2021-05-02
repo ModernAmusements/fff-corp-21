@@ -50,4 +50,15 @@ footer {
       }
     }
   }
+  .legal {
+    display: flex;
+    grid-column: 1 / 5;
+    flex-direction: row;
+    a {
+      margin-right: 0;
+    }
+    a:last-child {
+      margin-right: 0;
+    }
+  }
 }

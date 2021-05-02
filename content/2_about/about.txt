@@ -10,7 +10,7 @@ Subheading: Me
 
 ----
 
-Company: Shady Tawfik
+Company: Florian Nagel
 
 ----
 
@@ -38,7 +38,11 @@ Phone: (+49) 1 71 285 30 46
 
 ----
 
-About: # Currently based in Bielefeld, working with startups and top companies.
+About:
+
+Hey! It´s me Florian.
+
+My name is Florian Nagel and I’m a 3D artist and Artdirector. Informed by a background in graphic design and art Florian has established a colorful style, expressed through surreal images with a contemporary aesthetic.
 
 ----
 

@@ -27,6 +27,9 @@
     main.list .project .wrapper .images {
         grid-template-columns: repeat(16, 1fr);
     }
+    section.grid {
+      padding: 20rem 1rem 5rem;
+    }
 }
 
 /*NORMAL DESKTOP*/
@@ -54,6 +57,7 @@
 
 
     section.grid {
+      padding: 15rem 1rem 5rem;
       grid-template-columns: repeat(auto-fill,minmax(322px,1fr))
     }
 }

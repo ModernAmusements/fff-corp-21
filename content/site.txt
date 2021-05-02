@@ -38,7 +38,9 @@ Phone: (+31) 6 46 79 52 91
 
 ----
 
-Metaimage: - group75.png
+Metaimage:
+
+- group75.png
 
 ----
 
@@ -58,7 +60,9 @@ Popupsubheadline03: Intuitive: Strong preference for engaging UX/UI
 
 ----
 
-Popupimage: - shadytawfik-kraken.jpg
+Popupimage:
+
+- art-director-florian-nagel-cta.png
 
 ----
 
@@ -66,7 +70,9 @@ Altpopup: Javascript/TypeScript PHP/Laravel/MVC HTML/CSS/Bootstrap/SCSS vuejs/vu
 
 ----
 
-Succesimage: - shady1000px.png
+Succesimage:
+
+- shady1000px.png
 
 ----
 

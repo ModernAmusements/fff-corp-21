@@ -32,10 +32,10 @@
         </a>
     </div>
     <div class="footer-social">
-        <a aria-label="link to about" href="/about">
+        <a aria-label="link to about" target="_blank" href="https://www.behance.net/fnagel1992256a">
            Behance<span class="icon-right">↗</span>
         </a>
-        <a aria-label="link to about" href="/about">
+        <a aria-label="link to about" target="_blank" href="https://www.instagram.com/fffcorp/feed/?hl=de">
            Instagram<span class="icon-right">↗</span>
         </a>
     </div>

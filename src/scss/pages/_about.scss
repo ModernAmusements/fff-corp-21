@@ -1,0 +1,11 @@
+.about-images {
+  img {
+    height: auto;
+  }
+  .about-legend {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

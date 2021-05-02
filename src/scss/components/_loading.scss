@@ -115,13 +115,38 @@
   @media only screen and (max-width: 460px) {
 
     #preload-homepage {
-      #loader-bg {
-      }
 
       #loader-txt-wrap {
         opacity: 1;
         font-size: 5vw;
         height: 12vw;
+      }
+    }
+
+  }
+
+
+
+  @media only screen and (max-width: 1500px) {
+
+    #preload-homepage {
+      #loader-txt-wrap {
+        opacity: 1;
+        font-size: 5vw;
+        height: 20vw;
+      }
+    }
+
+  }
+
+
+  @media only screen and (max-width: 1700px) {
+
+    #preload-homepage {
+      #loader-txt-wrap {
+        opacity: 1;
+        font-size: 5vw;
+        height: 32vw;
       }
     }
 

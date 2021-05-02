@@ -94,9 +94,12 @@
 /***/ (function(module, exports) {
 
 $(function () {
+  $(window).scrollTop();
   var preloader = $("#preload-homepage");
   var menu = $(".menu-animation");
   var covers = $(".cover-animation");
+  var nav = $(".desktop-nav");
+  var header = $("header");
   var logo = $(".home-logo");
 
   if (!sessionStorage.getItem('homePagePreloader')) {
@@ -119,18 +122,31 @@ $(function () {
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 50) {
+    if (scroll >= 75) {
       setTimeout(function () {
         if (!logo.hasClass("scroll-logo")) {
-          logo.removeClass('lrg-logo').addClass("scroll-active"), logo.removeClass('page-title-animation');
+          logo.removeClass('large').addClass("scroll-active");
         }
       }, 150);
     } else {
       setTimeout(function () {
-        if (!logo.hasClass("lrg-logo")) {
-          logo.removeClass("scroll-active").addClass('lrg-logo'), logo.addClass('page-title-animation');
+        if (!logo.hasClass("large")) {
+          logo.removeClass("scroll-active").addClass('large');
         }
       }, 150);
+    }
+
+    if (window.innerWidth < 460) {
+      if (scroll >= 75) {
+        if (!nav.hasClass("scroll-nav")) {
+          nav.removeClass('lrg-nav'), header.addClass("scroll-header");
+        }
+      } else {
+        if (!nav.hasClass("lrg-nav")) {
+          nav.removeClass("scroll-nav"), header.removeClass("scroll-header");
+          ;
+        }
+      }
     }
   });
 }); // $('.home-logo').addClass('scroll-active')

@@ -1,9 +1,9 @@
 <?php
 ?>
 <?php snippet('header') ?>
-<section class="grid">
+<section class="grid cover-animation">
   <div class="animation transition-fade" id="project-header">
-    <a id="homeIndex" href="/home">
+    <a href="/home">
       [BACK]
     </a>
     <div><?= $page->title() ?></div>

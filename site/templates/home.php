@@ -1,8 +1,8 @@
 <?php snippet('header')?>
-<main class="covers">
+<main class="covers cover-animation">
     <?php if ($worksPage = page('works')): ?>
       <?php foreach ($worksPage->children()->sortBy('date', 'desc') as $work): ?>
-          <div class="cover-animation project <?= $work->layout() ?>">
+          <div class="project <?= $work->layout() ?>">
               <a class="poster" href="<?= $work->url() ?>">
                 <?php if ($cover = $work->cover()->resize(1080)) : ?>
                   <div class="image auto-gradient">

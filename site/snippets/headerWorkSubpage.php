@@ -78,7 +78,7 @@
                   <?php endforeach ?>
             <?php endif ?>
         </menu>
-        <a id="homeIndex" href="/home" class="home-logo lrg-logo">
+        <a href="/home" class="home-logo large">
           <svg viewBox="0 0 1344 262" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M387.026 243.921L406.355 184.539H420.878L393.504 260.448H380.705L353.435 184.539H367.906L387.026 243.921Z" fill="currentColor"/>
             <path d="M443.445 260.448H430.281V184.539H443.445V260.448Z" fill="currentColor"/>

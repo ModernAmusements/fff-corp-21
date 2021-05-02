@@ -212,41 +212,7 @@ body {
   box-sizing: border-box;
   font-smooth: antialiased;
   text-transform: uppercase;
-  cursor: url("data:image/svg+xml,%3Csvg height='6' width='6' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='rgb(255, 76, 0)' r='4'/%3E%3C/svg%3E") 3 3, auto;
-}
-
-.cursor {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--width);
-  height: var(--height);
-  transform: translate(calc(var(--x) - var(--width) / 2), calc(var(--y) - var(--height) / 2));
-  transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1), 150ms height cubic-bezier(0.39, 0.575, 0.565, 1), 150ms transform cubic-bezier(0.39, 0.575, 0.565, 1);
-  z-index: 1;
-  pointer-events: none;
-  will-change: transform;
-}
-
-@media (pointer: fine) {
-  .cursor {
-    display: block;
-  }
-}
-
-.cursor::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: var(--radius);
-  border: 1px solid var(--primary-color);
-  opacity: var(--scale);
-  transform: scale(var(--scale));
-  transition: 300ms opacity cubic-bezier(0.39, 0.575, 0.565, 1), 300ms transform cubic-bezier(0.39, 0.575, 0.565, 1), 150ms border-radius cubic-bezier(0.39, 0.575, 0.565, 1);
+  cursor: url("data:image/svg+xml;charset=UTF-8,<svg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z' fill='rgb(255, 76, 0)'/></svg>"), auto;
 }
 
 main {
@@ -1528,7 +1494,7 @@ select:-webkit-autofill:focus {
 
 .menu-animation {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(800px);
   transform-origin: 0% 0%;
   transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1), transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -1544,6 +1510,21 @@ select:-webkit-autofill:focus {
   opacity: 1;
   transform-origin: 100% 0%;
   transform: translateY(0);
+  transition-delay: 1s;
+}
+
+.fast-animation {
+  opacity: 0;
+  transform: translateY(800px);
+  transform-origin: 0% 0%;
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1), transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.fade-up-fast {
+  opacity: 1;
+  transform-origin: 100% 0%;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
 .fade-up-covers {
@@ -1557,6 +1538,7 @@ select:-webkit-autofill:focus {
   opacity: 1;
   transform-origin: 100% 0%;
   transform: translateY(0);
+  transition-delay: 1s;
 }
 
 .btn {
@@ -1755,7 +1737,11 @@ header:not(.post-header) .active {
   justify-self: end;
   pointer-events: none;
   width: 100%;
-  transition: width 1s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: width 1.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.home-logo .noise {
+  overflow: hidden;
 }
 
 .home-logo .noise .title {
@@ -1763,7 +1749,7 @@ header:not(.post-header) .active {
   font-size: 14.4vw;
   line-height: 16.8vw;
   top: 50vh;
-  transition: font-size 0.3s cubic-bezier(0.86, 0, 0.07, 1), top 1s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: font-size 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), top 1s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .page-title-animation .noise {
@@ -1775,12 +1761,13 @@ header:not(.post-header) .active {
 
 .page-title-animation .noise .title {
   top: 0;
+  transition: top 1s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .scroll-active {
   pointer-events: all;
   width: 10%;
-  transition: width 1s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: width 1.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .scroll-active .noise {
@@ -1796,7 +1783,7 @@ header:not(.post-header) .active {
   top: 0;
   line-height: 0px;
   right: 1em;
-  transition: font-size 0.3s cubic-bezier(0.86, 0, 0.07, 1), top 1s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: font-size 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), top 1s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 @media only screen and (max-width: 720px) {
@@ -1815,18 +1802,9 @@ header:not(.post-header) .active {
   }
 
   header:not(.post-header) .home-logo,
-  header:not(.post-header) .scroll-logo {
+  header:not(.post-header) .scroll-active {
     grid-column: 3/5;
     justify-self: end;
-  }
-
-  .home-logo svg {
-    top: 0;
-    transform: scale(2, 2);
-  }
-
-  .scroll-logo svg {
-    transform: scale(1, 1);
   }
 }
 
@@ -1835,57 +1813,83 @@ header:not(.post-header) .active {
     height: 100vh;
     grid-template-columns: 1fr 1fr;
     padding: 1em;
-    transition: heihgt 0.8s ease-in-out;
+    transition: heihgt 0.3s ease-in-out;
   }
 
   header:not(.post-header) .dark-mode-toggle {
     grid-column: 1/3;
-    grid-row: 2;
+    grid-row: 1;
     justify-self: end;
     align-self: end;
   }
 
+  header:not(.post-header) .dark-mode-toggle svg {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
   header:not(.post-header) .desktop-nav {
-    font-size: 45px;
-    line-height: 48px;
+    font-size: 26px;
+    line-height: 30px;
     grid-column: 1/3;
-    top: calc(100vh - 125px);
-    position: absolute;
+    position: relative;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    transition: top 0.8s ease-in-out, font-size 0.4s linear;
+    align-items: flex-start;
+    justify-content: center;
+    transition: bottom 0.8s ease-in-out, font-size 0.4s linear;
   }
 
   header:not(.post-header) .scroll-nav {
-    font-size: 18px;
-    line-height: 30px;
-    top: -7px;
-    transition: top 0.8s ease-in-out, font-size 0.4s linear;
+    bottom: -300px;
+    transition: bottom 0.8s ease-in-out, font-size 0.4s linear;
+    transition-delay: 0.5s;
+    position: relative;
+  }
+
+  header:not(.post-header) .scroll-nav-active {
+    bottom: 1px;
+    transition: bottom 0.8s ease-in-out, font-size 0.4s linear;
+    transition-delay: 0.5s;
+    position: relative;
   }
 
   header:not(.post-header) .home-logo {
-    grid-column: 2/3;
-    justify-self: end;
+    grid-column: 1/3;
+    justify-self: start;
     align-self: start;
     grid-row: 1;
     width: 100%;
   }
 
-  header:not(.post-header) .home-logo svg {
-    transform: scale(2.1, 2.1);
+  header:not(.post-header) .home-logo .noise {
+    overflow: hidden;
   }
 
-  header:not(.post-header) .scroll-logo {
+  header:not(.post-header) .home-logo .noise .title {
+    font-size: 13.8vw;
+    line-height: 16.8vw;
+  }
+
+  header:not(.post-header) .scroll-active {
     grid-column: 2/3;
     align-self: start;
     grid-row: 1;
   }
 
-  header:not(.post-header) .scroll-logo svg {
-    transform: scale(1, 1);
-    transform-origin: top right;
-    transition: transform 0.8s ease-in-out, transform-origin 0.8s ease-in-out;
+  header:not(.post-header) .scroll-active .noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+  }
+
+  header:not(.post-header) .scroll-active .noise .title {
+    position: relative;
+    font-size: 7.9vw;
+    top: 0;
+    line-height: 30px;
+    right: 1em;
+    transition: font-size 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), top 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   .scroll-header {

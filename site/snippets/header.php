@@ -41,7 +41,7 @@
 </head>
 <body>
     <header>
-       <span class="hide menu-animation dark-mode-toggle">
+       <span class="menu-animation dark-mode-toggle">
         <span id="sun" class="pointer">
             <svg viewBox="0 0 50 50">
               <g id="sun-group">
@@ -65,7 +65,7 @@
                 </span>
             </label>
         </span>
-        <menu class="desktop-nav lrg-nav menu-animation">
+        <menu class="desktop-nav menu-animation">
               <?php $items = $site->children(); $items->prepend('home', page('home')); 
                   if ($items->isNotEmpty()) :?>
                   <?php foreach ($items->listed() as $item) : ?>
@@ -75,7 +75,7 @@
                   <?php endforeach ?>
             <?php endif ?>
         </menu>
-        <a id="homeIndex" href="/home" class="home-logo">
+        <a href="/home" class="home-logo">
             <div class="noise">
               <div class="title">
                 <span>FFFCORP2021</span> 
@@ -83,5 +83,3 @@
             </div>  
         </a>
 </header>
-
-<div class="cursor"></div>

@@ -108,3 +108,21 @@
       }
     }
   }
+
+
+
+
+  @media only screen and (max-width: 460px) {
+
+    #preload-homepage {
+      #loader-bg {
+      }
+
+      #loader-txt-wrap {
+        opacity: 1;
+        font-size: 5vw;
+        height: 12vw;
+      }
+    }
+
+  }

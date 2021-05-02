@@ -41,7 +41,7 @@
 </head>
 <body>
     <header>
-       <span class="menu-animation dark-mode-toggle">
+       <span class="toggle-animation dark-mode-toggle">
         <span id="sun" class="pointer">
             <svg viewBox="0 0 50 50">
               <g id="sun-group">

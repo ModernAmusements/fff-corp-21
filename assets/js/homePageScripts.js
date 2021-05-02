@@ -101,6 +101,7 @@ $(function () {
   var nav = $(".desktop-nav");
   var header = $("header");
   var logo = $(".home-logo");
+  var darkmode = $(".toggle-animation");
 
   if (!sessionStorage.getItem('homePagePreloader')) {
     sessionStorage.setItem('homePagePreloader', true);
@@ -112,44 +113,53 @@ $(function () {
       }, 1500);
     }, 2000);
     setTimeout(function () {
-      menu.addClass('fade-up'), covers.addClass('fade-up'), logo.addClass('page-title-animation');
+      menu.addClass('fade-up'), covers.addClass('fade-up'), darkmode.addClass('fade-up'), logo.addClass('page-title-animation');
     }, 3000);
   } else {
     preloader.css('display', 'none');
-    menu.addClass('fade-up'), covers.addClass('fade-up'), logo.addClass('page-title-animation');
+    menu.addClass('fade-up'), covers.addClass('fade-up'), darkmode.addClass('fade-up'), logo.addClass('page-title-animation');
   }
 
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 75) {
-      setTimeout(function () {
-        if (!logo.hasClass("scroll-logo")) {
-          logo.removeClass('large').addClass("scroll-active");
-        }
-      }, 150);
-    } else {
-      setTimeout(function () {
-        if (!logo.hasClass("large")) {
-          logo.removeClass("scroll-active").addClass('large');
-        }
-      }, 150);
+    if (window.innerWidth > 460) {
+      if (scroll >= 75) {
+        setTimeout(function () {
+          if (!logo.hasClass("scroll-logo")) {
+            logo.removeClass('large').addClass("scroll-active");
+          }
+        }, 150);
+      } else {
+        setTimeout(function () {
+          if (!logo.hasClass("large")) {
+            logo.removeClass("scroll-active").addClass('large');
+          }
+        }, 150);
+      }
+
+      ;
     }
 
     if (window.innerWidth < 460) {
-      if (scroll >= 75) {
+      if (scroll >= 1) {
         if (!nav.hasClass("scroll-nav")) {
-          nav.removeClass('lrg-nav'), header.addClass("scroll-header");
+          logo.removeClass('large').addClass("scroll-active"), nav.removeClass('lrg-nav'), header.css({
+            "height": "100px",
+            "transition": "height 1s cubic-bezier(0.39, 0.575, 0.565, 1)"
+          });
         }
       } else {
         if (!nav.hasClass("lrg-nav")) {
-          nav.removeClass("scroll-nav"), header.removeClass("scroll-header");
-          ;
+          logo.removeClass("scroll-active").addClass('large'), nav.removeClass("scroll-nav"), header.css({
+            "height": "100vh",
+            "transition": "height 1s cubic-bezier(0.39, 0.575, 0.565, 1)"
+          });
         }
       }
     }
   });
-}); // $('.home-logo').addClass('scroll-active')
+});
 
 /***/ }),
 

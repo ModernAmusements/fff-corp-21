@@ -1485,6 +1485,14 @@ select:-webkit-autofill:focus {
   transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
+@media only screen and (max-width: 460px) {
+  #preload-homepage #loader-txt-wrap {
+    opacity: 1;
+    font-size: 5vw;
+    height: 12vw;
+  }
+}
+
 .title-animation {
   opacity: 0;
   transform: translateY(200%);
@@ -1504,6 +1512,13 @@ select:-webkit-autofill:focus {
   transform: translateY(50%);
   transform-origin: 0% 0%;
   transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1), transform-origin 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.toggle-animation {
+  opacity: 0;
+  transform: translateY(50%);
+  transform-origin: 0% 0%;
+  transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1), transform-origin 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .fade-up {
@@ -1813,7 +1828,7 @@ header:not(.post-header) .active {
     height: 100vh;
     grid-template-columns: 1fr 1fr;
     padding: 1em;
-    transition: heihgt 0.3s ease-in-out;
+    transition: height 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   header:not(.post-header) .dark-mode-toggle {
@@ -1829,14 +1844,13 @@ header:not(.post-header) .active {
   }
 
   header:not(.post-header) .desktop-nav {
-    font-size: 26px;
-    line-height: 30px;
-    grid-column: 1/3;
+    font-size: 20px;
+    line-height: 22px;
+    grid-column: 1/2;
     position: relative;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    transition: bottom 0.8s ease-in-out, font-size 0.4s linear;
   }
 
   header:not(.post-header) .scroll-nav {
@@ -1868,6 +1882,7 @@ header:not(.post-header) .active {
   header:not(.post-header) .home-logo .noise .title {
     font-size: 13.8vw;
     line-height: 16.8vw;
+    transition: font-size 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), top 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   header:not(.post-header) .scroll-active {
@@ -1890,11 +1905,6 @@ header:not(.post-header) .active {
     line-height: 30px;
     right: 1em;
     transition: font-size 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), top 1s cubic-bezier(0.39, 0.575, 0.565, 1);
-  }
-
-  .scroll-header {
-    height: 10vh !important;
-    transition: heihgt 0.8s ease-in-out;
   }
 }
 

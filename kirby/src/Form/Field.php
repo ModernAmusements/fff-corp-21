@@ -71,8 +71,8 @@ class Field extends Component
         $this->formFields = $formFields;
 
         // use the type as fallback for the name
-        $attrs['name'] = $attrs['name'] ?? $type;
-        $attrs['type'] = $type;
+        $attrs['name'] ??= $type;
+        $attrs['type']   = $type;
 
         parent::__construct($type, $attrs);
     }
@@ -84,7 +84,10 @@ class Field extends Component
      */
     public function api()
     {
-        if (isset($this->options['api']) === true && is_callable($this->options['api']) === true) {
+        if (
+            isset($this->options['api']) === true &&
+            is_a($this->options['api'], 'Closure') === true
+        ) {
             return $this->options['api']->call($this);
         }
     }
@@ -107,11 +110,13 @@ class Field extends Component
 
         if ($save === false) {
             return null;
-        } elseif (is_callable($save) === true) {
-            return $save->call($this, $value);
-        } else {
-            return $value;
         }
+
+        if (is_a($save, 'Closure') === true) {
+            return $save->call($this, $value);
+        }
+
+        return $value;
     }
 
     /**
@@ -207,16 +212,19 @@ class Field extends Component
             ],
             'computed' => [
                 'after' => function () {
+                    /** @var \Kirby\Form\Field $this */
                     if ($this->after !== null) {
                         return $this->model()->toString($this->after);
                     }
                 },
                 'before' => function () {
+                    /** @var \Kirby\Form\Field $this */
                     if ($this->before !== null) {
                         return $this->model()->toString($this->before);
                     }
                 },
                 'default' => function () {
+                    /** @var \Kirby\Form\Field $this */
                     if ($this->default === null) {
                         return;
                     }
@@ -228,24 +236,47 @@ class Field extends Component
                     return $this->model()->toString($this->default);
                 },
                 'help' => function () {
+                    /** @var \Kirby\Form\Field $this */
                     if ($this->help) {
-                        $help = $this->model()->toString($this->help);
+                        $help = $this->model()->toSafeString($this->help);
                         $help = $this->kirby()->kirbytext($help);
                         return $help;
                     }
                 },
                 'label' => function () {
+                    /** @var \Kirby\Form\Field $this */
                     if ($this->label !== null) {
                         return $this->model()->toString($this->label);
                     }
                 },
                 'placeholder' => function () {
+                    /** @var \Kirby\Form\Field $this */
                     if ($this->placeholder !== null) {
                         return $this->model()->toString($this->placeholder);
                     }
                 }
             ]
         ];
+    }
+
+    /**
+     * Creates a new field instance
+     *
+     * @param string $type
+     * @param array $attrs
+     * @param Fields|null $formFields
+     * @return static
+     */
+    public static function factory(string $type, array $attrs = [], ?Fields $formFields = null)
+    {
+        $field = static::$types[$type] ?? null;
+
+        if (is_string($field) && class_exists($field) === true) {
+            $attrs['siblings'] = $formFields;
+            return new $field($attrs);
+        }
+
+        return new static($type, $attrs, $formFields);
     }
 
     /**
@@ -330,13 +361,13 @@ class Field extends Component
      */
     public function kirby()
     {
-        return $this->model->kirby();
+        return $this->model()->kirby();
     }
 
     /**
      * Returns the parent model
      *
-     * @return mixed|null
+     * @return mixed
      */
     public function model()
     {
@@ -404,16 +435,15 @@ class Field extends Component
 
         unset($array['model']);
 
-        $array['errors']    = $this->errors();
-        $array['invalid']   = $this->isInvalid();
         $array['saveable']  = $this->save();
         $array['signature'] = md5(json_encode($array));
 
         ksort($array);
 
-        return array_filter($array, function ($item) {
-            return $item !== null;
-        });
+        return array_filter(
+            $array,
+            fn ($item) => $item !== null && is_object($item) === false
+        );
     }
 
     /**

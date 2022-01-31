@@ -241,9 +241,9 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/01_homePageScripts.js */"./src/js/01_homePageScripts.js");
-__webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/js/global.js */"./src/js/global.js");
-module.exports = __webpack_require__(/*! /Users/shady/Desktop/fffcorp21/src/scss/index.scss */"./src/scss/index.scss");
+__webpack_require__(/*! /Users/shady/Desktop/fff-corp-21/src/js/01_homePageScripts.js */"./src/js/01_homePageScripts.js");
+__webpack_require__(/*! /Users/shady/Desktop/fff-corp-21/src/js/global.js */"./src/js/global.js");
+module.exports = __webpack_require__(/*! /Users/shady/Desktop/fff-corp-21/src/scss/index.scss */"./src/scss/index.scss");
 
 
 /***/ })

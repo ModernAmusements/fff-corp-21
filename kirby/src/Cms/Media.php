@@ -3,8 +3,8 @@
 namespace Kirby\Cms;
 
 use Kirby\Data\Data;
-use Kirby\Toolkit\Dir;
-use Kirby\Toolkit\F;
+use Kirby\Filesystem\Dir;
+use Kirby\Filesystem\F;
 use Kirby\Toolkit\Str;
 use Throwable;
 
@@ -48,8 +48,8 @@ class Media
                 if (Str::startsWith($hash, $file->mediaToken() . '-') === true) {
                     return Response::redirect($file->mediaUrl(), 307);
                 } else {
-                    // don't leak the correct token
-                    return new Response('Not Found', 'text/plain', 404);
+                    // don't leak the correct token, render the error page
+                    return false;
                 }
             }
 
@@ -70,6 +70,9 @@ class Media
      */
     public static function publish(File $file, string $dest): bool
     {
+        // never publish risky files (e.g. HTML, PHP or Apache config files)
+        FileRules::validFile($file, false);
+
         $src       = $file->root();
         $version   = dirname($dest);
         $directory = dirname($version);

@@ -22,7 +22,7 @@ mix.js([
 
 mix.sass('src/scss/index.scss', 'assets/css');
 
-mix.browserSync('http://fffcorp21.test/');
+mix.browserSync('http://fff-corp-21.test/');
 
 
 if (mix.inProduction()) {

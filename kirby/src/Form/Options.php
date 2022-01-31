@@ -29,6 +29,7 @@ class Options
         return [
             'Kirby\Cms\File'            => 'file',
             'Kirby\Toolkit\Obj'         => 'arrayItem',
+            'Kirby\Cms\Block'           => 'block',
             'Kirby\Cms\Page'            => 'page',
             'Kirby\Cms\StructureObject' => 'structureItem',
             'Kirby\Cms\User'            => 'user',
@@ -39,15 +40,15 @@ class Options
      * Brings options through api
      *
      * @param $api
-     * @param $model
+     * @param \Kirby\Cms\Model|null $model
      * @return array
      */
     public static function api($api, $model = null): array
     {
-        $model = $model ?? App::instance()->site();
-        $fetch = null;
-        $text  = null;
-        $value = null;
+        $model ??= App::instance()->site();
+        $fetch   = null;
+        $text    = null;
+        $value   = null;
 
         if (is_array($api) === true) {
             $fetch = $api['fetch'] ?? null;
@@ -70,7 +71,7 @@ class Options
     }
 
     /**
-     * @param $model
+     * @param \Kirby\Cms\Model $model
      * @return array
      */
     protected static function data($model): array
@@ -99,14 +100,14 @@ class Options
      *
      * @param $options
      * @param array $props
-     * @param null $model
+     * @param \Kirby\Cms\Model|null $model
      * @return array
      */
     public static function factory($options, array $props = [], $model = null): array
     {
         switch ($options) {
             case 'api':
-                $options = static::api($props['api']);
+                $options = static::api($props['api'], $model);
                 break;
             case 'query':
                 $options = static::query($props['query'], $model);
@@ -159,16 +160,17 @@ class Options
      * Brings options with query
      *
      * @param $query
-     * @param null $model
+     * @param \Kirby\Cms\Model|null $model
      * @return array
      */
     public static function query($query, $model = null): array
     {
-        $model = $model ?? App::instance()->site();
+        $model ??= App::instance()->site();
 
         // default text setup
         $text = [
             'arrayItem'     => '{{ arrayItem.value }}',
+            'block'         => '{{ block.type }}: {{ block.id }}',
             'file'          => '{{ file.filename }}',
             'page'          => '{{ page.title }}',
             'structureItem' => '{{ structureItem.title }}',
@@ -178,6 +180,7 @@ class Options
         // default value setup
         $value = [
             'arrayItem'     => '{{ arrayItem.value }}',
+            'block'         => '{{ block.id }}',
             'file'          => '{{ file.id }}',
             'page'          => '{{ page.id }}',
             'structureItem' => '{{ structureItem.id }}',

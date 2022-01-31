@@ -23,7 +23,7 @@ class Roles extends Collection
      * roles that can be created by the
      * current user
      *
-     * @return self
+     * @return $this|static
      * @throws \Exception
      */
     public function canBeChanged()
@@ -47,7 +47,7 @@ class Roles extends Collection
      * roles that can be created by the
      * current user
      *
-     * @return self
+     * @return $this|static
      * @throws \Exception
      */
     public function canBeCreated()
@@ -69,7 +69,7 @@ class Roles extends Collection
     /**
      * @param array $roles
      * @param array $inject
-     * @return self
+     * @return static
      */
     public static function factory(array $roles, array $inject = [])
     {
@@ -87,13 +87,13 @@ class Roles extends Collection
         }
 
         // return the collection sorted by name
-        return $collection->sortBy('name', 'asc');
+        return $collection->sort('name', 'asc');
     }
 
     /**
      * @param string|null $root
      * @param array $inject
-     * @return self
+     * @return static
      */
     public static function load(string $root = null, array $inject = [])
     {
@@ -134,6 +134,6 @@ class Roles extends Collection
         }
 
         // return the collection sorted by name
-        return $roles->sortBy('name', 'asc');
+        return $roles->sort('name', 'asc');
     }
 }

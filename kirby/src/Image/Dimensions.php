@@ -67,7 +67,7 @@ class Dimensions
      *
      * @param int $width
      * @param int|null $height
-     * @return self
+     * @return $this
      */
     public function crop(int $width, int $height = null)
     {
@@ -110,11 +110,11 @@ class Dimensions
      * @param int $box the max width and/or height
      * @param bool $force If true, the dimensions will be
      *                    upscaled to fit the box if smaller
-     * @return self object with recalculated dimensions
+     * @return $this object with recalculated dimensions
      */
     public function fit(int $box, bool $force = false)
     {
-        if ($this->width == 0 || $this->height == 0) {
+        if ($this->width === 0 || $this->height === 0) {
             $this->width  = $box;
             $this->height = $box;
             return $this;
@@ -162,7 +162,7 @@ class Dimensions
      * @param int|null $fit the max height
      * @param bool $force If true, the dimensions will be
      *                    upscaled to fit the box if smaller
-     * @return self object with recalculated dimensions
+     * @return $this object with recalculated dimensions
      */
     public function fitHeight(int $fit = null, bool $force = false)
     {
@@ -176,7 +176,7 @@ class Dimensions
      * @param int|null $fit the max width
      * @param bool $force If true, the dimensions will be
      *                    upscaled to fit the box if smaller
-     * @return self object with recalculated dimensions
+     * @return $this object with recalculated dimensions
      */
     protected function fitSize(string $ref, int $fit = null, bool $force = false)
     {
@@ -215,7 +215,7 @@ class Dimensions
      * @param int|null $fit the max width
      * @param bool $force If true, the dimensions will be
      *                    upscaled to fit the box if smaller
-     * @return self object with recalculated dimensions
+     * @return $this object with recalculated dimensions
      */
     public function fitWidth(int $fit = null, bool $force = false)
     {
@@ -228,7 +228,7 @@ class Dimensions
      * @param int|null $width the max height
      * @param int|null $height the max width
      * @param bool $force
-     * @return self
+     * @return $this
      */
     public function fitWidthAndHeight(int $width = null, int $height = null, bool $force = false)
     {
@@ -255,7 +255,7 @@ class Dimensions
      * Detect the dimensions for an image file
      *
      * @param string $root
-     * @return self
+     * @return static
      */
     public static function forImage(string $root)
     {
@@ -271,7 +271,7 @@ class Dimensions
      * Detect the dimensions for a svg file
      *
      * @param string $root
-     * @return self
+     * @return static
      */
     public static function forSvg(string $root)
     {
@@ -365,7 +365,7 @@ class Dimensions
      * @param int|null $width
      * @param int|null $height
      * @param bool $force
-     * @return self
+     * @return $this
      */
     public function resize(int $width = null, int $height = null, bool $force = false)
     {
@@ -379,14 +379,14 @@ class Dimensions
      */
     public function square(): bool
     {
-        return $this->width == $this->height;
+        return $this->width === $this->height;
     }
 
     /**
      * Resize and crop
      *
      * @param array $options
-     * @return self
+     * @return $this
      */
     public function thumb(array $options = [])
     {

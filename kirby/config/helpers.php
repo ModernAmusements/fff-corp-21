@@ -1,12 +1,14 @@
 <?php
 
 use Kirby\Cms\App;
-use Kirby\Cms\Asset;
 use Kirby\Cms\Html;
 use Kirby\Cms\Response;
 use Kirby\Cms\Url;
+use Kirby\Exception\InvalidArgumentException;
+use Kirby\Filesystem\Asset;
+use Kirby\Filesystem\F;
+use Kirby\Http\Router;
 use Kirby\Toolkit\Escape;
-use Kirby\Toolkit\F;
 use Kirby\Toolkit\I18n;
 use Kirby\Toolkit\Str;
 use Kirby\Toolkit\V;
@@ -15,7 +17,7 @@ use Kirby\Toolkit\V;
  * Helper to create an asset object
  *
  * @param string $path
- * @return \Kirby\Cms\Asset
+ * @return \Kirby\Filesystem\Asset
  */
 function asset(string $path)
 {
@@ -25,12 +27,12 @@ function asset(string $path)
 /**
  * Generates a list of HTML attributes
  *
- * @param array $attr A list of attributes as key/value array
- * @param string $before An optional string that will be prepended if the result is not empty
- * @param string $after An optional string that will be appended if the result is not empty
- * @return string
+ * @param array|null $attr A list of attributes as key/value array
+ * @param string|null $before An optional string that will be prepended if the result is not empty
+ * @param string|null $after An optional string that will be appended if the result is not empty
+ * @return string|null
  */
-function attr(array $attr = null, $before = null, $after = null)
+function attr(?array $attr = null, ?string $before = null, ?string $after = null): ?string
 {
     if ($attrs = Html::attr($attr)) {
         return $before . $attrs . $after;
@@ -53,29 +55,34 @@ function collection(string $name)
 /**
  * Checks / returns a CSRF token
  *
- * @param string $check Pass a token here to compare it to the one in the session
+ * @param string|null $check Pass a token here to compare it to the one in the session
  * @return string|bool Either the token or a boolean check result
  */
-function csrf(string $check = null)
+function csrf(?string $check = null)
 {
     $session = App::instance()->session();
 
-    // check explicitly if there have been no arguments at all;
+    // no arguments, generate/return a token
+    // (check explicitly if there have been no arguments at all;
     // checking for null introduces a security issue because null could come
-    // from user input or bugs in the calling code!
+    // from user input or bugs in the calling code!)
     if (func_num_args() === 0) {
-        // no arguments, generate/return a token
+        $token = $session->get('kirby.csrf');
 
-        $token = $session->get('csrf');
         if (is_string($token) !== true) {
             $token = bin2hex(random_bytes(32));
-            $session->set('csrf', $token);
+            $session->set('kirby.csrf', $token);
         }
 
         return $token;
-    } elseif (is_string($check) === true && is_string($session->get('csrf')) === true) {
-        // argument has been passed, check the token
-        return hash_equals($session->get('csrf'), $check) === true;
+    }
+
+    // argument has been passed, check the token
+    if (
+        is_string($check) === true &&
+        is_string($session->get('kirby.csrf')) === true
+    ) {
+        return hash_equals($session->get('kirby.csrf'), $check) === true;
     }
 
     return false;
@@ -91,10 +98,7 @@ function csrf(string $check = null)
 function css($url, $options = null): ?string
 {
     if (is_array($url) === true) {
-        $links = array_map(function ($url) use ($options) {
-            return css($url, $options);
-        }, $url);
-
+        $links = A::map($url, fn ($url) => css($url, $options));
         return implode(PHP_EOL, $links);
     }
 
@@ -110,7 +114,7 @@ function css($url, $options = null): ?string
         }
     }
 
-    $url  = $kirby->component('css')($kirby, $url, $options);
+    $url  = ($kirby->component('css'))($kirby, $url, $options);
     $url  = Url::to($url);
     $attr = array_merge((array)$options, [
         'href' => $url,
@@ -148,7 +152,7 @@ if (function_exists('dump') === false) {
     function dump($variable, bool $echo = true): string
     {
         $kirby = App::instance();
-        return $kirby->component('dump')($kirby, $variable, $echo);
+        return ($kirby->component('dump'))($kirby, $variable, $echo);
     }
 }
 
@@ -170,14 +174,13 @@ if (function_exists('e') === false) {
  * Escape context specific output
  *
  * @param string $string Untrusted data
- * @param string $context Location of output
- * @param bool $strict Whether to escape an extended set of characters (HTML attributes only)
+ * @param string $context Location of output (`html`, `attr`, `js`, `css`, `url` or `xml`)
  * @return string Escaped data
  */
-function esc($string, $context = 'html', $strict = false)
+function esc(string $string, string $context = 'html'): string
 {
     if (method_exists('Kirby\Toolkit\Escape', $context) === true) {
-        return Escape::$context($string, $strict);
+        return Escape::$context($string);
     }
 
     return $string;
@@ -200,10 +203,10 @@ function get($key = null, $default = null)
  * Embeds a Github Gist
  *
  * @param string $url
- * @param string $file
+ * @param string|null $file
  * @return string
  */
-function gist(string $url, string $file = null): string
+function gist(string $url, ?string $file = null): string
 {
     return kirbytag([
         'gist' => $url,
@@ -219,7 +222,7 @@ function gist(string $url, string $file = null): string
  * @param int $code
  * @return void
  */
-function go(string $url = null, int $code = 302)
+function go(string $url = '/', int $code = 302)
 {
     die(Response::redirect($url, $code));
 }
@@ -255,10 +258,10 @@ function html(?string $string, bool $keepTags = false)
  * Example:
  * <?= image('some/page/myimage.jpg') ?>
  *
- * @param string $path
+ * @param string|null $path
  * @return \Kirby\Cms\File|null
  */
-function image(string $path = null)
+function image(?string $path = null)
 {
     if ($path === null) {
         return page()->image();
@@ -296,9 +299,9 @@ function image(string $path = null)
  * @param array $data
  * @param array $rules
  * @param array $messages
- * @return false|array
+ * @return array
  */
-function invalid(array $data = [], array $rules = [], array $messages = [])
+function invalid(array $data = [], array $rules = [], array $messages = []): array
 {
     $errors = [];
 
@@ -307,15 +310,25 @@ function invalid(array $data = [], array $rules = [], array $messages = [])
 
         // See: http://php.net/manual/en/types.comparisons.php
         // only false for: null, undefined variable, '', []
-        $filled  = isset($data[$field]) && $data[$field] !== '' && $data[$field] !== [];
+        $value   = $data[$field] ?? null;
+        $filled  = $value !== null && $value !== '' && $value !== [];
         $message = $messages[$field] ?? $field;
 
         // True if there is an error message for each validation method.
         $messageArray = is_array($message);
 
         foreach ($validations as $method => $options) {
+            // If the index is numeric, there is no option
+            // and `$value` is sent directly as a `$options` parameter
             if (is_numeric($method) === true) {
-                $method = $options;
+                $method  = $options;
+                $options = [$value];
+            } else {
+                if (is_array($options) === false) {
+                    $options = [$options];
+                }
+
+                array_unshift($options, $value);
             }
 
             $validationIndex++;
@@ -326,12 +339,6 @@ function invalid(array $data = [], array $rules = [], array $messages = [])
                     continue;
                 }
             } elseif ($filled) {
-                if (is_array($options) === false) {
-                    $options = [$options];
-                }
-
-                array_unshift($options, $data[$field] ?? null);
-
                 if (V::$method(...$options) === true) {
                     // Field is filled and passes validation method.
                     continue;
@@ -363,10 +370,7 @@ function invalid(array $data = [], array $rules = [], array $messages = [])
 function js($url, $options = null): ?string
 {
     if (is_array($url) === true) {
-        $scripts = array_map(function ($url) use ($options) {
-            return js($url, $options);
-        }, $url);
-
+        $scripts = A::map($url, fn ($url) => js($url, $options));
         return implode(PHP_EOL, $scripts);
     }
 
@@ -382,7 +386,7 @@ function js($url, $options = null): ?string
         }
     }
 
-    $url  = $kirby->component('js')($kirby, $url, $options);
+    $url  = ($kirby->component('js'))($kirby, $url, $options);
     $url  = Url::to($url);
     $attr = array_merge((array)$options, ['src' => $url]);
 
@@ -403,12 +407,12 @@ function kirby()
  * Makes it possible to use any defined Kirbytag as standalone function
  *
  * @param string|array $type
- * @param string $value
+ * @param string|null $value
  * @param array $attr
  * @param array $data
  * @return string
  */
-function kirbytag($type, string $value = null, array $attr = [], array $data = []): string
+function kirbytag($type, ?string $value = null, array $attr = [], array $data = []): string
 {
     if (is_array($type) === true) {
         $kirbytag = $type;
@@ -430,11 +434,11 @@ function kirbytag($type, string $value = null, array $attr = [], array $data = [
  * Parses KirbyTags in the given string. Shortcut
  * for `$kirby->kirbytags($text, $data)`
  *
- * @param string $text
+ * @param string|null $text
  * @param array $data
  * @return string
  */
-function kirbytags(string $text = null, array $data = []): string
+function kirbytags(?string $text = null, array $data = []): string
 {
     return App::instance()->kirbytags($text, $data);
 }
@@ -443,11 +447,11 @@ function kirbytags(string $text = null, array $data = []): string
  * Parses KirbyTags and Markdown in the
  * given string. Shortcut for `$kirby->kirbytext()`
  *
- * @param string $text
+ * @param string|null $text
  * @param array $data
  * @return string
  */
-function kirbytext(string $text = null, array $data = []): string
+function kirbytext(?string $text = null, array $data = []): string
 {
     return App::instance()->kirbytext($text, $data);
 }
@@ -457,11 +461,11 @@ function kirbytext(string $text = null, array $data = []): string
  * given string.
  * @since 3.1.0
  *
- * @param string $text
+ * @param string|null $text
  * @param array $data
  * @return string
  */
-function kirbytextinline(string $text = null, array $data = []): string
+function kirbytextinline(?string $text = null, array $data = []): string
 {
     return App::instance()->kirbytext($text, $data, true);
 }
@@ -469,11 +473,11 @@ function kirbytextinline(string $text = null, array $data = []): string
 /**
  * Shortcut for `kirbytext()` helper
  *
- * @param string $text
+ * @param string|null $text
  * @param array $data
  * @return string
  */
-function kt(string $text = null, array $data = []): string
+function kt(?string $text = null, array $data = []): string
 {
     return kirbytext($text, $data);
 }
@@ -482,11 +486,11 @@ function kt(string $text = null, array $data = []): string
  * Shortcut for `kirbytextinline()` helper
  * @since 3.1.0
  *
- * @param string $text
+ * @param string|null $text
  * @param array $data
  * @return string
  */
-function kti(string $text = null, array $data = []): string
+function kti(?string $text = null, array $data = []): string
 {
     return kirbytextinline($text, $data);
 }
@@ -495,10 +499,10 @@ function kti(string $text = null, array $data = []): string
  * A super simple class autoloader
  *
  * @param array $classmap
- * @param string $base
+ * @param string|null $base
  * @return void
  */
-function load(array $classmap, string $base = null)
+function load(array $classmap, ?string $base = null)
 {
     // convert all classnames to lowercase
     $classmap = array_change_key_case($classmap);
@@ -522,10 +526,10 @@ function load(array $classmap, string $base = null)
  * Parses markdown in the given string. Shortcut for
  * `$kirby->markdown($text)`
  *
- * @param string $text
+ * @param string|null $text
  * @return string
  */
-function markdown(string $text = null): string
+function markdown(?string $text = null): string
 {
     return App::instance()->markdown($text);
 }
@@ -547,12 +551,19 @@ function option(string $key, $default = null)
  * id or the current page when no id is specified
  *
  * @param string|array ...$id
- * @return \Kirby\Cms\Page|null
+ * @return \Kirby\Cms\Page|\Kirby\Cms\Pages|null
+ * @todo reduce to one parameter in 3.7.0 (also change return and return type)
  */
 function page(...$id)
 {
     if (empty($id) === true) {
         return App::instance()->site()->page();
+    }
+
+    if (count($id) > 1) {
+        // @codeCoverageIgnoreStart
+        deprecated('Passing multiple parameters to the `page()` helper has been deprecated. Please use the `pages()` helper instead.');
+        // @codeCoverageIgnoreEnd
     }
 
     return App::instance()->site()->find(...$id);
@@ -562,10 +573,17 @@ function page(...$id)
  * Helper to build page collections
  *
  * @param string|array ...$id
- * @return \Kirby\Cms\Pages
+ * @return \Kirby\Cms\Page|\Kirby\Cms\Pages|null
+ * @todo return only Pages|null in 3.7.0, wrap in Pages for single passed id
  */
 function pages(...$id)
 {
+    if (count($id) === 1 && is_array($id[0]) === false) {
+        // @codeCoverageIgnoreStart
+        deprecated('Passing a single id to the `pages()` helper will return a Kirby\Cms\Pages collection with a single element instead of the single Kirby\Cms\Page object itself - starting in 3.7.0.');
+        // @codeCoverageIgnoreEnd
+    }
+
     return App::instance()->site()->find(...$id);
 }
 
@@ -573,10 +591,10 @@ function pages(...$id)
  * Returns a single param from the URL
  *
  * @param string $key
- * @param string $fallback
+ * @param string|null $fallback
  * @return string|null
  */
-function param(string $key, string $fallback = null): ?string
+function param(string $key, ?string $fallback = null): ?string
 {
     return App::instance()->request()->url()->params()->$key ?? $fallback;
 }
@@ -605,6 +623,22 @@ function r($condition, $value, $alternative = null)
 }
 
 /**
+ * Creates a micro-router and executes
+ * the routing action immediately
+ * @since 3.6.0
+ *
+ * @param string|null $path
+ * @param string $method
+ * @param array $routes
+ * @param \Closure|null $callback
+ * @return mixed
+ */
+function router(?string $path = null, string $method = 'GET', array $routes = [], ?Closure $callback = null)
+{
+    return (new Router($routes))->call($path, $method, $callback);
+}
+
+/**
  * Returns the current site object
  *
  * @return \Kirby\Cms\Site
@@ -619,11 +653,12 @@ function site()
  *
  * @param mixed $value
  * @return int
+ * @throws \Kirby\Exception\InvalidArgumentException
  */
 function size($value): int
 {
     if (is_numeric($value)) {
-        return $value;
+        return (int)$value;
     }
 
     if (is_string($value)) {
@@ -643,16 +678,18 @@ function size($value): int
             return $value->count();
         }
     }
+
+    throw new InvalidArgumentException('Could not determine the size of the given value');
 }
 
 /**
  * Enhances the given string with
  * smartypants. Shortcut for `$kirby->smartypants($text)`
  *
- * @param string $text
+ * @param string|null $text
  * @return string
  */
-function smartypants(string $text = null): string
+function smartypants(?string $text = null): string
 {
     return App::instance()->smartypants($text);
 }
@@ -709,10 +746,6 @@ function svg($file)
     if (file_exists($file) === false) {
         $root = App::instance()->root();
         $file = realpath($root . '/' . $file);
-
-        if (file_exists($file) === false) {
-            return false;
-        }
     }
 
     return F::read($file);
@@ -723,7 +756,7 @@ function svg($file)
  *
  * @param string|array $key
  * @param string|null $fallback
- * @return mixed
+ * @return array|string|null
  */
 function t($key, string $fallback = null)
 {
@@ -733,11 +766,11 @@ function t($key, string $fallback = null)
 /**
  * Translates a count
  *
- * @param string|array $key
+ * @param string $key
  * @param int $count
  * @return mixed
  */
-function tc($key, int $count)
+function tc(string $key, int $count)
 {
     return I18n::translateCount($key, $count);
 }
@@ -746,11 +779,11 @@ function tc($key, int $count)
  * Rounds the minutes of the given date
  * by the defined step
  *
- * @param string $date
- * @param int $step
- * @return string|null
+ * @param string|null $date
+ * @param int|array|null $step array of `unit` and `size` to round to nearest
+ * @return int|null
  */
-function timestamp(string $date = null, int $step = null): ?string
+function timestamp(?string $date = null, $step = null): ?int
 {
     if (V::date($date) === false) {
         return null;
@@ -762,13 +795,50 @@ function timestamp(string $date = null, int $step = null): ?string
         return $date;
     }
 
-    $hours   = date('H', $date);
-    $minutes = date('i', $date);
-    $minutes = floor($minutes / $step) * $step;
-    $minutes = str_pad($minutes, 2, 0, STR_PAD_LEFT);
-    $date    = date('Y-m-d', $date) . ' ' . $hours . ':' . $minutes;
+    // fallback for pre-3.5.0 usage
+    if (is_int($step) === true) {
+        $step = [
+            'unit' => 'minute',
+            'size' => $step
+        ];
+    }
 
-    return strtotime($date);
+    if (is_array($step) === false) {
+        return $date;
+    }
+
+    $parts = [
+        'second' => date('s', $date),
+        'minute' => date('i', $date),
+        'hour'   => date('H', $date),
+        'day'    => date('d', $date),
+        'month'  => date('m', $date),
+        'year'   => date('Y', $date),
+    ];
+
+    $current = $parts[$step['unit']];
+    $nearest = round($current / $step['size']) * $step['size'];
+    $parts[$step['unit']] = $nearest;
+
+    foreach ($parts as $part => $value) {
+        if ($part === $step['unit']) {
+            break;
+        }
+
+        $parts[$part] = 0;
+    }
+
+    $timestamp = strtotime(
+        $parts['year'] . '-' .
+        str_pad($parts['month'], 2, 0, STR_PAD_LEFT) . '-' .
+        str_pad($parts['day'], 2, 0, STR_PAD_LEFT) . ' ' .
+        str_pad($parts['hour'], 2, 0, STR_PAD_LEFT) . ':' .
+        str_pad($parts['minute'], 2, 0, STR_PAD_LEFT) . ':' .
+        str_pad($parts['second'], 2, 0, STR_PAD_LEFT)
+    );
+
+    // on error, convert `false` into `null`
+    return $timestamp ?? null;
 }
 
 /**
@@ -776,12 +846,12 @@ function timestamp(string $date = null, int $step = null): ?string
  * placeholders in the text
  *
  * @param string $key
- * @param string $fallback
- * @param array $replace
- * @param string $locale
+ * @param string|array|null $fallback
+ * @param array|null $replace
+ * @param string|null $locale
  * @return string
  */
-function tt(string $key, $fallback = null, array $replace = null, string $locale = null)
+function tt(string $key, $fallback = null, ?array $replace = null, ?string $locale = null)
 {
     return I18n::template($key, $fallback, $replace, $locale);
 }
@@ -790,12 +860,12 @@ function tt(string $key, $fallback = null, array $replace = null, string $locale
  * Builds a Twitter link
  *
  * @param string $username
- * @param string $text
- * @param string $title
- * @param string $class
+ * @param string|null $text
+ * @param string|null $title
+ * @param string|null $class
  * @return string
  */
-function twitter(string $username, string $text = null, string $title = null, string $class = null): string
+function twitter(string $username, ?string $text = null, ?string $title = null, ?string $class = null): string
 {
     return kirbytag([
         'twitter' => $username,
@@ -808,11 +878,11 @@ function twitter(string $username, string $text = null, string $title = null, st
 /**
  * Shortcut for url()
  *
- * @param string $path
+ * @param string|null $path
  * @param array|string|null $options
  * @return string
  */
-function u(string $path = null, $options = null): string
+function u(?string $path = null, $options = null): string
 {
     return Url::to($path, $options);
 }
@@ -820,14 +890,44 @@ function u(string $path = null, $options = null): string
 /**
  * Builds an absolute URL for a given path
  *
- * @param string $path
+ * @param string|null $path
  * @param array|string|null $options
  * @return string
  */
-function url(string $path = null, $options = null): string
+function url(?string $path = null, $options = null): string
 {
     return Url::to($path, $options);
 }
+
+/**
+ * Creates a compliant v4 UUID
+ * Taken from: https://github.com/symfony/polyfill
+ *
+ * @return string
+ */
+function uuid(): string
+{
+    $uuid = bin2hex(random_bytes(16));
+
+    return sprintf(
+        '%08s-%04s-4%03s-%04x-%012s',
+        // 32 bits for "time_low"
+        substr($uuid, 0, 8),
+        // 16 bits for "time_mid"
+        substr($uuid, 8, 4),
+        // 16 bits for "time_hi_and_version",
+        // four most significant bits holds version number 4
+        substr($uuid, 13, 3),
+        // 16 bits:
+        // * 8 bits for "clk_seq_hi_res",
+        // * 8 bits for "clk_seq_low",
+        // two most significant bits holds zero and one for variant DCE1.1
+        hexdec(substr($uuid, 16, 4)) & 0x3fff | 0x8000,
+        // 48 bits for "node"
+        substr($uuid, 20, 12)
+    );
+}
+
 
 /**
  * Creates a video embed via iframe for Youtube or Vimeo
@@ -837,9 +937,9 @@ function url(string $path = null, $options = null): string
  * @param string $url
  * @param array $options
  * @param array $attr
- * @return string
+ * @return string|null
  */
-function video(string $url, array $options = [], array $attr = []): string
+function video(string $url, array $options = [], array $attr = []): ?string
 {
     return Html::video($url, $options, $attr);
 }
@@ -850,9 +950,9 @@ function video(string $url, array $options = [], array $attr = []): string
  * @param string $url
  * @param array $options
  * @param array $attr
- * @return string
+ * @return string|null
  */
-function vimeo(string $url, array $options = [], array $attr = []): string
+function vimeo(string $url, array $options = [], array $attr = []): ?string
 {
     return Html::vimeo($url, $options, $attr);
 }
@@ -876,9 +976,9 @@ function widont(string $string = null): string
  * @param string $url
  * @param array $options
  * @param array $attr
- * @return string
+ * @return string|null
  */
-function youtube(string $url, array $options = [], array $attr = []): string
+function youtube(string $url, array $options = [], array $attr = []): ?string
 {
     return Html::youtube($url, $options, $attr);
 }
